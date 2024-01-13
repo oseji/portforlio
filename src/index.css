@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  @apply scroll-smooth;
+}
+
+.App {
+  @apply min-h-screen;
+}
+
+.appLightMode {
+  @apply bg-white text-black;
+}
+
+.appDarkMode {
+  @apply bg-black text-white;
+}
+
+header {
+  @apply flex flex-col lg:flex-row items-center lg:justify-between py-3 px-5 lg:px-20;
+}
+
+.headerLightMode {
+  @apply bg-slate-200 text-black;
+}
+.headerDarkMode {
+  @apply bg-slate-950 text-white;
+}
+
+.logoGrp {
+  @apply flex flex-row justify-between w-full lg:w-auto items-center;
+}
+
+.logo {
+  @apply text-3xl font-bold;
+}
+
+.menuIcon {
+  @apply lg:hidden;
+}
+
+.themeSwitcher {
+  @apply flex flex-row gap-3 items-center;
+}
+
+.themeText {
+  @apply text-xs font-semibold;
+}
+
+.sliderContainer {
+  @apply p-1 rounded-xl bg-slate-400 w-10 cursor-pointer;
+}
+
+.slider {
+  @apply bg-orange-400 h-3 w-3 rounded-full transition ease-in-out duration-200;
+}
+
+.navList {
+  @apply flex flex-col lg:flex-row items-center gap-10;
+}
+
+.navText {
+  @apply font-semibold lg:hover:scale-110 transition ease-in-out duration-200;
+}
+
+main {
+  @apply py-2;
+}
+
+section {
+  @apply min-h-screen px-5 lg:px-20 py-10;
+}
+.sectionHeading {
+  @apply text-5xl uppercase;
+}
+
+.introText {
+  @apply text-center text-2xl md:text-3xl lg:text-6xl font-bold mb-2;
+}
+
+.aboutMeText {
+  @apply text-xl mt-10 mx-auto md:w-10/12 lg:w-1/2 lg:text-start lg:mx-0;
+}
+
+#projects {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-10 gap-16;
+}
+
+.projectsPageLightMode {
+  @apply bg-slate-200;
+}
+.projectsPageDarkMode {
+  @apply bg-white text-black;
+}
+
+.projectContainer {
+  @apply rounded-lg bg-slate-100;
+}
+
+.projectImg {
+  @apply rounded-t-lg;
+}
+
+.projectText {
+  @apply p-5;
+}
+
+.projectName {
+  @apply text-2xl font-bold mb-2 cursor-pointer hover:text-red-600 transition ease-in-out duration-200;
+}
