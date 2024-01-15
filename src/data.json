@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "img": "/assets/country finder.jpg",
+    "alt": "Country Finder screenshot",
+    "title": "Country finder",
+    "href": "https://country-finder-oseji.netlify.app/",
+    "about": "Search for any country in the world by name or the region they're located in and click on their card to see their details."
+  },
+  {
+    "id": 2,
+    "img": "/assets/dictionary.jpg",
+    "alt": "Dictionary screenshot",
+    "title": "Dictionary",
+    "href": "https://osejis-dictionary.netlify.app/",
+    "about": "A dictionary with audio functionality to pronounce searched words."
+  },
+  {
+    "id": 3,
+    "img": "/assets/github search.jpg",
+    "alt": "Github profile screenshot",
+    "title": "Github profile searcher",
+    "href": "https://github-profile-finder-oseji.netlify.app/",
+    "about": "A site to search for github profiles and display follower and following count,user location and user repositories."
+  },
+  {
+    "id": 4,
+    "img": "/assets/ip address.jpg",
+    "alt": "IP address screenshot",
+    "title": "IP address tracker",
+    "href": "https://ip-tracker-oseji.netlify.app/",
+    "about": "An IP address tracker that displays the users IP address,ISP,timezone and displays IP location on a rendered map using react-leaflet."
+  },
+  {
+    "id": 5,
+    "img": "/assets/taxas.jpg",
+    "alt": "Taxas landing page screenshot",
+    "title": "Taxas landing page",
+    "href": "https://txs-oseji.netlify.app/",
+    "about": "A landing page with simple animations."
+  },
+  {
+    "id": 6,
+    "img": "/assets/translator.jpg",
+    "alt": "Language translator screenshot",
+    "title": "Language translator",
+    "href": "https://translator-oseji.netlify.app/",
+    "about": "A language translator where you can copy text and also play audio of translated text."
+  }
+]
