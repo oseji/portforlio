@@ -57,7 +57,6 @@ function App() {
   const navRef = useRef(null);
 
   const [menu, setMenu] = useState(iconMenu);
-  const [isMenuToggled, setIsMenuToggled] = useState(false);
   const [isThemeToggled, setIsThemeToggled] = useState(false);
 
   const toggleMenu = () => {
@@ -144,7 +143,10 @@ function App() {
       </header>
 
       <main>
-        <section id="intro">
+        <section
+          id="intro"
+          className="flex flex-col justify-center my-40 lg:my-0"
+        >
           <motion.h1
             className="introText mt-32 lg:mt-20"
             variants={introTextVariants}

@@ -6,6 +6,9 @@ export default {
       translate: {
         end: "170%",
       },
+      minHeight: {
+        halfScreen: "90vh",
+      },
     },
   },
   plugins: [],

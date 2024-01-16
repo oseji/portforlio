@@ -19,11 +19,11 @@ html {
 }
 
 header {
-  @apply relative flex flex-col lg:flex-row items-center lg:justify-between py-3 px-5 lg:px-20  overflow-hidden;
+  @apply w-full fixed z-10 flex flex-col lg:flex-row items-center lg:justify-between py-3 px-5 lg:px-20  overflow-hidden;
 }
 
 .headerLightMode {
-  @apply bg-slate-200 text-black;
+  @apply bg-slate-300 text-black;
 }
 .headerDarkMode {
   @apply bg-slate-950 text-white;
@@ -58,7 +58,7 @@ header {
 }
 
 nav {
-  @apply w-full lg:w-auto  my-10 lg:my-0 transition ease-in-out duration-700 z-10;
+  @apply w-full lg:w-auto my-10 lg:my-0 transition ease-in-out duration-700 z-10;
 }
 .hideNav {
   @apply absolute lg:relative translate-x-96 lg:translate-x-0 opacity-0 lg:opacity-100;
@@ -77,14 +77,14 @@ main {
 }
 
 section {
-  @apply min-h-screen px-5 lg:px-20 py-10;
+  @apply lg:min-h-screen px-5 lg:px-20 py-10;
 }
 .sectionHeading {
   @apply text-5xl uppercase;
 }
 
 .introText {
-  @apply text-center text-5xl md:text-3xl lg:text-6xl font-bold mb-2;
+  @apply text-center text-5xl md:text-6xl lg:text-6xl font-bold mb-2;
 }
 
 .aboutMeText {
