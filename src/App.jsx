@@ -2,62 +2,100 @@ import { useState, useEffect, useRef } from "react";
 import { motion, useScroll } from "framer-motion";
 
 import projectData from "./data.json";
+import avatar from "./assets/my picture.jpg";
 
 function App() {
+  const sliderRef = useRef(null);
+  const navRef = useRef(null);
+
+  const [isThemeToggled, setIsThemeToggled] = useState(false);
+
   const iconMenu = (
     <svg width="20" height="14" xmlns="http://www.w3.org/2000/svg">
       <path
         d="M20 12v2H0v-2h20zm0-6v2H0V6h20zm0-6v2H0V0h20z"
-        fill="#FFF"
+        fill="#808080"
         fillRule="evenodd"
       />
     </svg>
   );
-
-  const iconClose = (
-    <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
-      <path
-        d="M14.364.222l1.414 1.414L9.414 8l6.364 6.364-1.414 1.414L8 9.414l-6.364 6.364-1.414-1.414L6.586 8 .222 1.636 1.636.222 8 6.586 14.364.222z"
-        fill="#000"
-        fillRule="evenodd"
-        opacity=".201"
-      />
-    </svg>
-  );
+  const [menu, setMenu] = useState(iconMenu);
 
   const iconGithub = (
     <svg
-      class="w-6 h-6 text-gray-800 dark:text-white"
+      className="w-6 h-6 text-gray-800 dark:text-white"
       aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
-      fill="currentColor"
+      fill={isThemeToggled ? "white" : "black"}
       viewBox="0 0 20 20"
     >
       <path
-        fill-rule="evenodd"
+        fillRule="evenodd"
         d="M10 .333A9.911 9.911 0 0 0 6.866 19.65c.5.092.678-.215.678-.477 0-.237-.01-1.017-.014-1.845-2.757.6-3.338-1.169-3.338-1.169a2.627 2.627 0 0 0-1.1-1.451c-.9-.615.07-.6.07-.6a2.084 2.084 0 0 1 1.518 1.021 2.11 2.11 0 0 0 2.884.823c.044-.503.268-.973.63-1.325-2.2-.25-4.516-1.1-4.516-4.9A3.832 3.832 0 0 1 4.7 7.068a3.56 3.56 0 0 1 .095-2.623s.832-.266 2.726 1.016a9.409 9.409 0 0 1 4.962 0c1.89-1.282 2.717-1.016 2.717-1.016.366.83.402 1.768.1 2.623a3.827 3.827 0 0 1 1.02 2.659c0 3.807-2.319 4.644-4.525 4.889a2.366 2.366 0 0 1 .673 1.834c0 1.326-.012 2.394-.012 2.72 0 .263.18.572.681.475A9.911 9.911 0 0 0 10 .333Z"
-        clip-rule="evenodd"
+        clipRule="evenodd"
       />
     </svg>
   );
 
-  const iconPhone = (
+  const iconLinkdn = (
+    <svg
+      class="w-6 h-6 text-gray-800 dark:text-white"
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      fill={isThemeToggled ? "white" : "black"}
+      viewBox="0 0 15 15"
+    >
+      <path
+        fillRule="evenodd"
+        d="M7.979 5v1.586a3.5 3.5 0 0 1 3.082-1.574C14.3 5.012 15 7.03 15 9.655V15h-3v-4.738c0-1.13-.229-2.584-1.995-2.584-1.713 0-2.005 1.23-2.005 2.5V15H5.009V5h2.97ZM3 2.487a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"
+        clipRule="evenodd"
+      />
+      <path d="M3 5.012H0V15h3V5.012Z" />
+    </svg>
+  );
+  const iconTwitter = (
+    <svg
+      class="w-6 h-6 text-gray-800 dark:text-white"
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      fill={isThemeToggled ? "white" : "#000000"}
+      viewBox="0 0 20 20"
+    >
+      <path
+        fill="currentColor"
+        d="M12.186 8.672 18.743.947h-2.927l-5.005 5.9-4.44-5.9H0l7.434 9.876-6.986 8.23h2.927l5.434-6.4 4.82 6.4H20L12.186 8.672Zm-2.267 2.671L8.544 9.515 3.2 2.42h2.2l4.312 5.719 1.375 1.828 5.731 7.613h-2.2l-4.699-6.237Z"
+      />
+    </svg>
+  );
+
+  const iconLocation = (
     <svg
       class="w-6 h-6 text-gray-800 dark:text-white"
       aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
       fill="currentColor"
-      viewBox="0 0 19 18"
+      viewBox="0 0 16 20"
     >
-      <path d="M18 13.446a3.02 3.02 0 0 0-.946-1.985l-1.4-1.4a3.054 3.054 0 0 0-4.218 0l-.7.7a.983.983 0 0 1-1.39 0l-2.1-2.1a.983.983 0 0 1 0-1.389l.7-.7a2.98 2.98 0 0 0 0-4.217l-1.4-1.4a2.824 2.824 0 0 0-4.218 0c-3.619 3.619-3 8.229 1.752 12.979C6.785 16.639 9.45 18 11.912 18a7.175 7.175 0 0 0 5.139-2.325A2.9 2.9 0 0 0 18 13.446Z" />
+      <path d="M8 0a7.992 7.992 0 0 0-6.583 12.535 1 1 0 0 0 .12.183l.12.146c.112.145.227.285.326.4l5.245 6.374a1 1 0 0 0 1.545-.003l5.092-6.205c.206-.222.4-.455.578-.7l.127-.155a.934.934 0 0 0 .122-.192A8.001 8.001 0 0 0 8 0Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z" />
     </svg>
   );
 
-  const sliderRef = useRef(null);
-  const navRef = useRef(null);
-
-  const [menu, setMenu] = useState(iconMenu);
-  const [isThemeToggled, setIsThemeToggled] = useState(false);
+  const upArrow = (
+    <svg
+      class="w-6 h-6 text-gray-800 dark:text-white"
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      fill={isThemeToggled ? "white" : "black"}
+      viewBox="0 0 14 8"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="M13 7 7.674 1.3a.91.91 0 0 0-1.348 0L1 7"
+      />
+    </svg>
+  );
 
   const toggleMenu = () => {
     const navbar = navRef.current;
@@ -142,70 +180,109 @@ function App() {
         </div>
       </header>
 
+      <a href="#intro">
+        <button className="upBtn">{upArrow}</button>
+      </a>
+
       <main>
         <section
           id="intro"
-          className="flex flex-col justify-center my-40 lg:my-0"
+          className="flex flex-col lg:flex-row  justify-center items-center  my-40 lg:my-0"
         >
           <motion.h1
-            className="introText mt-32 lg:mt-20"
+            className="introText mt-20 lg:mt-0"
             variants={introTextVariants}
             initial="hidden"
             animate="visible"
           >
-            Hey,I'm Ose
-          </motion.h1>
-          <motion.h1
-            className="introText"
-            variants={introTextVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            A Frontend developer
+            Hey,I'm Ose <span> A Frontend developer</span>
           </motion.h1>
         </section>
 
         <section id="aboutMe">
-          <motion.h1
-            initial={{ y: 100, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1, transition: { duration: 0.5 } }}
-            className="sectionHeading"
-          >
-            ABOUT ME
-          </motion.h1>
+          <div className="w-full lg:w-1/2">
+            <motion.img
+              variants={projectsVariants}
+              initial="hidden"
+              whileInView="visible"
+              src={avatar}
+              alt="avatar"
+              className="avatar"
+            />
+          </div>
 
-          <motion.p
-            initial={{ y: 100, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1, transition: { duration: 0.5 } }}
-            className="aboutMeText"
-          >
-            Hey there,I am a web developer that is seasoned in developing
-            landing pages and small scale websites for small to medium sized
-            businesses.I am also open to working with larger business if
-            opportunity presents itself
-          </motion.p>
+          <div className="w-full lg:w-1/2">
+            <motion.h1
+              initial={{ y: 100, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1, transition: { duration: 0.5 } }}
+              className="sectionHeading"
+            >
+              ABOUT ME
+            </motion.h1>
 
-          <motion.ul variants={ulVariants} initial="hidden" whileInView="show">
-            <li>
-              • Proficient with the use of HTML,CSS,JavaScript react.js and
-              tailwindcss for handling more complex projects.
-            </li>
+            <motion.p
+              initial={{ y: 100, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1, transition: { duration: 0.5 } }}
+              className="aboutMeText"
+            >
+              Hey there,I am a web developer that is seasoned in developing
+              landing pages and small scale websites for small to medium sized
+              businesses.I am also open to working with larger business if
+              opportunity presents itself
+            </motion.p>
 
-            <li>
-              • My services cover full management of your project from the start
-              until completion.
-            </li>
+            <motion.ul
+              variants={ulVariants}
+              initial="hidden"
+              whileInView="show"
+            >
+              <li>
+                • Proficient with the use of HTML,CSS,JavaScript react.js and
+                tailwindcss for handling more complex projects.
+              </li>
 
-            <li>
-              • Communication and transparency is of upmost importance to me so
-              feel free to reach out whenever you feel the need to.
-            </li>
+              <li>
+                • My services cover full management of your project from the
+                start until completion.
+              </li>
 
-            <li>
-              • Nothing makes me happier than a satisfied customer and I eagerly
-              look forward to helping businesses grow with the use of my skills
-            </li>
-          </motion.ul>
+              <li>
+                • Communication and transparency is of upmost importance to me
+                so feel free to reach out whenever you feel the need to.
+              </li>
+
+              <li>
+                • Nothing makes me happier than a satisfied customer and I
+                eagerly look forward to helping businesses grow with the use of
+                my skills
+              </li>
+            </motion.ul>
+
+            <motion.p
+              initial={{ y: 100, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1, transition: { duration: 0.5 } }}
+              className="mt-10"
+            >
+              <span className="font-bold">Skills: </span>HTML ,CSS ,Javascript
+              ,Tailwindcss ,ReactJs ,Framer motion ,Git
+            </motion.p>
+
+            <motion.div
+              initial={{ y: 100, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1, transition: { duration: 0.5 } }}
+              className="contactDetails"
+            >
+              <a href="https://github.com/oseji">{iconGithub}</a>
+
+              <a href="https://x.com/osejiiii?s=11&t=T8eipyBsmUUoM5iFV7A9TA">
+                {iconTwitter}
+              </a>
+
+              <a href="https://www.linkedin.com/in/ose-oziegbe-648154254?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">
+                {iconLinkdn}
+              </a>
+            </motion.div>
+          </div>
         </section>
 
         <motion.section
@@ -233,11 +310,24 @@ function App() {
               <img src={element.img} alt={element.alt} className="projectImg" />
 
               <div className="projectText">
-                <a href={element.href} className="projectName">
-                  {element.title}
-                </a>
+                <div>
+                  <h1 className="projectName">{element.title}</h1>
 
-                <p className="aboutProject">{element.about}</p>
+                  <p className="aboutProject">{element.about}</p>
+                </div>
+
+                <div className="iconGrp">
+                  <a href={element.githubRepo}>{iconGithub}</a>
+
+                  <a
+                    href={element.href}
+                    className={`border-b text-sm hover:text-orange-400 hover:border-orange-400 ${
+                      isThemeToggled ? `border-white` : `border-black`
+                    }`}
+                  >
+                    Go to site
+                  </a>
+                </div>
               </div>
             </motion.div>
           ))}

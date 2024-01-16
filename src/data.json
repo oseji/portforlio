@@ -5,6 +5,7 @@
     "alt": "Country Finder screenshot",
     "title": "Country finder",
     "href": "https://country-finder-oseji.netlify.app/",
+    "githubRepo": "https://github.com/oseji/countryFinder.git",
     "about": "Search for any country in the world by name or the region they're located in and click on their card to see their details."
   },
   {
@@ -13,6 +14,7 @@
     "alt": "Dictionary screenshot",
     "title": "Dictionary",
     "href": "https://osejis-dictionary.netlify.app/",
+    "githubRepo": "https://github.com/oseji/osejis-dictionary.git",
     "about": "A dictionary with audio functionality to pronounce searched words."
   },
   {
@@ -21,6 +23,7 @@
     "alt": "Github profile screenshot",
     "title": "Github profile searcher",
     "href": "https://github-profile-finder-oseji.netlify.app/",
+    "githubRepo": "https://github.com/oseji/github-profile-search.git",
     "about": "A site to search for github profiles and display follower and following count,user location and user repositories."
   },
   {
@@ -29,6 +32,7 @@
     "alt": "IP address screenshot",
     "title": "IP address tracker",
     "href": "https://ip-tracker-oseji.netlify.app/",
+    "githubRepo": "https://github.com/oseji/IP-Address-Tracker.git",
     "about": "An IP address tracker that displays the users IP address,ISP,timezone and displays IP location on a rendered map using react-leaflet."
   },
   {
@@ -37,6 +41,7 @@
     "alt": "Taxas landing page screenshot",
     "title": "Taxas landing page",
     "href": "https://txs-oseji.netlify.app/",
+    "githubRepo": "https://github.com/oseji/TXS.git",
     "about": "A landing page with simple animations."
   },
   {
@@ -45,6 +50,7 @@
     "alt": "Language translator screenshot",
     "title": "Language translator",
     "href": "https://translator-oseji.netlify.app/",
+    "githubRepo": "https://github.com/oseji/translator.git",
     "about": "A language translator where you can copy text and also play audio of translated text."
   }
 ]
