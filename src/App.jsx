@@ -120,24 +120,16 @@ function App() {
   };
 
   const projectContainerVariants = {
-    // hidden: { y: 100, opacity: 0 },
-    // visible: { y: 0, opacity: 1, transition: { duration: 0.5, delay: 0.5 } },
-
-    hidden: { scale: 0.5, opacity: 0 },
+    hidden: { scale: 0.7, opacity: 0 },
     visible: {
       scale: 1,
       opacity: 1,
-      transition: { duration: 0.5, delay: 0.5 },
+      transition: { duration: 0.5, delay: 0.2 },
     },
   };
 
-  const ulVariants = {
-    hidden: { y: 200, opacity: 0 },
-    show: { y: 0, opacity: 1, transition: { duration: 0.5 } },
-  };
-
   return (
-    <div className={`App ${isThemeToggled ? "appDarkMode" : "appLightMode"}`}>
+    <div className={`App  ${isThemeToggled ? "appDarkMode" : "appLightMode"}`}>
       <header
         className={` ${isThemeToggled ? "headerDarkMode" : "headerLightMode"}`}
       >
@@ -187,7 +179,7 @@ function App() {
       <main>
         <section
           id="intro"
-          className="flex flex-col lg:flex-row  justify-center items-center  my-40 lg:my-0"
+          className="flex flex-col justify-center items-center  my-40 lg:my-0"
         >
           <motion.h1
             className="introText mt-20 lg:mt-0"
@@ -195,7 +187,15 @@ function App() {
             initial="hidden"
             animate="visible"
           >
-            Hey,I'm Ose <span> A Frontend developer</span>
+            Welcome,
+          </motion.h1>
+          <motion.h1
+            className="introText lg:mt-0"
+            variants={introTextVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            To my portforlio
           </motion.h1>
         </section>
 
@@ -211,77 +211,164 @@ function App() {
             />
           </div>
 
-          <div className="w-full lg:w-1/2">
-            <motion.h1
-              initial={{ y: 100, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1, transition: { duration: 0.5 } }}
-              className="sectionHeading"
-            >
-              ABOUT ME
-            </motion.h1>
+          <div className="w-full  lg:w-1/2 flex flex-col justify-between">
+            <div>
+              <motion.h1
+                initial={{ y: 100, opacity: 0 }}
+                whileInView={{
+                  y: 0,
+                  opacity: 1,
+                  transition: { duration: 0.5 },
+                }}
+                className="sectionHeading"
+              >
+                ABOUT ME
+              </motion.h1>
 
-            <motion.p
-              initial={{ y: 100, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1, transition: { duration: 0.5 } }}
-              className="aboutMeText"
-            >
-              Hey there,I am a web developer that is seasoned in developing
-              landing pages and small scale websites for small to medium sized
-              businesses.I am also open to working with larger business if
-              opportunity presents itself
-            </motion.p>
+              <motion.p
+                initial={{ y: 100, opacity: 0 }}
+                whileInView={{
+                  y: 0,
+                  opacity: 1,
+                  transition: { duration: 0.5 },
+                }}
+                className="aboutMeText"
+              >
+                Hey there! I'm Ose,a front-end web developer mastering the art
+                of HTML,CSS and JavaScript.With a flair for aesthetics,I've
+                fine-tuned my skills in tailwindcss,crafting visually stunning
+                and responsive user interfaces.
+              </motion.p>
 
-            <motion.ul
-              variants={ulVariants}
-              initial="hidden"
-              whileInView="show"
-            >
-              <li>
-                • Proficient with the use of HTML,CSS,JavaScript react.js and
-                tailwindcss for handling more complex projects.
-              </li>
+              <motion.p
+                initial={{ y: 100, opacity: 0 }}
+                whileInView={{
+                  y: 0,
+                  opacity: 1,
+                  transition: { duration: 0.5 },
+                }}
+                className="aboutMeText"
+              >
+                My playground is ReactJS,where I build scalable and efficient
+                UIs.I am currently diving into the world of Framer Motion,I'm
+                adding dynamic animations to my toolkit.I'm not just a coder,
+                I'm a problem solver and a clean code enthusiast.
+              </motion.p>
 
-              <li>
-                • My services cover full management of your project from the
-                start until completion.
-              </li>
+              <motion.p
+                initial={{ y: 100, opacity: 0 }}
+                whileInView={{
+                  y: 0,
+                  opacity: 1,
+                  transition: { duration: 0.5 },
+                }}
+                className="aboutMeText"
+              >
+                Join me on this journey of perpetual learning and innovation as
+                I push my boundaries of web development.Let's create digital
+                experiences that captivate and inspire!
+              </motion.p>
+            </div>
 
-              <li>
-                • Communication and transparency is of upmost importance to me
-                so feel free to reach out whenever you feel the need to.
-              </li>
+            <div>
+              <motion.div
+                initial={{ y: 100, opacity: 0 }}
+                whileInView={{
+                  y: 0,
+                  opacity: 1,
+                  transition: { duration: 0.5 },
+                }}
+                className="contactIconGrp"
+              >
+                <a href="https://github.com/oseji">{iconGithub}</a>
 
-              <li>
-                • Nothing makes me happier than a satisfied customer and I
-                eagerly look forward to helping businesses grow with the use of
-                my skills
-              </li>
-            </motion.ul>
+                <a href="https://x.com/osejiiii?s=11&t=T8eipyBsmUUoM5iFV7A9TA">
+                  {iconTwitter}
+                </a>
 
-            <motion.p
-              initial={{ y: 100, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1, transition: { duration: 0.5 } }}
-              className="mt-10"
-            >
-              <span className="font-bold">Skills: </span>HTML ,CSS ,Javascript
-              ,Tailwindcss ,ReactJs ,Framer motion ,Git
-            </motion.p>
+                <a href="https://www.linkedin.com/in/ose-oziegbe-648154254?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">
+                  {iconLinkdn}
+                </a>
+              </motion.div>
 
-            <motion.div
-              initial={{ y: 100, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1, transition: { duration: 0.5 } }}
-              className="contactDetails"
-            >
-              <a href="https://github.com/oseji">{iconGithub}</a>
+              <motion.div
+                initial={{ y: 100, opacity: 0 }}
+                whileInView={{
+                  y: 0,
+                  opacity: 1,
+                  transition: { duration: 0.5 },
+                }}
+                className="skillsGrp"
+              >
+                <h2 className="font-bold text-xl mt-8 col-span-full">
+                  My Skills:
+                </h2>
 
-              <a href="https://x.com/osejiiii?s=11&t=T8eipyBsmUUoM5iFV7A9TA">
-                {iconTwitter}
-              </a>
-
-              <a href="https://www.linkedin.com/in/ose-oziegbe-648154254?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">
-                {iconLinkdn}
-              </a>
-            </motion.div>
+                <div className="skill">
+                  <p
+                    className={`skillText ${
+                      isThemeToggled ? "stackDark" : "stackLight"
+                    }`}
+                  >
+                    HTML
+                  </p>
+                </div>
+                <div className="skill">
+                  <p
+                    className={`skillText ${
+                      isThemeToggled ? "stackDark" : "stackLight"
+                    }`}
+                  >
+                    CSS
+                  </p>
+                </div>
+                <div className="skill">
+                  <p
+                    className={`skillText ${
+                      isThemeToggled ? "stackDark" : "stackLight"
+                    }`}
+                  >
+                    Javascript
+                  </p>
+                </div>
+                <div className="skill">
+                  <p
+                    className={`skillText ${
+                      isThemeToggled ? "stackDark" : "stackLight"
+                    }`}
+                  >
+                    Tailwindcss
+                  </p>
+                </div>
+                <div className="skill">
+                  <p
+                    className={`skillText ${
+                      isThemeToggled ? "stackDark" : "stackLight"
+                    }`}
+                  >
+                    React JS
+                  </p>
+                </div>
+                <div className="skill">
+                  <p
+                    className={`skillText ${
+                      isThemeToggled ? "stackDark" : "stackLight"
+                    }`}
+                  >
+                    Framer motion
+                  </p>
+                </div>
+                <div className="skill">
+                  <p
+                    className={`skillText ${
+                      isThemeToggled ? "stackDark" : "stackLight"
+                    }`}
+                  >
+                    Git
+                  </p>
+                </div>
+              </motion.div>
+            </div>
           </div>
         </section>
 
@@ -298,35 +385,52 @@ function App() {
           {projectData.map((element, index) => (
             <motion.div
               key={index}
-              className={`projectContainer ${
-                isThemeToggled
-                  ? "projectContainerDark"
-                  : "projectContainerLight"
-              }`}
+              className="projectContainer"
               variants={projectContainerVariants}
               initial="hidden"
               whileInView="visible"
             >
               <img src={element.img} alt={element.alt} className="projectImg" />
 
-              <div className="projectText">
+              <div
+                className={`projectText ${
+                  isThemeToggled
+                    ? "projectContainerDark"
+                    : "projectContainerLight"
+                }`}
+              >
                 <div>
                   <h1 className="projectName">{element.title}</h1>
 
                   <p className="aboutProject">{element.about}</p>
                 </div>
 
-                <div className="iconGrp">
-                  <a href={element.githubRepo}>{iconGithub}</a>
+                <div>
+                  <div className="stackGrp">
+                    {element.stack.map((stack, index) => (
+                      <p
+                        className={`stack ${
+                          isThemeToggled ? "stackDark" : "stackLight"
+                        }`}
+                        key={index}
+                      >
+                        {stack}
+                      </p>
+                    ))}
+                  </div>
 
-                  <a
-                    href={element.href}
-                    className={`border-b text-sm hover:text-orange-400 hover:border-orange-400 ${
-                      isThemeToggled ? `border-white` : `border-black`
-                    }`}
-                  >
-                    Go to site
-                  </a>
+                  <div className="iconGrp">
+                    <a href={element.githubRepo}>{iconGithub}</a>
+
+                    <a
+                      href={element.href}
+                      className={`font-semibold border-b text-sm hover:text-orange-400 hover:border-orange-400 ${
+                        isThemeToggled ? `border-white` : `border-black`
+                      }`}
+                    >
+                      Live site
+                    </a>
+                  </div>
                 </div>
               </div>
             </motion.div>

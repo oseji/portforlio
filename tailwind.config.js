@@ -9,6 +9,9 @@ export default {
       minHeight: {
         halfScreen: "90vh",
       },
+      fontFamily: {
+        mulish: ["Mulish", "sans-serif"],
+      },
     },
   },
   plugins: [],
