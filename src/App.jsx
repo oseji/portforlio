@@ -5,6 +5,25 @@ import projectData from "./data.json";
 import avatar from "./assets/my picture.jpg";
 
 function App() {
+  const introTextVariants = {
+    hidden: { y: 300 },
+    visible: { y: 0, transition: { duration: 0.5 } },
+  };
+
+  const projectsVariants = {
+    hidden: { scale: 0.7, opacity: 0 },
+    visible: { scale: 1, opacity: 1, transition: { duration: 0.5 } },
+  };
+
+  const projectContainerVariants = {
+    hidden: { scale: 0.7, opacity: 0 },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: { duration: 0.5, delay: 0.2 },
+    },
+  };
+
   const sliderRef = useRef(null);
   const navRef = useRef(null);
 
@@ -109,24 +128,24 @@ function App() {
     slider.classList.toggle("translate-x-end");
   };
 
-  const introTextVariants = {
-    hidden: { y: 300 },
-    visible: { y: 0, transition: { duration: 0.5 } },
-  };
+  const [text, setText] = useState("");
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const words = ["Ose", "A frontend dev"];
 
-  const projectsVariants = {
-    hidden: { scale: 0.7, opacity: 0 },
-    visible: { scale: 1, opacity: 1, transition: { duration: 0.5 } },
-  };
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % words.length);
+    }, 3000);
 
-  const projectContainerVariants = {
-    hidden: { scale: 0.7, opacity: 0 },
-    visible: {
-      scale: 1,
-      opacity: 1,
-      transition: { duration: 0.5, delay: 0.2 },
-    },
-  };
+    return () => clearInterval(intervalId);
+  }, []);
+
+  useEffect(() => {
+    const currentWord = words[currentIndex];
+    const currentText = currentWord.slice(0, text.length + 1);
+
+    setText(currentText);
+  }, [currentIndex, text]);
 
   return (
     <div className={`App  ${isThemeToggled ? "appDarkMode" : "appLightMode"}`}>
@@ -179,23 +198,23 @@ function App() {
       <main>
         <section
           id="intro"
-          className="flex flex-col justify-center items-center  my-40 lg:my-0"
+          className="flex flex-col justify-start lg:justify-center items-center "
         >
           <motion.h1
-            className="introText mt-20 lg:mt-0"
+            className="introText mt-20 lg:mt-0 text-2xl md:text-3xl lg:text-4xl"
             variants={introTextVariants}
             initial="hidden"
             animate="visible"
           >
-            Welcome,
+            Hey there,I'm
           </motion.h1>
           <motion.h1
-            className="introText lg:mt-0"
+            className="introText lg:mt-0 text-orange-400 text-5xl md:text-5xl lg:text-6xl"
             variants={introTextVariants}
             initial="hidden"
             animate="visible"
           >
-            To my portforlio
+            {text}
           </motion.h1>
         </section>
 
