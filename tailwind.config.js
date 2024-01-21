@@ -10,7 +10,7 @@ export default {
         halfScreen: "90vh",
       },
       fontFamily: {
-        mulish: ["Mulish", "sans-serif"],
+        afacad: ["Afacad", "sans-serif"],
       },
     },
   },

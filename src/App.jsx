@@ -4,6 +4,13 @@ import copy from "clipboard-copy";
 
 import projectData from "./data.json";
 import avatar from "./assets/my picture.jpg";
+import iconHtml from "./assets/html.png";
+import iconCSS from "./assets/css.png";
+import iconJS from "./assets/java-script.png";
+import iconGit from "./assets/git.png";
+import iconReact from "./assets/react.png";
+import iconTailwind from "./assets/tailwind-css-icon.png";
+import iconFramer from "./assets/framer.png";
 
 function App() {
   const introTextVariants = {
@@ -31,7 +38,7 @@ function App() {
   const [isThemeToggled, setIsThemeToggled] = useState(false);
   const [text, setText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
-  const words = ["Ose", "A frontend dev"];
+  const words = ["OSE", "OSE, a frontend dev"];
 
   const iconMenu = (
     <svg width="20" height="14" xmlns="http://www.w3.org/2000/svg">
@@ -232,15 +239,16 @@ function App() {
           className="flex flex-col justify-start lg:justify-center items-center "
         >
           <motion.h1
-            className="introText mt-20 lg:mt-0 text-2xl md:text-3xl lg:text-4xl"
+            className="introText mt-20 lg:mt-0 text-2xl md:text-3xl"
             variants={introTextVariants}
             initial="hidden"
             animate="visible"
           >
             Hey there,I'm
           </motion.h1>
+
           <motion.h1
-            className="introText lg:mt-0 text-orange-400 text-5xl md:text-5xl lg:text-6xl"
+            className="introText lg:mt-0 text-orange-400 text-5xl lg:text-6xl"
             variants={introTextVariants}
             initial="hidden"
             animate="visible"
@@ -272,6 +280,7 @@ function App() {
                 }}
                 className="sectionHeading"
               >
+                <span className="headingNum">01. </span>
                 ABOUT ME
               </motion.h1>
 
@@ -329,67 +338,80 @@ function App() {
                 </h2>
 
                 <div className="skill">
-                  <p
+                  <div
                     className={`skillText ${
                       isThemeToggled ? "stackDark" : "stackLight"
                     }`}
                   >
-                    HTML
-                  </p>
+                    <img src={iconHtml} alt="html" className="skillIcon" />
+                    <span>HTML</span>
+                  </div>
                 </div>
+
                 <div className="skill">
-                  <p
+                  <div
                     className={`skillText ${
                       isThemeToggled ? "stackDark" : "stackLight"
                     }`}
                   >
-                    CSS
-                  </p>
+                    <img src={iconCSS} alt="html" className="skillIcon" />
+                    <span>CSS</span>
+                  </div>
                 </div>
+
                 <div className="skill">
-                  <p
+                  <div
                     className={`skillText ${
                       isThemeToggled ? "stackDark" : "stackLight"
                     }`}
                   >
-                    Javascript
-                  </p>
+                    <img src={iconJS} alt="html" className="skillIcon" />
+                    <span>Javascript</span>
+                  </div>
                 </div>
+
                 <div className="skill">
-                  <p
+                  <div
                     className={`skillText ${
                       isThemeToggled ? "stackDark" : "stackLight"
                     }`}
                   >
-                    Tailwindcss
-                  </p>
+                    <img src={iconTailwind} alt="html" className="skillIcon" />
+                    <span>Tailwindcss</span>
+                  </div>
                 </div>
+
                 <div className="skill">
-                  <p
+                  <div
                     className={`skillText ${
                       isThemeToggled ? "stackDark" : "stackLight"
                     }`}
                   >
-                    React JS
-                  </p>
+                    <img src={iconReact} alt="html" className="skillIcon" />
+                    <span>ReactJS</span>
+                  </div>
                 </div>
+
                 <div className="skill">
-                  <p
+                  <div
                     className={`skillText ${
                       isThemeToggled ? "stackDark" : "stackLight"
                     }`}
                   >
-                    Framer motion
-                  </p>
+                    <img src={iconFramer} alt="html" className="skillIcon" />
+                    <span>Framer motion</span>
+                  </div>
                 </div>
+
                 <div className="skill">
-                  <p
+                  <div
                     className={`skillText ${
                       isThemeToggled ? "stackDark" : "stackLight"
                     }`}
                   >
-                    Git
-                  </p>
+                    <img src={iconGit} alt="html" className="skillIcon" />
+                    <span>Git</span>
+                  </div>
                 </div>
               </motion.div>
             </div>
@@ -405,7 +427,9 @@ function App() {
             isThemeToggled ? "projectsPageDarkMode" : "projectsPageLightMode"
           }
         >
-          <h1 className="sectionHeading col-span-full">PROJECTS</h1>
+          <h1 className="sectionHeading col-span-full">
+            <span className="headingNum">02. </span>PROJECTS
+          </h1>
           {projectData.map((element, index) => (
             <motion.div
               key={index}
@@ -466,7 +490,9 @@ function App() {
         </motion.section>
 
         <section id="contactMe">
-          <h1 className="sectionHeading">WHATS NEXT ?</h1>
+          <h1 className="sectionHeading">
+            <span className="headingNum">03. </span>WHATS NEXT ?
+          </h1>
 
           <div>
             <motion.h2
@@ -476,7 +502,7 @@ function App() {
                 opacity: 1,
                 transition: { duration: 0.5 },
               }}
-              className="text-center text-4xl mt-10"
+              className="text-center text-2xl mt-10"
             >
               Contact me
             </motion.h2>
