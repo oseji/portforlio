@@ -26,7 +26,7 @@
     "title": "Github profile searcher",
     "href": "https://github-profile-finder-oseji.netlify.app/",
     "githubRepo": "https://github.com/oseji/github-profile-search.git",
-    "about": "A site to search for github profiles and display follower and following count,user location and user repositories.",
+    "about": "Search for github profiles and display follower and following count,user location and user repositories.",
     "stack": ["ReactJS", "tailwindcss", "Framer motion", "API"]
   },
   {
@@ -44,10 +44,10 @@
     "img": "/assets/taxas.jpg",
     "alt": "Taxas landing page screenshot",
     "title": "Taxas landing page",
-    "href": "https://txs-oseji.netlify.app/",
-    "githubRepo": "https://github.com/oseji/TXS.git",
+    "href": "https://oseji-taxas.netlify.app/",
+    "githubRepo": "https://github.com/oseji/taxas.git",
     "about": "A landing page with simple animations.",
-    "stack": ["ReactJS", "tailwindcss", "Framer motion"]
+    "stack": ["HTML", "tailwindcss", "Javascript"]
   },
   {
     "id": 6,

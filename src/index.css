@@ -94,7 +94,7 @@ section {
 }
 
 #aboutMe {
-  @apply flex flex-col gap-10 lg:gap-0 lg:flex-row items-start max-h-full;
+  @apply flex flex-col-reverse gap-10 lg:gap-0 lg:flex-row items-start max-h-full;
 }
 
 .avatar {
@@ -151,7 +151,7 @@ li {
 }
 
 .projectText {
-  @apply rounded-lg p-2 h-52 flex flex-col justify-between hover:scale-105 transition ease-in-out duration-100 cursor-default;
+  @apply rounded-lg p-3 h-52 flex flex-col justify-between cursor-default;
 }
 
 .projectName {
@@ -163,7 +163,7 @@ li {
 }
 
 .stackGrp {
-  @apply flex flex-row gap-2 items-center mb-2;
+  @apply flex flex-row gap-2 items-center mb-3;
 }
 
 .stack {
@@ -178,4 +178,8 @@ li {
 
 .iconGrp {
   @apply flex flex-row justify-between items-center;
+}
+
+.emailBtn {
+  @apply w-fit mx-auto mt-5 block p-4 rounded-lg bg-orange-400;
 }

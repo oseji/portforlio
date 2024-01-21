@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, useScroll } from "framer-motion";
+import copy from "clipboard-copy";
 
 import projectData from "./data.json";
 import avatar from "./assets/my picture.jpg";
@@ -28,6 +29,9 @@ function App() {
   const navRef = useRef(null);
 
   const [isThemeToggled, setIsThemeToggled] = useState(false);
+  const [text, setText] = useState("");
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const words = ["Ose", "A frontend dev"];
 
   const iconMenu = (
     <svg width="20" height="14" xmlns="http://www.w3.org/2000/svg">
@@ -38,8 +42,6 @@ function App() {
       />
     </svg>
   );
-  const [menu, setMenu] = useState(iconMenu);
-
   const iconGithub = (
     <svg
       className="w-6 h-6 text-gray-800 dark:text-white"
@@ -55,7 +57,6 @@ function App() {
       />
     </svg>
   );
-
   const iconLinkdn = (
     <svg
       class="w-6 h-6 text-gray-800 dark:text-white"
@@ -86,19 +87,39 @@ function App() {
       />
     </svg>
   );
-
-  const iconLocation = (
+  const linkSVG = (
     <svg
-      class="w-6 h-6 text-gray-800 dark:text-white"
-      aria-hidden="true"
+      stroke="currentColor"
+      fill={isThemeToggled ? "white" : "#000000"}
+      strokeWidth="0"
+      viewBox="0 0 15 15"
+      className="cursor-pointer"
+      height="1em"
+      width="1em"
       xmlns="http://www.w3.org/2000/svg"
-      fill="currentColor"
-      viewBox="0 0 16 20"
     >
-      <path d="M8 0a7.992 7.992 0 0 0-6.583 12.535 1 1 0 0 0 .12.183l.12.146c.112.145.227.285.326.4l5.245 6.374a1 1 0 0 0 1.545-.003l5.092-6.205c.206-.222.4-.455.578-.7l.127-.155a.934.934 0 0 0 .122-.192A8.001 8.001 0 0 0 8 0Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z" />
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M12 13C12.5523 13 13 12.5523 13 12V3C13 2.44771 12.5523 2 12 2H3C2.44771 2 2 2.44771 2 3V6.5C2 6.77614 2.22386 7 2.5 7C2.77614 7 3 6.77614 3 6.5V3H12V12H8.5C8.22386 12 8 12.2239 8 12.5C8 12.7761 8.22386 13 8.5 13H12ZM9 6.5C9 6.5001 9 6.50021 9 6.50031V6.50035V9.5C9 9.77614 8.77614 10 8.5 10C8.22386 10 8 9.77614 8 9.5V7.70711L2.85355 12.8536C2.65829 13.0488 2.34171 13.0488 2.14645 12.8536C1.95118 12.6583 1.95118 12.3417 2.14645 12.1464L7.29289 7H5.5C5.22386 7 5 6.77614 5 6.5C5 6.22386 5.22386 6 5.5 6H8.5C8.56779 6 8.63244 6.01349 8.69139 6.03794C8.74949 6.06198 8.80398 6.09744 8.85143 6.14433C8.94251 6.23434 8.9992 6.35909 8.99999 6.49708L8.99999 6.49738"
+        fill="currentColor"
+      ></path>
     </svg>
   );
-
+  const copySVG = (
+    <svg
+      stroke="currentColor"
+      fill={isThemeToggled ? "white" : "#000000"}
+      strokeWidth="0"
+      viewBox="0 0 448 512"
+      className="cursor-pointer hover:scale-110 duration-200 ml-3 "
+      height="1em"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M320 448v40c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V120c0-13.255 10.745-24 24-24h72v296c0 30.879 25.121 56 56 56h168zm0-344V0H152c-13.255 0-24 10.745-24 24v368c0 13.255 10.745 24 24 24h272c13.255 0 24-10.745 24-24V128H344c-13.2 0-24-10.8-24-24zm120.971-31.029L375.029 7.029A24 24 0 0 0 358.059 0H352v96h96v-6.059a24 24 0 0 0-7.029-16.97z"></path>
+    </svg>
+  );
   const upArrow = (
     <svg
       class="w-6 h-6 text-gray-800 dark:text-white"
@@ -116,6 +137,20 @@ function App() {
     </svg>
   );
 
+  const iconLocation = (
+    <svg
+      class="w-6 h-6 text-gray-800 dark:text-white"
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+      viewBox="0 0 16 20"
+    >
+      <path d="M8 0a7.992 7.992 0 0 0-6.583 12.535 1 1 0 0 0 .12.183l.12.146c.112.145.227.285.326.4l5.245 6.374a1 1 0 0 0 1.545-.003l5.092-6.205c.206-.222.4-.455.578-.7l.127-.155a.934.934 0 0 0 .122-.192A8.001 8.001 0 0 0 8 0Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z" />
+    </svg>
+  );
+
+  const [menu, setMenu] = useState(iconMenu);
+
   const toggleMenu = () => {
     const navbar = navRef.current;
     navbar.classList.toggle("hideNav");
@@ -127,10 +162,6 @@ function App() {
     const slider = sliderRef.current;
     slider.classList.toggle("translate-x-end");
   };
-
-  const [text, setText] = useState("");
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const words = ["Ose", "A frontend dev"];
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -253,39 +284,13 @@ function App() {
                 }}
                 className="aboutMeText"
               >
-                Hey there! I'm Ose,a front-end web developer mastering the art
-                of HTML,CSS and JavaScript.With a flair for aesthetics,I've
-                fine-tuned my skills in tailwindcss,crafting visually stunning
-                and responsive user interfaces.
-              </motion.p>
-
-              <motion.p
-                initial={{ y: 100, opacity: 0 }}
-                whileInView={{
-                  y: 0,
-                  opacity: 1,
-                  transition: { duration: 0.5 },
-                }}
-                className="aboutMeText"
-              >
-                My playground is ReactJS,where I build scalable and efficient
-                UIs.I am currently diving into the world of Framer Motion,I'm
-                adding dynamic animations to my toolkit.I'm not just a coder,
-                I'm a problem solver and a clean code enthusiast.
-              </motion.p>
-
-              <motion.p
-                initial={{ y: 100, opacity: 0 }}
-                whileInView={{
-                  y: 0,
-                  opacity: 1,
-                  transition: { duration: 0.5 },
-                }}
-                className="aboutMeText"
-              >
-                Join me on this journey of perpetual learning and innovation as
-                I push my boundaries of web development.Let's create digital
-                experiences that captivate and inspire!
+                Hey I'm Ose, a front-end web developer skilled in HTML, CSS and
+                JavaScript. I specialize in crafting visually stunning and
+                responsive user interfaces using Tailwind CSS, with ReactJS I
+                build scalable and efficient UIs and I'm currently exploring
+                Framer Motion for dynamic animations. I'm a problem solver and
+                clean code enthusiast so let's innovate and create captivating
+                digital experiences together!
               </motion.p>
             </div>
 
@@ -441,14 +446,18 @@ function App() {
                   <div className="iconGrp">
                     <a href={element.githubRepo}>{iconGithub}</a>
 
-                    <a
-                      href={element.href}
-                      className={`font-semibold border-b text-sm hover:text-orange-400 hover:border-orange-400 ${
-                        isThemeToggled ? `border-white` : `border-black`
-                      }`}
-                    >
-                      Live site
-                    </a>
+                    <div className=" flex flex-row items-center gap-2 hover:text-orange-400 duration-100">
+                      <a
+                        href={element.href}
+                        className={`font-semibold  text-sm  ${
+                          isThemeToggled ? `border-white` : `border-black`
+                        }`}
+                      >
+                        Live site
+                      </a>
+
+                      {linkSVG}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -457,7 +466,70 @@ function App() {
         </motion.section>
 
         <section id="contactMe">
-          <h1 className="sectionHeading">CONTACT ME</h1>
+          <h1 className="sectionHeading">WHATS NEXT ?</h1>
+
+          <div>
+            <motion.h2
+              initial={{ y: 100, opacity: 0 }}
+              whileInView={{
+                y: 0,
+                opacity: 1,
+                transition: { duration: 0.5 },
+              }}
+              className="text-center text-4xl mt-10"
+            >
+              Contact me
+            </motion.h2>
+            <motion.p
+              initial={{ y: 100, opacity: 0 }}
+              whileInView={{
+                y: 0,
+                opacity: 1,
+                transition: { duration: 0.5 },
+              }}
+              className="text-center mt-5"
+            >
+              Are you interested in working together? We should schedule a time
+              to chat.
+            </motion.p>
+
+            <motion.div
+              initial={{ y: 100, opacity: 0 }}
+              whileInView={{
+                y: 0,
+                opacity: 1,
+                transition: { duration: 0.5 },
+              }}
+              className="flex flex-row items-center gap-5 justify-center my-10"
+            >
+              <p>jiade1233@gmail.com</p>
+
+              <button
+                onClick={() => {
+                  copy("jiade1233@gmail.com")
+                    .then(alert("copied email"))
+                    .catch((err) => console.log(err));
+                }}
+              >
+                {copySVG}
+              </button>
+            </motion.div>
+
+            <motion.a
+              initial={{ y: 100, opacity: 0 }}
+              whileInView={{
+                y: 0,
+                opacity: 1,
+                transition: { duration: 0.5 },
+              }}
+              href="mailto:jiade1233@gmail.com"
+              className={`emailBtn ${
+                isThemeToggled ? "text-white" : "text-black"
+              }`}
+            >
+              Send me an email
+            </motion.a>
+          </div>
         </section>
       </main>
     </div>
