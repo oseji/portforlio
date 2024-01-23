@@ -37,6 +37,7 @@ function App() {
   const navRef = useRef(null);
 
   const [isThemeToggled, setIsThemeToggled] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
   const [text, setText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
   const words = ["", " , a frontend dev"];
@@ -55,7 +56,7 @@ function App() {
       <path
         d="M14.364.222l1.414 1.414L9.414 8l6.364 6.364-1.414 1.414L8 9.414l-6.364 6.364-1.414-1.414L6.586 8 .222 1.636 1.636.222 8 6.586 14.364.222z"
         fill="#808080"
-        fill-rule="evenodd"
+        fillRule="evenodd"
       />
     </svg>
   );
@@ -187,6 +188,30 @@ function App() {
     setText(currentText);
   }, [currentIndex, text]);
 
+  useEffect(() => {
+    if (window.matchMedia) {
+      const darkModeQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+      console.log(darkModeQuery.matches);
+
+      const handleChange = (e) => {
+        if (e === true) {
+          setIsThemeToggled(true);
+        }
+
+        if (e === false) {
+          setIsThemeToggled(false);
+        }
+      };
+
+      darkModeQuery.addListener(handleChange);
+
+      return () => {
+        darkModeQuery.removeListener(handleChange);
+      };
+    }
+  }, []);
+
   return (
     <div className={`App  ${isThemeToggled ? "appDarkMode" : "appLightMode"}`}>
       <header
@@ -238,7 +263,7 @@ function App() {
       <main>
         <section
           id="intro"
-          className="flex flex-col justify-start lg:justify-center items-center "
+          className="flex flex-col justify-center items-center "
         >
           <motion.h1
             className="introText mt-20 lg:mt-0 text-2xl md:text-3xl"

@@ -95,7 +95,7 @@ section {
 }
 
 .introText {
-  @apply text-start lg:text-center  font-bold mb-2 w-full lg:w-2/3;
+  @apply text-center  font-bold mb-2 w-full lg:w-2/3;
 }
 
 /* ABOUT ME */
