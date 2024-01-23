@@ -188,29 +188,30 @@ function App() {
     setText(currentText);
   }, [currentIndex, text]);
 
-  useEffect(() => {
-    if (window.matchMedia) {
-      const darkModeQuery = window.matchMedia("(prefers-color-scheme: dark)");
+  //LOGIC TO CHECK CURRENT DEVICE THEME
+  // useEffect(() => {
+  //   if (window.matchMedia) {
+  //     const darkModeQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
-      console.log(darkModeQuery.matches);
+  //     console.log(darkModeQuery.matches);
 
-      const handleChange = (e) => {
-        if (e === true) {
-          setIsThemeToggled(true);
-        }
+  //     const handleChange = (e) => {
+  //       if (e === true) {
+  //         setIsThemeToggled(true);
+  //       }
 
-        if (e === false) {
-          setIsThemeToggled(false);
-        }
-      };
+  //       if (e === false) {
+  //         setIsThemeToggled(false);
+  //       }
+  //     };
 
-      darkModeQuery.addListener(handleChange);
+  //     darkModeQuery.addListener(handleChange);
 
-      return () => {
-        darkModeQuery.removeListener(handleChange);
-      };
-    }
-  }, []);
+  //     return () => {
+  //       darkModeQuery.removeListener(handleChange);
+  //     };
+  //   }
+  // }, []);
 
   return (
     <div className={`App  ${isThemeToggled ? "appDarkMode" : "appLightMode"}`}>
