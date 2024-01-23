@@ -1,8 +1,9 @@
 import { useState, useEffect, useRef } from "react";
-import { motion, useScroll } from "framer-motion";
+import { motion } from "framer-motion";
 import copy from "clipboard-copy";
 
 import projectData from "./data.json";
+
 import avatar from "./assets/my picture.jpg";
 import iconHtml from "./assets/html.png";
 import iconCSS from "./assets/css.png";
@@ -38,7 +39,7 @@ function App() {
   const [isThemeToggled, setIsThemeToggled] = useState(false);
   const [text, setText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
-  const words = ["OSE", "OSE, a frontend dev"];
+  const words = ["", " , a frontend dev"];
 
   const iconMenu = (
     <svg width="20" height="14" xmlns="http://www.w3.org/2000/svg">
@@ -49,12 +50,21 @@ function App() {
       />
     </svg>
   );
+  const iconClose = (
+    <svg width="20" height="16" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M14.364.222l1.414 1.414L9.414 8l6.364 6.364-1.414 1.414L8 9.414l-6.364 6.364-1.414-1.414L6.586 8 .222 1.636 1.636.222 8 6.586 14.364.222z"
+        fill="#808080"
+        fill-rule="evenodd"
+      />
+    </svg>
+  );
   const iconGithub = (
     <svg
       className="w-6 h-6 text-gray-800 dark:text-white"
       aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
-      fill={isThemeToggled ? "white" : "black"}
+      fill="white"
       viewBox="0 0 20 20"
     >
       <path
@@ -62,22 +72,6 @@ function App() {
         d="M10 .333A9.911 9.911 0 0 0 6.866 19.65c.5.092.678-.215.678-.477 0-.237-.01-1.017-.014-1.845-2.757.6-3.338-1.169-3.338-1.169a2.627 2.627 0 0 0-1.1-1.451c-.9-.615.07-.6.07-.6a2.084 2.084 0 0 1 1.518 1.021 2.11 2.11 0 0 0 2.884.823c.044-.503.268-.973.63-1.325-2.2-.25-4.516-1.1-4.516-4.9A3.832 3.832 0 0 1 4.7 7.068a3.56 3.56 0 0 1 .095-2.623s.832-.266 2.726 1.016a9.409 9.409 0 0 1 4.962 0c1.89-1.282 2.717-1.016 2.717-1.016.366.83.402 1.768.1 2.623a3.827 3.827 0 0 1 1.02 2.659c0 3.807-2.319 4.644-4.525 4.889a2.366 2.366 0 0 1 .673 1.834c0 1.326-.012 2.394-.012 2.72 0 .263.18.572.681.475A9.911 9.911 0 0 0 10 .333Z"
         clipRule="evenodd"
       />
-    </svg>
-  );
-  const iconLinkdn = (
-    <svg
-      class="w-6 h-6 text-gray-800 dark:text-white"
-      aria-hidden="true"
-      xmlns="http://www.w3.org/2000/svg"
-      fill={isThemeToggled ? "white" : "black"}
-      viewBox="0 0 15 15"
-    >
-      <path
-        fillRule="evenodd"
-        d="M7.979 5v1.586a3.5 3.5 0 0 1 3.082-1.574C14.3 5.012 15 7.03 15 9.655V15h-3v-4.738c0-1.13-.229-2.584-1.995-2.584-1.713 0-2.005 1.23-2.005 2.5V15H5.009V5h2.97ZM3 2.487a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"
-        clipRule="evenodd"
-      />
-      <path d="M3 5.012H0V15h3V5.012Z" />
     </svg>
   );
   const iconTwitter = (
@@ -157,10 +151,18 @@ function App() {
   );
 
   const [menu, setMenu] = useState(iconMenu);
+  const [isMenuToggled, setIsMenuToggled] = useState(false);
 
   const toggleMenu = () => {
     const navbar = navRef.current;
     navbar.classList.toggle("hideNav");
+
+    setIsMenuToggled(!isMenuToggled);
+    if (isMenuToggled) {
+      setMenu(iconMenu);
+    } else {
+      setMenu(iconClose);
+    }
   };
 
   const toggleTheme = () => {
@@ -253,7 +255,14 @@ function App() {
             initial="hidden"
             animate="visible"
           >
-            {text}
+            Ose
+            <span
+              className={`text-2xl md:text-3xl ${
+                isThemeToggled ? "text-white" : "text-black"
+              }`}
+            >
+              {text}
+            </span>
           </motion.h1>
         </section>
 
@@ -303,118 +312,96 @@ function App() {
               </motion.p>
             </div>
 
-            <div>
-              <motion.div
-                initial={{ y: 100, opacity: 0 }}
-                whileInView={{
-                  y: 0,
-                  opacity: 1,
-                  transition: { duration: 0.5 },
-                }}
-                className="contactIconGrp"
-              >
-                <a href="https://github.com/oseji">{iconGithub}</a>
+            <motion.div
+              initial={{ y: 100, opacity: 0 }}
+              whileInView={{
+                y: 0,
+                opacity: 1,
+                transition: { duration: 0.5 },
+              }}
+              className="skillsGrp"
+            >
+              <h2 className="font-bold text-xl mt-8 col-span-full">
+                My Skills:
+              </h2>
 
-                <a href="https://x.com/osejiiii?s=11&t=T8eipyBsmUUoM5iFV7A9TA">
-                  {iconTwitter}
-                </a>
-
-                <a href="https://www.linkedin.com/in/ose-oziegbe-648154254?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">
-                  {iconLinkdn}
-                </a>
-              </motion.div>
-
-              <motion.div
-                initial={{ y: 100, opacity: 0 }}
-                whileInView={{
-                  y: 0,
-                  opacity: 1,
-                  transition: { duration: 0.5 },
-                }}
-                className="skillsGrp"
-              >
-                <h2 className="font-bold text-xl mt-8 col-span-full">
-                  My Skills:
-                </h2>
-
-                <div className="skill">
-                  <div
-                    className={`skillText ${
-                      isThemeToggled ? "stackDark" : "stackLight"
-                    }`}
-                  >
-                    <img src={iconHtml} alt="html" className="skillIcon" />
-                    <span>HTML</span>
-                  </div>
+              <div className="skill">
+                <div
+                  className={`skillText  ${
+                    isThemeToggled ? "stackDark" : "stackLight"
+                  } `}
+                >
+                  <img src={iconHtml} alt="html" className="skillIcon" />
+                  <span>HTML</span>
                 </div>
+              </div>
 
-                <div className="skill">
-                  <div
-                    className={`skillText ${
-                      isThemeToggled ? "stackDark" : "stackLight"
-                    }`}
-                  >
-                    <img src={iconCSS} alt="html" className="skillIcon" />
-                    <span>CSS</span>
-                  </div>
+              <div className="skill">
+                <div
+                  className={`skillText  ${
+                    isThemeToggled ? "stackDark" : "stackLight"
+                  }`}
+                >
+                  <img src={iconCSS} alt="html" className="skillIcon" />
+                  <span>CSS</span>
                 </div>
+              </div>
 
-                <div className="skill">
-                  <div
-                    className={`skillText ${
-                      isThemeToggled ? "stackDark" : "stackLight"
-                    }`}
-                  >
-                    <img src={iconJS} alt="html" className="skillIcon" />
-                    <span>Javascript</span>
-                  </div>
+              <div className="skill">
+                <div
+                  className={`skillText  ${
+                    isThemeToggled ? "stackDark" : "stackLight"
+                  }`}
+                >
+                  <img src={iconJS} alt="html" className="skillIcon" />
+                  <span>Javascript</span>
                 </div>
+              </div>
 
-                <div className="skill">
-                  <div
-                    className={`skillText ${
-                      isThemeToggled ? "stackDark" : "stackLight"
-                    }`}
-                  >
-                    <img src={iconTailwind} alt="html" className="skillIcon" />
-                    <span>Tailwindcss</span>
-                  </div>
+              <div className="skill">
+                <div
+                  className={`skillText  ${
+                    isThemeToggled ? "stackDark" : "stackLight"
+                  }`}
+                >
+                  <img src={iconTailwind} alt="html" className="skillIcon" />
+                  <span>Tailwindcss</span>
                 </div>
+              </div>
 
-                <div className="skill">
-                  <div
-                    className={`skillText ${
-                      isThemeToggled ? "stackDark" : "stackLight"
-                    }`}
-                  >
-                    <img src={iconReact} alt="html" className="skillIcon" />
-                    <span>ReactJS</span>
-                  </div>
+              <div className="skill">
+                <div
+                  className={`skillText  ${
+                    isThemeToggled ? "stackDark" : "stackLight"
+                  }`}
+                >
+                  <img src={iconReact} alt="html" className="skillIcon" />
+                  <span>ReactJS</span>
                 </div>
+              </div>
 
-                <div className="skill">
-                  <div
-                    className={`skillText ${
-                      isThemeToggled ? "stackDark" : "stackLight"
-                    }`}
-                  >
-                    <img src={iconFramer} alt="html" className="skillIcon" />
-                    <span>Framer motion</span>
-                  </div>
+              <div className="skill">
+                <div
+                  className={`skillText  ${
+                    isThemeToggled ? "stackDark" : "stackLight"
+                  }`}
+                >
+                  <img src={iconFramer} alt="html" className="skillIcon" />
+                  <span>Framer motion</span>
                 </div>
+              </div>
 
-                <div className="skill">
-                  <div
-                    className={`skillText ${
-                      isThemeToggled ? "stackDark" : "stackLight"
-                    }`}
-                  >
-                    <img src={iconGit} alt="html" className="skillIcon" />
-                    <span>Git</span>
-                  </div>
+              <div className="skill">
+                <div
+                  className={`skillText  ${
+                    isThemeToggled ? "stackDark" : "stackLight"
+                  }`}
+                >
+                  <img src={iconGit} alt="html" className="skillIcon" />
+                  <span>Git</span>
                 </div>
-              </motion.div>
-            </div>
+              </div>
+            </motion.div>
           </div>
         </section>
 
@@ -468,11 +455,14 @@ function App() {
                   </div>
 
                   <div className="iconGrp">
-                    <a href={element.githubRepo}>{iconGithub}</a>
+                    <a href={element.githubRepo} target="_blank">
+                      {iconGithub}
+                    </a>
 
                     <div className=" flex flex-row items-center gap-2 hover:text-orange-400 duration-100">
                       <a
                         href={element.href}
+                        target="_blank"
                         className={`font-semibold  text-sm  ${
                           isThemeToggled ? `border-white` : `border-black`
                         }`}
@@ -490,9 +480,17 @@ function App() {
         </motion.section>
 
         <section id="contactMe">
-          <h1 className="sectionHeading">
+          <motion.h1
+            className="sectionHeading"
+            initial={{ y: 100, opacity: 0 }}
+            whileInView={{
+              y: 0,
+              opacity: 1,
+              transition: { duration: 0.5 },
+            }}
+          >
             <span className="headingNum">03. </span>WHATS NEXT ?
-          </h1>
+          </motion.h1>
 
           <div>
             <motion.h2
@@ -506,6 +504,23 @@ function App() {
             >
               Contact me
             </motion.h2>
+
+            <motion.div
+              initial={{ y: 100, opacity: 0 }}
+              whileInView={{
+                y: 0,
+                opacity: 1,
+                transition: { duration: 0.5 },
+              }}
+              className="contactIconGrp"
+            >
+              <a href="https://github.com/oseji">{iconGithub}</a>
+
+              <a href="https://x.com/osejiiii?s=11&t=T8eipyBsmUUoM5iFV7A9TA">
+                {iconTwitter}
+              </a>
+            </motion.div>
+
             <motion.p
               initial={{ y: 100, opacity: 0 }}
               whileInView={{
@@ -513,7 +528,7 @@ function App() {
                 opacity: 1,
                 transition: { duration: 0.5 },
               }}
-              className="text-center mt-5"
+              className="text-center mt-10"
             >
               Are you interested in working together? We should schedule a time
               to chat.
@@ -526,13 +541,35 @@ function App() {
                 opacity: 1,
                 transition: { duration: 0.5 },
               }}
-              className="flex flex-row items-center gap-5 justify-center my-10"
+              className="flex flex-row items-center gap-5 justify-center mt-5 mb-5"
             >
               <p>jiade1233@gmail.com</p>
 
               <button
                 onClick={() => {
                   copy("jiade1233@gmail.com")
+                    .then(alert("copied email"))
+                    .catch((err) => console.log(err));
+                }}
+              >
+                {copySVG}
+              </button>
+            </motion.div>
+
+            <motion.div
+              initial={{ y: 100, opacity: 0 }}
+              whileInView={{
+                y: 0,
+                opacity: 1,
+                transition: { duration: 0.5 },
+              }}
+              className="flex flex-row items-center gap-5 justify-center mb-10"
+            >
+              <p>+234 70 1995 2903</p>
+
+              <button
+                onClick={() => {
+                  copy("+234 70 1995 2903")
                     .then(alert("copied email"))
                     .catch((err) => console.log(err));
                 }}
