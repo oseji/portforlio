@@ -4,6 +4,9 @@ import copy from "clipboard-copy";
 
 import projectData from "./data.json";
 
+import iconMenu from "./assets/iconMenu.svg";
+import iconClose from "./assets/iconClose.svg";
+
 import avatar from "./assets/my picture.jpg";
 import iconHtml from "./assets/html.png";
 import iconCSS from "./assets/css.png";
@@ -42,24 +45,6 @@ function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const words = ["", " , a frontend dev"];
 
-  const iconMenu = (
-    <svg width="20" height="14" xmlns="http://www.w3.org/2000/svg">
-      <path
-        d="M20 12v2H0v-2h20zm0-6v2H0V6h20zm0-6v2H0V0h20z"
-        fill="#808080"
-        fillRule="evenodd"
-      />
-    </svg>
-  );
-  const iconClose = (
-    <svg width="20" height="16" xmlns="http://www.w3.org/2000/svg">
-      <path
-        d="M14.364.222l1.414 1.414L9.414 8l6.364 6.364-1.414 1.414L8 9.414l-6.364 6.364-1.414-1.414L6.586 8 .222 1.636 1.636.222 8 6.586 14.364.222z"
-        fill="#808080"
-        fillRule="evenodd"
-      />
-    </svg>
-  );
   const iconGithub = (
     <svg
       className="w-6 h-6 text-gray-800 dark:text-white"
@@ -139,18 +124,6 @@ function App() {
     </svg>
   );
 
-  const iconLocation = (
-    <svg
-      class="w-6 h-6 text-gray-800 dark:text-white"
-      aria-hidden="true"
-      xmlns="http://www.w3.org/2000/svg"
-      fill="currentColor"
-      viewBox="0 0 16 20"
-    >
-      <path d="M8 0a7.992 7.992 0 0 0-6.583 12.535 1 1 0 0 0 .12.183l.12.146c.112.145.227.285.326.4l5.245 6.374a1 1 0 0 0 1.545-.003l5.092-6.205c.206-.222.4-.455.578-.7l.127-.155a.934.934 0 0 0 .122-.192A8.001 8.001 0 0 0 8 0Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z" />
-    </svg>
-  );
-
   const [menu, setMenu] = useState(iconMenu);
   const [isMenuToggled, setIsMenuToggled] = useState(false);
 
@@ -221,9 +194,12 @@ function App() {
         <div className="logoGrp">
           <h1 className="logo">Oseji</h1>
 
-          <div className="menuIcon" onClick={toggleMenu}>
-            {menu}
-          </div>
+          <img
+            src={menu}
+            alt="menu"
+            className="menuIcon"
+            onClick={toggleMenu}
+          />
         </div>
 
         <nav className="hideNav" ref={navRef}>
@@ -540,9 +516,14 @@ function App() {
               }}
               className="contactIconGrp"
             >
-              <a href="https://github.com/oseji">{iconGithub}</a>
+              <a href="https://github.com/oseji" target="_blank">
+                {iconGithub}
+              </a>
 
-              <a href="https://x.com/osejiiii?s=11&t=T8eipyBsmUUoM5iFV7A9TA">
+              <a
+                href="https://x.com/osejiiii?s=11&t=T8eipyBsmUUoM5iFV7A9TA"
+                target="_blank"
+              >
                 {iconTwitter}
               </a>
             </motion.div>
@@ -591,7 +572,13 @@ function App() {
               }}
               className="flex flex-row items-center gap-5 justify-center mb-10"
             >
-              <p>+234 70 1995 2903</p>
+              <a
+                href="https://wa.me/07019952903"
+                target="_blank"
+                className="hover:text-orange-400"
+              >
+                +234 70 1995 2903
+              </a>
 
               <button
                 onClick={() => {
