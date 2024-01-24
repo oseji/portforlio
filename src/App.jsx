@@ -585,7 +585,7 @@ function App() {
               className="flex flex-row items-center gap-5 justify-center mb-10"
             >
               <a
-                href="https://wa.me/07019952903"
+                href="https://wa.me/+234 70 1995 2903"
                 target="_blank"
                 className="hover:text-orange-400"
               >
