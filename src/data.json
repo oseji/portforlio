@@ -68,5 +68,15 @@
     "githubRepo": "https://github.com/oseji/osejis-dictionary.git",
     "about": "A dictionary with audio functionality to pronounce searched words.",
     "stack": ["ReactJS", "tailwindcss", "Framer motion", "API"]
+  },
+  {
+    "id": 8,
+    "img": "/assets/manage.png",
+    "alt": "Manage landing page screenshot",
+    "title": "Manage landing page",
+    "href": "https://manage-landing-page-oseji.netlify.app/",
+    "githubRepo": "https://github.com/oseji/manage-landingPage.git",
+    "about": "A landing page with simple animations.",
+    "stack": ["ReactJS", "tailwindcss", "Framer motion"]
   }
 ]

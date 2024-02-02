@@ -120,15 +120,15 @@ section {
 }
 
 .skillText {
-  @apply flex flex-row gap-2 items-center p-3 rounded-lg font-bold text-sm text-orange-400;
+  @apply flex flex-row gap-2 items-center p-3 rounded-lg font-bold text-sm text-black;
 }
 .skillIcon {
-  @apply h-4;
+  @apply h-6;
 }
 
 /* PROJECTS */
 .displayProjects {
-  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 md:gap-14 mt-10;
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mt-10;
 }
 
 .projectsPageLightMode {
@@ -153,7 +153,7 @@ section {
 }
 
 .projectText {
-  @apply rounded-lg p-3 h-52 flex flex-col justify-between cursor-default  shadow-lg;
+  @apply rounded-lg p-3 h-48 flex flex-col justify-between cursor-default  shadow-lg;
 }
 
 .projectName {

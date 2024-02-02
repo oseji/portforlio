@@ -16,6 +16,13 @@ import iconReact from "./assets/react.png";
 import iconTailwind from "./assets/tailwind-css-icon.png";
 import iconFramer from "./assets/framer.png";
 
+import html from "./assets/html.svg";
+import tailwind from "./assets/tailwind.svg";
+import git from "./assets/git.svg";
+import css from "./assets/css.svg";
+import js from "./assets/js.svg";
+import react from "./assets/react.svg";
+
 function App() {
   const introTextVariants = {
     hidden: { y: 300 },
@@ -340,78 +347,50 @@ function App() {
               </h2>
 
               <div className="skill">
-                <div
-                  className={`skillText  ${
-                    isThemeToggled ? "stackDark" : "stackLight"
-                  } `}
-                >
-                  <img src={iconHtml} alt="html" className="skillIcon" />
+                <div className={`skillText stackLight `}>
+                  <img src={html} alt="html" className="skillIcon" />
                   <span>HTML</span>
                 </div>
               </div>
 
               <div className="skill">
-                <div
-                  className={`skillText  ${
-                    isThemeToggled ? "stackDark" : "stackLight"
-                  }`}
-                >
-                  <img src={iconCSS} alt="html" className="skillIcon" />
+                <div className={`skillText stackLight `}>
+                  <img src={css} alt="html" className="skillIcon" />
                   <span>CSS</span>
                 </div>
               </div>
 
               <div className="skill">
-                <div
-                  className={`skillText  ${
-                    isThemeToggled ? "stackDark" : "stackLight"
-                  }`}
-                >
-                  <img src={iconJS} alt="html" className="skillIcon" />
+                <div className={`skillText stackLight `}>
+                  <img src={js} alt="html" className="skillIcon" />
                   <span>Javascript</span>
                 </div>
               </div>
 
               <div className="skill">
-                <div
-                  className={`skillText  ${
-                    isThemeToggled ? "stackDark" : "stackLight"
-                  }`}
-                >
-                  <img src={iconTailwind} alt="html" className="skillIcon" />
+                <div className={`skillText stackLight `}>
+                  <img src={tailwind} alt="html" className="skillIcon" />
                   <span>Tailwindcss</span>
                 </div>
               </div>
 
               <div className="skill">
-                <div
-                  className={`skillText  ${
-                    isThemeToggled ? "stackDark" : "stackLight"
-                  }`}
-                >
-                  <img src={iconReact} alt="html" className="skillIcon" />
+                <div className={`skillText stackLight `}>
+                  <img src={react} alt="html" className="skillIcon" />
                   <span>ReactJS</span>
                 </div>
               </div>
 
               <div className="skill">
-                <div
-                  className={`skillText  ${
-                    isThemeToggled ? "stackDark" : "stackLight"
-                  }`}
-                >
+                <div className={`skillText stackLight `}>
                   <img src={iconFramer} alt="html" className="skillIcon" />
                   <span>Framer motion</span>
                 </div>
               </div>
 
               <div className="skill">
-                <div
-                  className={`skillText  ${
-                    isThemeToggled ? "stackDark" : "stackLight"
-                  }`}
-                >
-                  <img src={iconGit} alt="html" className="skillIcon" />
+                <div className={`skillText stackLight `}>
+                  <img src={git} alt="html" className="skillIcon" />
                   <span>Git</span>
                 </div>
               </div>
@@ -574,8 +553,8 @@ function App() {
               }}
               className="text-center mt-10"
             >
-              Are you interested in working together? We should schedule a time
-              to chat.
+              Are you interested in working together? Let's schedule a time to
+              chat.
             </motion.p>
 
             <motion.div
