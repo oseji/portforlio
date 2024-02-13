@@ -1,27 +1,12 @@
 import { useState, useEffect, useRef } from "react";
-import { motion } from "framer-motion";
-import copy from "clipboard-copy";
 
-import projectData from "./data.json";
+import Intro from "./Intro";
+import AboutMe from "./AboutMe";
+import Projects from "./Projects";
+import ContactMe from "./ContactMe";
 
 import iconMenu from "./assets/iconMenu.svg";
 import iconClose from "./assets/iconClose.svg";
-
-import avatar from "./assets/my picture.jpg";
-import iconHtml from "./assets/html.png";
-import iconCSS from "./assets/css.png";
-import iconJS from "./assets/java-script.png";
-import iconGit from "./assets/git.png";
-import iconReact from "./assets/react.png";
-import iconTailwind from "./assets/tailwind-css-icon.png";
-import iconFramer from "./assets/framer.png";
-
-import html from "./assets/html.svg";
-import tailwind from "./assets/tailwind.svg";
-import git from "./assets/git.svg";
-import css from "./assets/css.svg";
-import js from "./assets/js.svg";
-import react from "./assets/react.svg";
 
 function App() {
   const introTextVariants = {
@@ -47,15 +32,8 @@ function App() {
   const navRef = useRef(null);
 
   const [isThemeToggled, setIsThemeToggled] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  const [areProjectsFiltered, setAreProjectsFiltered] = useState(true);
-  const filteredProjects = projectData.slice(0, 3);
-  const [dataToMap, setDataToMap] = useState(filteredProjects);
-
-  const [text, setText] = useState("");
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const words = ["", " , a frontend dev"];
+  const [menu, setMenu] = useState(iconMenu);
+  const [isMenuToggled, setIsMenuToggled] = useState(false);
 
   const iconGithub = (
     <svg
@@ -72,20 +50,7 @@ function App() {
       />
     </svg>
   );
-  const iconTwitter = (
-    <svg
-      class="w-6 h-6 text-gray-800 dark:text-white"
-      aria-hidden="true"
-      xmlns="http://www.w3.org/2000/svg"
-      fill={isThemeToggled ? "white" : "#000000"}
-      viewBox="0 0 20 20"
-    >
-      <path
-        fill="currentColor"
-        d="M12.186 8.672 18.743.947h-2.927l-5.005 5.9-4.44-5.9H0l7.434 9.876-6.986 8.23h2.927l5.434-6.4 4.82 6.4H20L12.186 8.672Zm-2.267 2.671L8.544 9.515 3.2 2.42h2.2l4.312 5.719 1.375 1.828 5.731 7.613h-2.2l-4.699-6.237Z"
-      />
-    </svg>
-  );
+
   const linkSVG = (
     <svg
       stroke="currentColor"
@@ -105,20 +70,7 @@ function App() {
       ></path>
     </svg>
   );
-  const copySVG = (
-    <svg
-      stroke="currentColor"
-      fill={isThemeToggled ? "white" : "#000000"}
-      strokeWidth="0"
-      viewBox="0 0 448 512"
-      className="cursor-pointer hover:scale-110 duration-200 ml-3 "
-      height="1em"
-      width="1em"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path d="M320 448v40c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V120c0-13.255 10.745-24 24-24h72v296c0 30.879 25.121 56 56 56h168zm0-344V0H152c-13.255 0-24 10.745-24 24v368c0 13.255 10.745 24 24 24h272c13.255 0 24-10.745 24-24V128H344c-13.2 0-24-10.8-24-24zm120.971-31.029L375.029 7.029A24 24 0 0 0 358.059 0H352v96h96v-6.059a24 24 0 0 0-7.029-16.97z"></path>
-    </svg>
-  );
+
   const upArrow = (
     <svg
       class="w-6 h-6 text-gray-800 dark:text-white"
@@ -135,9 +87,6 @@ function App() {
       />
     </svg>
   );
-
-  const [menu, setMenu] = useState(iconMenu);
-  const [isMenuToggled, setIsMenuToggled] = useState(false);
 
   const toggleMenu = () => {
     const navbar = navRef.current;
@@ -157,53 +106,6 @@ function App() {
     const slider = sliderRef.current;
     slider.classList.toggle("translate-x-end");
   };
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % words.length);
-    }, 3000);
-
-    return () => clearInterval(intervalId);
-  }, []);
-
-  useEffect(() => {
-    const currentWord = words[currentIndex];
-    const currentText = currentWord.slice(0, text.length + 1);
-
-    setText(currentText);
-  }, [currentIndex, text]);
-
-  //toggling between showing all projects and showing just first 3
-  useEffect(() => {
-    areProjectsFiltered
-      ? setDataToMap(filteredProjects)
-      : setDataToMap(projectData);
-  }, [areProjectsFiltered]);
-
-  //LOGIC TO CHECK CURRENT DEVICE THEME
-  // useEffect(() => {
-  //   if (window.matchMedia) {
-  //     const darkModeQuery = window.matchMedia("(prefers-color-scheme: dark)");
-
-  //     console.log(darkModeQuery.matches);
-
-  //     const handleChange = (e) => {
-  //       if (e === true) {
-  //         setIsThemeToggled(true);
-  //       }
-
-  //       if (e === false) {
-  //         setIsThemeToggled(false);
-  //       }
-  //     };
-
-  //     darkModeQuery.addListener(handleChange);
-
-  //     return () => {
-  //       darkModeQuery.removeListener(handleChange);
-  //     };
-  //   }
-  // }, []);
 
   return (
     <div className={`App  ${isThemeToggled ? "appDarkMode" : "appLightMode"}`}>
@@ -257,372 +159,33 @@ function App() {
       </a>
 
       <main>
-        <section
-          id="intro"
-          className="flex flex-col justify-center items-center "
-        >
-          <motion.h1
-            className="introText mt-20 lg:mt-0 text-2xl md:text-3xl"
-            variants={introTextVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            Hey there,I'm
-          </motion.h1>
+        <Intro
+          introTextVariants={introTextVariants}
+          projectsVariants={projectsVariants}
+          projectContainerVariants={projectContainerVariants}
+          isThemeToggled={isThemeToggled}
+        ></Intro>
 
-          <motion.h1
-            className="introText lg:mt-0 text-orange-400 text-5xl lg:text-6xl"
-            variants={introTextVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            Ose
-            <span
-              className={`text-2xl md:text-3xl ${
-                isThemeToggled ? "text-white" : "text-black"
-              }`}
-            >
-              {text}
-            </span>
-          </motion.h1>
-        </section>
+        <AboutMe
+          introTextVariants={introTextVariants}
+          projectsVariants={projectsVariants}
+          projectContainerVariants={projectContainerVariants}
+        ></AboutMe>
 
-        <section id="aboutMe">
-          <div className="w-full lg:w-1/2">
-            <motion.img
-              variants={projectsVariants}
-              initial="hidden"
-              whileInView="visible"
-              src={avatar}
-              alt="avatar"
-              className="avatar"
-            />
-          </div>
+        <Projects
+          introTextVariants={introTextVariants}
+          projectsVariants={projectsVariants}
+          projectContainerVariants={projectContainerVariants}
+          iconGithub={iconGithub}
+          linkSVG={linkSVG}
+        ></Projects>
 
-          <div className="w-full  lg:w-1/2 flex flex-col justify-between">
-            <div>
-              <motion.h1
-                initial={{ y: 100, opacity: 0 }}
-                whileInView={{
-                  y: 0,
-                  opacity: 1,
-                  transition: { duration: 0.5 },
-                }}
-                className="sectionHeading"
-              >
-                <span className="headingNum">01. </span>
-                ABOUT ME
-              </motion.h1>
-
-              <motion.p
-                initial={{ y: 100, opacity: 0 }}
-                whileInView={{
-                  y: 0,
-                  opacity: 1,
-                  transition: { duration: 0.5 },
-                }}
-                className="aboutMeText"
-              >
-                Hey I'm Ose, a front-end web developer skilled in HTML, CSS and
-                JavaScript. I specialize in crafting visually stunning and
-                responsive user interfaces using Tailwind CSS, with ReactJS I
-                build scalable and efficient UIs and I'm currently exploring
-                Framer Motion for dynamic animations. I'm a problem solver and
-                clean code enthusiast so let's innovate and create captivating
-                digital experiences together!
-              </motion.p>
-            </div>
-
-            <motion.div
-              initial={{ y: 100, opacity: 0 }}
-              whileInView={{
-                y: 0,
-                opacity: 1,
-                transition: { duration: 0.5 },
-              }}
-              className="skillsGrp"
-            >
-              <h2 className="font-bold text-xl mt-8 col-span-full">
-                My Skills:
-              </h2>
-
-              <div className="skill">
-                <div className={`skillText stackLight `}>
-                  <img src={html} alt="html" className="skillIcon" />
-                  <span>HTML</span>
-                </div>
-              </div>
-
-              <div className="skill">
-                <div className={`skillText stackLight `}>
-                  <img src={css} alt="html" className="skillIcon" />
-                  <span>CSS</span>
-                </div>
-              </div>
-
-              <div className="skill">
-                <div className={`skillText stackLight `}>
-                  <img src={js} alt="html" className="skillIcon" />
-                  <span>Javascript</span>
-                </div>
-              </div>
-
-              <div className="skill">
-                <div className={`skillText stackLight `}>
-                  <img src={tailwind} alt="html" className="skillIcon" />
-                  <span>Tailwindcss</span>
-                </div>
-              </div>
-
-              <div className="skill">
-                <div className={`skillText stackLight `}>
-                  <img src={react} alt="html" className="skillIcon" />
-                  <span>ReactJS</span>
-                </div>
-              </div>
-
-              <div className="skill">
-                <div className={`skillText stackLight `}>
-                  <img src={iconFramer} alt="html" className="skillIcon" />
-                  <span>Framer motion</span>
-                </div>
-              </div>
-
-              <div className="skill">
-                <div className={`skillText stackLight `}>
-                  <img src={git} alt="html" className="skillIcon" />
-                  <span>Git</span>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        <motion.section
-          variants={projectsVariants}
-          initial="hidden"
-          whileInView="visible"
-          id="projects"
-          className={
-            isThemeToggled ? "projectsPageDarkMode" : "projectsPageLightMode"
-          }
-        >
-          <h1 className="sectionHeading col-span-full">
-            <span className="headingNum">02. </span>PROJECTS
-          </h1>
-          <div className="displayProjects">
-            {dataToMap.map((element, index) => (
-              <motion.div
-                key={index}
-                className="projectContainer"
-                variants={projectContainerVariants}
-                initial="hidden"
-                whileInView="visible"
-              >
-                <img
-                  src={element.img}
-                  alt={element.alt}
-                  className="projectImg"
-                />
-
-                <div
-                  className={`projectText ${
-                    isThemeToggled
-                      ? "projectContainerDark"
-                      : "projectContainerLight"
-                  }`}
-                >
-                  <div>
-                    <h1 className="projectName">{element.title}</h1>
-
-                    <p className="aboutProject">{element.about}</p>
-                  </div>
-
-                  <div>
-                    <div className="stackGrp">
-                      {element.stack.map((stack, index) => (
-                        <p
-                          className={`stack ${
-                            isThemeToggled ? "stackDark" : "stackLight"
-                          }`}
-                          key={index}
-                        >
-                          {stack}
-                        </p>
-                      ))}
-                    </div>
-
-                    <div className="iconGrp">
-                      <a href={element.githubRepo} target="_blank">
-                        {iconGithub}
-                      </a>
-
-                      <div className=" flex flex-row items-center gap-2 hover:text-orange-400 duration-100">
-                        <a
-                          href={element.href}
-                          target="_blank"
-                          className={`font-semibold  text-sm  ${
-                            isThemeToggled ? `border-white` : `border-black`
-                          }`}
-                        >
-                          Live site
-                        </a>
-
-                        {linkSVG}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          <button
-            className="block mx-auto font-semibold mt-5 hover:underline"
-            onClick={() => setAreProjectsFiltered(!areProjectsFiltered)}
-          >
-            {areProjectsFiltered ? "Show All" : "Show less"}
-          </button>
-        </motion.section>
-
-        <section id="contactMe">
-          <motion.h1
-            className="sectionHeading"
-            initial={{ y: 100, opacity: 0 }}
-            whileInView={{
-              y: 0,
-              opacity: 1,
-              transition: { duration: 0.5 },
-            }}
-          >
-            <span className="headingNum">03. </span>WHATS NEXT ?
-          </motion.h1>
-
-          <div>
-            <motion.h2
-              initial={{ y: 100, opacity: 0 }}
-              whileInView={{
-                y: 0,
-                opacity: 1,
-                transition: { duration: 0.5 },
-              }}
-              className="text-center text-2xl mt-10"
-            >
-              Contact me
-            </motion.h2>
-
-            <motion.div
-              initial={{ y: 100, opacity: 0 }}
-              whileInView={{
-                y: 0,
-                opacity: 1,
-                transition: { duration: 0.5 },
-              }}
-              className="contactIconGrp"
-            >
-              <a href="https://github.com/oseji" target="_blank">
-                <svg
-                  className="w-6 h-6 text-gray-800 dark:text-white"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="white"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 .333A9.911 9.911 0 0 0 6.866 19.65c.5.092.678-.215.678-.477 0-.237-.01-1.017-.014-1.845-2.757.6-3.338-1.169-3.338-1.169a2.627 2.627 0 0 0-1.1-1.451c-.9-.615.07-.6.07-.6a2.084 2.084 0 0 1 1.518 1.021 2.11 2.11 0 0 0 2.884.823c.044-.503.268-.973.63-1.325-2.2-.25-4.516-1.1-4.516-4.9A3.832 3.832 0 0 1 4.7 7.068a3.56 3.56 0 0 1 .095-2.623s.832-.266 2.726 1.016a9.409 9.409 0 0 1 4.962 0c1.89-1.282 2.717-1.016 2.717-1.016.366.83.402 1.768.1 2.623a3.827 3.827 0 0 1 1.02 2.659c0 3.807-2.319 4.644-4.525 4.889a2.366 2.366 0 0 1 .673 1.834c0 1.326-.012 2.394-.012 2.72 0 .263.18.572.681.475A9.911 9.911 0 0 0 10 .333Z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </a>
-
-              <a
-                href="https://x.com/osejiiii?s=11&t=T8eipyBsmUUoM5iFV7A9TA"
-                target="_blank"
-              >
-                {iconTwitter}
-              </a>
-            </motion.div>
-
-            <motion.p
-              initial={{ y: 100, opacity: 0 }}
-              whileInView={{
-                y: 0,
-                opacity: 1,
-                transition: { duration: 0.5 },
-              }}
-              className="text-center mt-10"
-            >
-              Are you interested in working together? Let's schedule a time to
-              chat.
-            </motion.p>
-
-            <motion.div
-              initial={{ y: 100, opacity: 0 }}
-              whileInView={{
-                y: 0,
-                opacity: 1,
-                transition: { duration: 0.5 },
-              }}
-              className="flex flex-row items-center gap-5 justify-center mt-5 mb-5"
-            >
-              <p>jiade1233@gmail.com</p>
-
-              <button
-                onClick={() => {
-                  copy("jiade1233@gmail.com")
-                    .then(alert("copied email"))
-                    .catch((err) => console.log(err));
-                }}
-              >
-                {copySVG}
-              </button>
-            </motion.div>
-
-            <motion.div
-              initial={{ y: 100, opacity: 0 }}
-              whileInView={{
-                y: 0,
-                opacity: 1,
-                transition: { duration: 0.5 },
-              }}
-              className="flex flex-row items-center gap-5 justify-center mb-10"
-            >
-              <a
-                href="https://wa.me/+234 70 1995 2903"
-                target="_blank"
-                className="hover:text-orange-400"
-              >
-                +234 70 1995 2903
-              </a>
-
-              <button
-                onClick={() => {
-                  copy("+234 70 1995 2903")
-                    .then(alert("copied email"))
-                    .catch((err) => console.log(err));
-                }}
-              >
-                {copySVG}
-              </button>
-            </motion.div>
-
-            <motion.a
-              initial={{ y: 100, opacity: 0 }}
-              whileInView={{
-                y: 0,
-                opacity: 1,
-                transition: { duration: 0.5 },
-              }}
-              href="mailto:jiade1233@gmail.com"
-              className={`emailBtn ${
-                isThemeToggled ? "text-white" : "text-black"
-              }`}
-            >
-              Send me an email
-            </motion.a>
-          </div>
-        </section>
+        <ContactMe
+          introTextVariants={introTextVariants}
+          projectsVariants={projectsVariants}
+          projectContainerVariants={projectContainerVariants}
+          isThemeToggled={isThemeToggled}
+        ></ContactMe>
       </main>
     </div>
   );
