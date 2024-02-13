@@ -176,6 +176,7 @@ function App() {
           introTextVariants={introTextVariants}
           projectsVariants={projectsVariants}
           projectContainerVariants={projectContainerVariants}
+          isThemeToggled={isThemeToggled}
           iconGithub={iconGithub}
           linkSVG={linkSVG}
         ></Projects>

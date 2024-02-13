@@ -37,7 +37,7 @@ header {
 }
 
 .logo {
-  @apply text-3xl font-bold;
+  @apply text-3xl font-bold text-orange-400;
 }
 
 .menuIcon {
