@@ -130,11 +130,13 @@ function App() {
                 About me
               </a>
             </li>
+
             <li className="navText">
               <a href="#projects" className="navLink">
                 Projects
               </a>
             </li>
+
             <li className="navText">
               <a href="#contactMe" className="navLink">
                 Contact me

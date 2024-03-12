@@ -10,6 +10,11 @@ import js from "./assets/js.svg";
 import react from "./assets/react.svg";
 
 const AboutMe = ({ projectsVariants }) => {
+  const skillVariants = {
+    hidden: { opacity: 0, scale: 0.2 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
+  };
+
   return (
     <section id="aboutMe">
       <div className="w-full lg:w-1/2">
@@ -68,54 +73,89 @@ const AboutMe = ({ projectsVariants }) => {
         >
           <h2 className="font-bold text-xl mt-8 col-span-full">My Skills:</h2>
 
-          <div className="skill">
+          <motion.div
+            className="skill"
+            variants={skillVariants}
+            initial="hidden"
+            whileInView="visible"
+          >
             <div className={`skillText stackLight `}>
               <img src={html} alt="html" className="skillIcon" />
               <span>HTML</span>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="skill">
+          <motion.div
+            className="skill"
+            variants={skillVariants}
+            initial="hidden"
+            whileInView="visible"
+          >
             <div className={`skillText stackLight `}>
               <img src={css} alt="html" className="skillIcon" />
               <span>CSS</span>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="skill">
+          <motion.div
+            className="skill"
+            variants={skillVariants}
+            initial="hidden"
+            whileInView="visible"
+          >
             <div className={`skillText stackLight `}>
               <img src={js} alt="html" className="skillIcon" />
               <span>Javascript</span>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="skill">
+          <motion.div
+            className="skill"
+            variants={skillVariants}
+            initial="hidden"
+            whileInView="visible"
+          >
             <div className={`skillText stackLight `}>
               <img src={tailwind} alt="html" className="skillIcon" />
               <span>Tailwindcss</span>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="skill">
+          <motion.div
+            className="skill"
+            variants={skillVariants}
+            initial="hidden"
+            whileInView="visible"
+          >
             <div className={`skillText stackLight `}>
               <img src={react} alt="html" className="skillIcon" />
               <span>ReactJS</span>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="skill">
+          <motion.div
+            className="skill"
+            variants={skillVariants}
+            initial="hidden"
+            whileInView="visible"
+          >
             <div className={`skillText stackLight `}>
               <img src={iconFramer} alt="html" className="skillIcon" />
               <span>Framer motion</span>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="skill">
+          <motion.div
+            className="skill"
+            variants={skillVariants}
+            initial="hidden"
+            whileInView="visible"
+          >
             <div className={`skillText stackLight `}>
               <img src={git} alt="html" className="skillIcon" />
               <span>Git</span>
             </div>
-          </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>
