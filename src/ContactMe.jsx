@@ -153,7 +153,18 @@ const ContactMe = ({ isThemeToggled }) => {
           </button>
         </motion.div>
 
-        <motion.a
+        <motion.button
+          className={`emailBtn ${isThemeToggled ? "text-white" : "text-black"}`}
+          initial={{ y: 100, opacity: 0 }}
+          whileInView={{
+            y: 0,
+            opacity: 1,
+            transition: { duration: 0.5 },
+          }}
+        >
+          <a href="mailto:jiade1233@gmail.com">Send me an email</a>
+        </motion.button>
+        {/* <motion.a
           initial={{ y: 100, opacity: 0 }}
           whileInView={{
             y: 0,
@@ -164,7 +175,7 @@ const ContactMe = ({ isThemeToggled }) => {
           className={`emailBtn ${isThemeToggled ? "text-white" : "text-black"}`}
         >
           Send me an email
-        </motion.a>
+        </motion.a> */}
       </div>
     </section>
   );

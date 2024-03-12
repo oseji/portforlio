@@ -146,13 +146,25 @@ function App() {
         </nav>
 
         <div className="themeSwitcher">
-          <p className="themeText">Light</p>
+          <p
+            className={`themeText ${
+              !isThemeToggled ? "text-orange-400" : "text-white"
+            }`}
+          >
+            Light
+          </p>
 
           <div className="sliderContainer" onClick={toggleTheme}>
             <div className="slider" ref={sliderRef}></div>
           </div>
 
-          <p className="themeText">Dark</p>
+          <p
+            className={`themeText ${
+              isThemeToggled ? "text-orange-400" : "text-black"
+            }`}
+          >
+            Dark
+          </p>
         </div>
       </header>
 

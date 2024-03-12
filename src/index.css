@@ -188,5 +188,5 @@ section {
 }
 
 .emailBtn {
-  @apply w-fit mx-auto block p-4 rounded-lg bg-orange-400;
+  @apply w-fit mx-auto block p-4 font-semibold rounded-lg bg-orange-400;
 }
