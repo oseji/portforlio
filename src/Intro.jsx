@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-const Intro = ({ introTextVariants, isThemeToggled }) => {
+const Intro = ({ isThemeToggled }) => {
   const [text, setText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
   const words = ["", " , a frontend dev"];
@@ -25,7 +25,6 @@ const Intro = ({ introTextVariants, isThemeToggled }) => {
     <section id="intro" className="flex flex-col justify-center items-center ">
       <motion.h1
         className="introText mt-20 lg:mt-0 text-2xl md:text-3xl"
-        variants={introTextVariants}
         initial="hidden"
         animate="visible"
       >
@@ -34,7 +33,6 @@ const Intro = ({ introTextVariants, isThemeToggled }) => {
 
       <motion.h1
         className="introText lg:mt-0 text-orange-400 text-5xl lg:text-6xl"
-        variants={introTextVariants}
         initial="hidden"
         animate="visible"
       >

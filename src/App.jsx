@@ -9,11 +9,6 @@ import iconMenu from "./assets/iconMenu.svg";
 import iconClose from "./assets/iconClose.svg";
 
 function App() {
-  const introTextVariants = {
-    hidden: { y: 300 },
-    visible: { y: 0, transition: { duration: 0.5 } },
-  };
-
   const projectsVariants = {
     hidden: { scale: 0.7, opacity: 0 },
     visible: { scale: 1, opacity: 1, transition: { duration: 0.5 } },
@@ -173,21 +168,11 @@ function App() {
       </a>
 
       <main>
-        <Intro
-          introTextVariants={introTextVariants}
-          projectsVariants={projectsVariants}
-          projectContainerVariants={projectContainerVariants}
-          isThemeToggled={isThemeToggled}
-        ></Intro>
+        <Intro isThemeToggled={isThemeToggled}></Intro>
 
-        <AboutMe
-          introTextVariants={introTextVariants}
-          projectsVariants={projectsVariants}
-          projectContainerVariants={projectContainerVariants}
-        ></AboutMe>
+        <AboutMe projectsVariants={projectsVariants}></AboutMe>
 
         <Projects
-          introTextVariants={introTextVariants}
           projectsVariants={projectsVariants}
           projectContainerVariants={projectContainerVariants}
           isThemeToggled={isThemeToggled}
@@ -195,12 +180,7 @@ function App() {
           linkSVG={linkSVG}
         ></Projects>
 
-        <ContactMe
-          introTextVariants={introTextVariants}
-          projectsVariants={projectsVariants}
-          projectContainerVariants={projectContainerVariants}
-          isThemeToggled={isThemeToggled}
-        ></ContactMe>
+        <ContactMe isThemeToggled={isThemeToggled}></ContactMe>
       </main>
     </div>
   );

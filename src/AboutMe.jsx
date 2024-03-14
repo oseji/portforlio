@@ -31,9 +31,9 @@ const AboutMe = ({ projectsVariants }) => {
       <div className="w-full  lg:w-1/2 flex flex-col justify-between">
         <div>
           <motion.h1
-            initial={{ y: 100, opacity: 0 }}
+            initial={{ x: 100, opacity: 0 }}
             whileInView={{
-              y: 0,
+              x: 0,
               opacity: 1,
               transition: { duration: 0.5 },
             }}
@@ -44,9 +44,9 @@ const AboutMe = ({ projectsVariants }) => {
           </motion.h1>
 
           <motion.p
-            initial={{ y: 100, opacity: 0 }}
+            initial={{ x: 100, opacity: 0 }}
             whileInView={{
-              y: 0,
+              x: 0,
               opacity: 1,
               transition: { duration: 0.5 },
             }}
@@ -63,7 +63,17 @@ const AboutMe = ({ projectsVariants }) => {
         </div>
 
         <motion.div className="skillsGrp">
-          <h2 className="font-bold text-xl mt-8 col-span-full">My Skills:</h2>
+          <motion.h2
+            className="font-bold text-xl mt-8 col-span-full"
+            initial={{ x: 100, opacity: 0 }}
+            whileInView={{
+              x: 0,
+              opacity: 1,
+              transition: { duration: 0.5 },
+            }}
+          >
+            My Skills:
+          </motion.h2>
 
           <motion.div
             className="skill"

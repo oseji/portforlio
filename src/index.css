@@ -9,7 +9,7 @@ html {
 }
 
 .App {
-  @apply min-h-screen font-afacad;
+  @apply min-h-screen font-afacad overflow-hidden;
 }
 
 .appLightMode {

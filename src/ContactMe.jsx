@@ -35,9 +35,9 @@ const ContactMe = ({ isThemeToggled }) => {
     <section id="contactMe">
       <motion.h1
         className="sectionHeading"
-        initial={{ y: 100, opacity: 0 }}
+        initial={{ x: 100, opacity: 0 }}
         whileInView={{
-          y: 0,
+          x: 0,
           opacity: 1,
           transition: { duration: 0.5 },
         }}
@@ -45,23 +45,20 @@ const ContactMe = ({ isThemeToggled }) => {
         <span className="headingNum">03. </span>WHATS NEXT ?
       </motion.h1>
 
-      <div>
-        <motion.h2
-          initial={{ y: 100, opacity: 0 }}
-          whileInView={{
-            y: 0,
-            opacity: 1,
-            transition: { duration: 0.5 },
-          }}
-          className="text-center text-2xl mt-10"
-        >
-          Contact me
-        </motion.h2>
+      <motion.div
+        initial={{ x: -100, opacity: 0 }}
+        whileInView={{
+          x: 0,
+          opacity: 1,
+          transition: { duration: 1 },
+        }}
+      >
+        <h2 className="text-center text-2xl mt-10">Contact me</h2>
 
-        <motion.div
-          initial={{ y: 100, opacity: 0 }}
+        <div
+          initial={{ x: 100, opacity: 0 }}
           whileInView={{
-            y: 0,
+            x: 0,
             opacity: 1,
             transition: { duration: 0.5 },
           }}
@@ -89,24 +86,24 @@ const ContactMe = ({ isThemeToggled }) => {
           >
             {iconTwitter}
           </a>
-        </motion.div>
+        </div>
 
-        <motion.p
-          initial={{ y: 100, opacity: 0 }}
+        <p
+          initial={{ x: -100, opacity: 0 }}
           whileInView={{
-            y: 0,
+            x: 0,
             opacity: 1,
             transition: { duration: 0.5 },
           }}
           className="text-center mt-10"
         >
           Are you interested in working together? Let's schedule a time to chat.
-        </motion.p>
+        </p>
 
-        <motion.div
-          initial={{ y: 100, opacity: 0 }}
+        <div
+          initial={{ x: 100, opacity: 0 }}
           whileInView={{
-            y: 0,
+            x: 0,
             opacity: 1,
             transition: { duration: 0.5 },
           }}
@@ -123,12 +120,12 @@ const ContactMe = ({ isThemeToggled }) => {
           >
             {copySVG}
           </button>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ y: 100, opacity: 0 }}
+        <div
+          initial={{ x: -100, opacity: 0 }}
           whileInView={{
-            y: 0,
+            x: 0,
             opacity: 1,
             transition: { duration: 0.5 },
           }}
@@ -151,32 +148,21 @@ const ContactMe = ({ isThemeToggled }) => {
           >
             {copySVG}
           </button>
-        </motion.div>
+        </div>
 
-        <motion.button
-          className={`emailBtn ${isThemeToggled ? "text-white" : "text-black"}`}
-          initial={{ y: 100, opacity: 0 }}
-          whileInView={{
-            y: 0,
-            opacity: 1,
-            transition: { duration: 0.5 },
-          }}
-        >
-          <a href="mailto:jiade1233@gmail.com">Send me an email</a>
-        </motion.button>
-        {/* <motion.a
-          initial={{ y: 100, opacity: 0 }}
-          whileInView={{
-            y: 0,
-            opacity: 1,
-            transition: { duration: 0.5 },
-          }}
+        <a
           href="mailto:jiade1233@gmail.com"
           className={`emailBtn ${isThemeToggled ? "text-white" : "text-black"}`}
+          initial={{ x: 100, opacity: 0 }}
+          whileInView={{
+            x: 0,
+            opacity: 1,
+            transition: { duration: 0.5 },
+          }}
         >
           Send me an email
-        </motion.a> */}
-      </div>
+        </a>
+      </motion.div>
     </section>
   );
 };
