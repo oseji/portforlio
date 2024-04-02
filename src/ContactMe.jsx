@@ -81,7 +81,7 @@ const ContactMe = ({ isThemeToggled }) => {
           </a>
 
           <a
-            href="https://x.com/osejiiii?s=11&t=T8eipyBsmUUoM5iFV7A9TA"
+            href="https://x.com/dev_jiade?s=11&t=T8eipyBsmUUoM5iFV7A9TA"
             target="_blank"
           >
             {iconTwitter}
