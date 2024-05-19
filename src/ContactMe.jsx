@@ -81,7 +81,7 @@ const ContactMe = ({ isThemeToggled }) => {
           </a>
 
           <a
-            href="https://x.com/dev_jiade?s=11&t=T8eipyBsmUUoM5iFV7A9TA"
+            href="https://x.com/osejiiii?s=21"
             target="_blank"
           >
             {iconTwitter}
@@ -109,11 +109,11 @@ const ContactMe = ({ isThemeToggled }) => {
           }}
           className="flex flex-row items-center gap-5 justify-center mt-5 mb-5"
         >
-          <p>jiade1233@gmail.com</p>
+          <p>oseoziegbe0@gmail.com</p>
 
           <button
             onClick={() => {
-              copy("jiade1233@gmail.com")
+              copy("oseoziegbe0@gmail.com")
                 .then(alert("Copied email"))
                 .catch((err) => console.log(err));
             }}
@@ -151,7 +151,7 @@ const ContactMe = ({ isThemeToggled }) => {
         </div>
 
         <a
-          href="mailto:jiade1233@gmail.com"
+          href="mailto:oseoziegbe0@gmail.com"
           className={`emailBtn ${isThemeToggled ? "text-white" : "text-black"}`}
           initial={{ x: 100, opacity: 0 }}
           whileInView={{
