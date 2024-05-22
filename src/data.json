@@ -26,7 +26,8 @@
     "title": "IP address tracker",
     "href": "https://ip-tracker-oseji.netlify.app/",
     "githubRepo": "https://github.com/oseji/IP-Address-Tracker.git",
-    "about": "An IP address tracker that displays the users IP address,ISP,timezone and displays IP location on a rendered map using react-leaflet.",
+    "about": "Built an IP address tracker that displays the users IP address, Internet service provider(ISP) and user timezone. Integrated react-leaflet to display the users
+ISP location on a rendered map.",
     "stack": ["ReactJS", "tailwindcss", "React-leaflet", "API"]
   },
   {
@@ -66,7 +67,7 @@
     "title": "Dictionary",
     "href": "https://osejis-dictionary.netlify.app/",
     "githubRepo": "https://github.com/oseji/osejis-dictionary.git",
-    "about": "A dictionary with audio playback functionality.",
+    "about": "Created a dictionary with audio playback and theme switching functionality.",
     "stack": ["ReactJS", "tailwindcss", "Framer motion", "API"]
   },
   {
