@@ -26,8 +26,7 @@
     "title": "IP address tracker",
     "href": "https://ip-tracker-oseji.netlify.app/",
     "githubRepo": "https://github.com/oseji/IP-Address-Tracker.git",
-    "about": "Built an IP address tracker that displays the users IP address, Internet service provider(ISP) and user timezone. Integrated react-leaflet to display the users
-ISP location on a rendered map.",
+    "about": "Built an IP address tracker that displays the users IP address, Internet service provider(ISP) and user timezone. Integrated react-leaflet to display the users ISP location on a rendered map.",
     "stack": ["ReactJS", "tailwindcss", "React-leaflet", "API"]
   },
   {
