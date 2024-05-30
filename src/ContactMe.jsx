@@ -80,10 +80,7 @@ const ContactMe = ({ isThemeToggled }) => {
             </svg>
           </a>
 
-          <a
-            href="https://x.com/osejiiii?s=21"
-            target="_blank"
-          >
+          <a href="https://x.com/osejiiii?s=21" target="_blank">
             {iconTwitter}
           </a>
         </div>

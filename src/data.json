@@ -36,7 +36,7 @@
     "title": "Github profile searcher",
     "href": "https://github-profile-finder-oseji.netlify.app/",
     "githubRepo": "https://github.com/oseji/github-profile-search.git",
-    "about": "Search for github profiles and display follower and following count,user location and user repositories.",
+    "about": "Search for github profiles and view the user follower and following count,  location and repositories.",
     "stack": ["ReactJS", "tailwindcss", "Framer motion", "API"]
   },
   {
@@ -56,7 +56,7 @@
     "title": "Language translator",
     "href": "https://translator-oseji.netlify.app/",
     "githubRepo": "https://github.com/oseji/translator.git",
-    "about": "A language translator with text copy and audio playback functionality.",
+    "about": "Created a multilingual translator with text copy and audio playback functionality.",
     "stack": ["ReactJS", "tailwindcss", "API"]
   },
   {

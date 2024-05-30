@@ -52,13 +52,19 @@ const AboutMe = ({ projectsVariants }) => {
             }}
             className="aboutMeText"
           >
-            Hey I'm Ose, a front-end web developer skilled in HTML, CSS and
-            JavaScript. I specialize in crafting visually stunning and
-            responsive user interfaces using Tailwind CSS, with ReactJS I build
-            scalable and efficient UIs and I'm currently exploring Framer Motion
-            for dynamic animations. I'm a problem solver and clean code
-            enthusiast so let's innovate and create captivating digital
-            experiences together!
+            Hi, I'm Ose, a passionate front-end web developer with a strong
+            foundation in HTML, CSS, and JavaScript. I specialize in creating
+            beautiful and responsive user interfaces, leveraging the power of
+            Tailwindcss to accelerate my design process. Using ReactJS, I build
+            scalable and efficient UIs, making sure that every project is both
+            solid and adaptable.<br></br>
+            <br></br> Currently, I'm exploring Framer Motion to bring dynamic
+            animations to life, adding an extra layer of interactivity and
+            engagement to my work. I thrive on solving complex problems and I am
+            a firm believer in writing clean and maintainable code. My goal is
+            to innovate and create captivating digital experiences that leave a
+            lasting impression on users. So come on, let's connect and
+            collaborate to bring your vision to life!
           </motion.p>
         </div>
 
