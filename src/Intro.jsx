@@ -1,50 +1,25 @@
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { TypeAnimation } from "react-type-animation";
 
 const Intro = ({ isThemeToggled }) => {
-  const [text, setText] = useState("");
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const words = ["", " , a frontend dev"];
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % words.length);
-    }, 3000);
-
-    return () => clearInterval(intervalId);
-  }, []);
-
-  useEffect(() => {
-    const currentWord = words[currentIndex];
-    const currentText = currentWord.slice(0, text.length + 1);
-
-    setText(currentText);
-  }, [currentIndex, text]);
-
   return (
     <section id="intro" className="flex flex-col justify-center items-center ">
-      <motion.h1
-        className="introText mt-20 lg:mt-0 text-2xl md:text-3xl"
-        initial="hidden"
-        animate="visible"
-      >
-        Hey there,I'm
-      </motion.h1>
-
-      <motion.h1
-        className="introText lg:mt-0 text-orange-400 text-5xl lg:text-6xl"
-        initial="hidden"
-        animate="visible"
-      >
-        Ose
-        <span
-          className={`text-2xl md:text-3xl ${
-            isThemeToggled ? "text-white" : "text-black"
-          }`}
-        >
-          {text}
-        </span>
-      </motion.h1>
+      <TypeAnimation
+        sequence={[
+          // Same substring at the start will only be typed out once, initially
+          "Hey there",
+          1000, // wait 1s before replacing "Mice" with "Hamsters"
+          "Hey there I'm Ose",
+          1000,
+          "Hey there I'm Ose, a Frontend developer",
+          1000,
+          "Hey there I'm Ose, a Frontend developer, welcome to my portfolio.",
+          1000,
+        ]}
+        className="introText mt-20 lg:mt-0 text-3xl md:text-5xl"
+        wrapper="h1"
+        speed={30}
+        repeat={0}
+      />
     </section>
   );
 };
