@@ -7,7 +7,7 @@
     "href": "https://country-finder-oseji.netlify.app/",
     "githubRepo": "https://github.com/oseji/countryFinder.git",
     "about": "Search for any country in the world by name or the region they're located in and click on their card to see their details.",
-    "stack": ["ReactJS", "tailwindcss", "Framer motion", "API"]
+    "stack": ["React", "Tailwindcss", "Framer motion", "API"]
   },
   {
     "id": 2,
@@ -17,7 +17,7 @@
     "href": "https://oseji-dashboard.netlify.app/",
     "githubRepo": "https://github.com/oseji/geepay-challenge.git",
     "about": "An Analytics dashboard I developed from a figma design.",
-    "stack": ["ReactJS", "tailwindcss", "Rechart js"]
+    "stack": ["React", "Tailwindcss", "Rechart js"]
   },
   {
     "id": 3,
@@ -27,56 +27,66 @@
     "href": "https://ip-tracker-oseji.netlify.app/",
     "githubRepo": "https://github.com/oseji/IP-Address-Tracker.git",
     "about": "Built an IP address tracker that displays the users IP address, Internet service provider(ISP) and user timezone. Integrated react-leaflet to display the users ISP location on a rendered map.",
-    "stack": ["ReactJS", "tailwindcss", "React-leaflet", "API"]
+    "stack": ["React", "Tailwindcss", "React-leaflet", "API"]
   },
   {
     "id": 4,
+    "img": "/assets/finGenius.png",
+    "alt": "FinGenius screenshot",
+    "title": "FinGenius landing page",
+    "href": "https://fingenius.netlify.app/",
+    "githubRepo": "https://github.com/oseji/finGenius.git",
+    "about": "A landing page with animations.",
+    "stack": ["React", "Typescript","Tailwindcss", "Framer motion"]
+  },
+  {
+    "id": 5,
     "img": "/assets/github search.png",
     "alt": "Github profile screenshot",
     "title": "Github profile searcher",
     "href": "https://github-profile-finder-oseji.netlify.app/",
     "githubRepo": "https://github.com/oseji/github-profile-search.git",
-    "about": "Search for github profiles and view the user follower and following count,  location and repositories.",
-    "stack": ["ReactJS", "tailwindcss", "Framer motion", "API"]
+    "about": "Search for github profiles and view the user follower and following count, location and repositories.",
+    "stack": ["React", "Tailwindcss", "Framer motion", "API"]
   },
   {
-    "id": 5,
+    "id": 6,
     "img": "/assets/taxas.png",
     "alt": "Taxas landing page screenshot",
     "title": "Taxas landing page",
     "href": "https://oseji-taxas.netlify.app/",
     "githubRepo": "https://github.com/oseji/taxas.git",
     "about": "A landing page with simple animations.",
-    "stack": ["HTML", "tailwindcss", "Javascript"]
+    "stack": ["HTML", "Tailwindcss", "Javascript"]
   },
   {
-    "id": 6,
+    "id": 7,
     "img": "/assets/translator.jpg",
     "alt": "Analytics screenshot",
     "title": "Language translator",
     "href": "https://translator-oseji.netlify.app/",
     "githubRepo": "https://github.com/oseji/translator.git",
     "about": "Created a multilingual translator with text copy and audio playback functionality.",
-    "stack": ["ReactJS", "tailwindcss", "API"]
+    "stack": ["React", "Tailwindcss", "API"]
   },
   {
-    "id": 7,
+    "id": 8,
     "img": "/assets/dictionary.png",
     "alt": "Dictionary screenshot",
     "title": "Dictionary",
     "href": "https://osejis-dictionary.netlify.app/",
     "githubRepo": "https://github.com/oseji/osejis-dictionary.git",
     "about": "Created a dictionary with audio playback and theme switching functionality.",
-    "stack": ["ReactJS", "tailwindcss", "Framer motion", "API"]
+    "stack": ["React", "Tailwindcss", "Framer motion", "API"]
   },
   {
-    "id": 8,
+    "id": 9,
     "img": "/assets/manage.png",
     "alt": "Manage landing page screenshot",
     "title": "Manage landing page",
     "href": "https://manage-landing-page-oseji.netlify.app/",
     "githubRepo": "https://github.com/oseji/manage-landingPage.git",
-    "about": "A landing page with simple animations.",
-    "stack": ["ReactJS", "tailwindcss", "Framer motion"]
+    "about": "A landing page with animations.",
+    "stack": ["React", "Tailwindcss", "Framer motion"]
   }
 ]
