@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
 
 import avatar from "./assets/my picture.jpg";
-import iconFramer from "./assets/framer.png";
+import framer from "./assets/framer-logo-svgrepo-com.png";
 import html from "./assets/html.svg";
 import tailwind from "./assets/tailwind.svg";
 import git from "./assets/git.svg";
 import css from "./assets/css.svg";
 import js from "./assets/js.svg";
+import ts from "./assets/typescript.svg";
 import react from "./assets/react.svg";
 
 const AboutMe = ({ projectsVariants }) => {
@@ -104,7 +105,7 @@ const AboutMe = ({ projectsVariants }) => {
             <div
               className={`skillText bg-slate-200 hover:bg-orange-400 hover:scale-110 transition ease-in-out duration-100 cursor-default`}
             >
-              <img src={css} alt="html" className="skillIcon" />
+              <img src={css} alt="css" className="skillIcon" />
               <span>CSS</span>
             </div>
           </motion.div>
@@ -118,7 +119,7 @@ const AboutMe = ({ projectsVariants }) => {
             <div
               className={`skillText bg-slate-200 hover:bg-orange-400 hover:scale-110 transition ease-in-out duration-100 cursor-default`}
             >
-              <img src={js} alt="html" className="skillIcon" />
+              <img src={js} alt="javascript" className="skillIcon" />
               <span>Javascript</span>
             </div>
           </motion.div>
@@ -132,7 +133,21 @@ const AboutMe = ({ projectsVariants }) => {
             <div
               className={`skillText bg-slate-200 hover:bg-orange-400 hover:scale-110 transition ease-in-out duration-100 cursor-default`}
             >
-              <img src={tailwind} alt="html" className="skillIcon" />
+              <img src={ts} alt="typescript" className="skillIcon" />
+              <span>Typescript</span>
+            </div>
+          </motion.div>
+
+          <motion.div
+            className="skill"
+            variants={skillVariants}
+            initial="hidden"
+            whileInView="visible"
+          >
+            <div
+              className={`skillText bg-slate-200 hover:bg-orange-400 hover:scale-110 transition ease-in-out duration-100 cursor-default`}
+            >
+              <img src={tailwind} alt="tailwindcss" className="skillIcon" />
               <span>Tailwindcss</span>
             </div>
           </motion.div>
@@ -146,7 +161,7 @@ const AboutMe = ({ projectsVariants }) => {
             <div
               className={`skillText bg-slate-200 hover:bg-orange-400 hover:scale-110 transition ease-in-out duration-100 cursor-default`}
             >
-              <img src={react} alt="html" className="skillIcon" />
+              <img src={react} alt="react" className="skillIcon" />
               <span>ReactJS</span>
             </div>
           </motion.div>
@@ -160,7 +175,7 @@ const AboutMe = ({ projectsVariants }) => {
             <div
               className={`skillText bg-slate-200 hover:bg-orange-400 hover:scale-110 transition ease-in-out duration-100 cursor-default`}
             >
-              <img src={iconFramer} alt="html" className="skillIcon" />
+              <img src={framer} alt="framer motion" className="skillIcon" />
               <span>Framer motion</span>
             </div>
           </motion.div>
