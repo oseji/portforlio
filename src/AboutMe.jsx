@@ -52,9 +52,9 @@ const AboutMe = ({ projectsVariants }) => {
             }}
             className="aboutMeText"
           >
-            Hi, I'm Ose, a passionate front-end web developer with a strong
-            foundation in HTML, CSS, and JavaScript. I specialize in creating
-            beautiful and responsive user interfaces, leveraging the power of
+            Hi, I'm Ose, a front-end web developer with a strong
+            foundation in HTML, CSS and JavaScript. I specialize in creating
+            beautiful and responsive user interfaces, using the power of
             Tailwindcss to accelerate my design process. Using ReactJS, I build
             scalable and efficient UIs, making sure that every project is both
             solid and adaptable.<br></br>
