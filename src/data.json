@@ -11,26 +11,6 @@
   },
   {
     "id": 2,
-    "img": "/assets/dashboard.png",
-    "alt": "Analytics dashboard screenshot",
-    "title": "Analytics dashboard",
-    "href": "https://oseji-dashboard.netlify.app/",
-    "githubRepo": "https://github.com/oseji/geepay-challenge.git",
-    "about": "An Analytics dashboard I developed from a figma design.",
-    "stack": ["React", "Tailwindcss", "Rechart js"]
-  },
-  {
-    "id": 3,
-    "img": "/assets/ip address.png",
-    "alt": "IP address screenshot",
-    "title": "IP address tracker",
-    "href": "https://ip-tracker-oseji.netlify.app/",
-    "githubRepo": "https://github.com/oseji/IP-Address-Tracker.git",
-    "about": "Built an IP address tracker that displays the users IP address, Internet service provider(ISP) and user timezone. Integrated react-leaflet to display the users ISP location on a rendered map.",
-    "stack": ["React", "Tailwindcss", "React-leaflet", "API"]
-  },
-  {
-    "id": 4,
     "img": "/assets/finGenius.png",
     "alt": "FinGenius screenshot",
     "title": "FinGenius landing page",
@@ -39,6 +19,28 @@
     "about": "A landing page with animations.",
     "stack": ["React", "Typescript","Tailwindcss", "Framer motion"]
   },
+  
+  {
+    "id": 3,
+    "img": "/assets/ip address.png",
+    "alt": "IP address screenshot",
+    "title": "IP address tracker",
+    "href": "https://ip-tracker-oseji.netlify.app/",
+    "githubRepo": "https://github.com/oseji/IP-Address-Tracker.git",
+    "about": "An IP address tracker that displays the users IP address, Internet service provider(ISP) and user timezone. Integrated react-leaflet to display the users ISP location on a rendered map.",
+    "stack": ["React", "Tailwindcss", "React-leaflet", "API"]
+  },
+  {
+    "id": 4,
+    "img": "/assets/dashboard.png",
+    "alt": "Analytics dashboard screenshot",
+    "title": "Analytics dashboard",
+    "href": "https://oseji-dashboard.netlify.app/",
+    "githubRepo": "https://github.com/oseji/geepay-challenge.git",
+    "about": "The overview page of an Analytics dashboard I developed from a figma design.",
+    "stack": ["React", "Tailwindcss", "Rechart js"]
+  },
+  
   {
     "id": 5,
     "img": "/assets/github search.png",

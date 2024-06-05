@@ -15,11 +15,11 @@ function App() {
   };
 
   const projectContainerVariants = {
-    hidden: { scale: 0.7, opacity: 0 },
+    hidden: { scale: 0.8, opacity: 0 },
     visible: {
       scale: 1,
       opacity: 1,
-      transition: { duration: 0.5, delay: 0.2 },
+      transition: { duration: 0.5 },
     },
   };
 

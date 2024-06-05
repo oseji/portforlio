@@ -2,11 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import projectData from "./data.json";
 
-const Projects = ({
-  projectsVariants,
-  projectContainerVariants,
-  isThemeToggled,
-}) => {
+const Projects = ({ projectContainerVariants, isThemeToggled }) => {
   const [areProjectsFiltered, setAreProjectsFiltered] = useState(true);
   const filteredProjects = projectData.slice(0, 3);
   const [dataToMap, setDataToMap] = useState(filteredProjects);
@@ -56,9 +52,6 @@ const Projects = ({
 
   return (
     <motion.section
-      variants={projectsVariants}
-      initial="hidden"
-      whileInView="visible"
       id="projects"
       className={
         isThemeToggled ? "projectsPageDarkMode" : "projectsPageLightMode"
