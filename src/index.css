@@ -135,7 +135,7 @@ section {
   @apply bg-slate-200;
 }
 .projectsPageDarkMode {
-  @apply bg-slate-950 text-white;
+  @apply bg-black text-white;
 }
 
 .projectContainer {
@@ -145,7 +145,7 @@ section {
   @apply bg-white;
 }
 .projectContainerDark {
-  @apply bg-slate-800;
+  @apply bg-slate-900;
 }
 
 .projectImg {
@@ -180,6 +180,18 @@ section {
 
 .iconGrp {
   @apply flex flex-row justify-between items-center;
+}
+
+.prevNextBtn {
+  @apply px-2 py-1 rounded-md w-24 text-center font-semibold hover:scale-110 transition ease-in-out duration-100;
+}
+
+.pageNum {
+  @apply px-2.5 py-1 rounded-md;
+}
+
+.pageNumGrp {
+  @apply flex flex-row items-center gap-5;
 }
 
 /* CONTACTS */

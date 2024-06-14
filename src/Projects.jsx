@@ -3,16 +3,24 @@ import { motion } from "framer-motion";
 import projectData from "./data.json";
 
 const Projects = ({ projectContainerVariants, isThemeToggled }) => {
-  const [areProjectsFiltered, setAreProjectsFiltered] = useState(true);
-  const filteredProjects = projectData.slice(0, 3);
-  const [dataToMap, setDataToMap] = useState(filteredProjects);
+  const [currentPage, setCurrentPage] = useState(1);
+  const numberOfItemsPerPage = 3;
+  const numberOfPages = Math.ceil(projectData.length / numberOfItemsPerPage);
 
-  //toggling between showing all projects and showing just first 3
-  useEffect(() => {
-    areProjectsFiltered
-      ? setDataToMap(filteredProjects)
-      : setDataToMap(projectData);
-  }, [areProjectsFiltered]);
+  const startIndex = (currentPage - 1) * numberOfItemsPerPage;
+  const endIndex = startIndex + numberOfItemsPerPage;
+
+  const handlePrevBtn = () => {
+    if (currentPage >= 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  const handleNextBtn = () => {
+    if (currentPage < numberOfPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
 
   const iconGithub = (
     <svg
@@ -61,7 +69,7 @@ const Projects = ({ projectContainerVariants, isThemeToggled }) => {
         <span className="headingNum">02. </span>PROJECTS
       </h1>
       <div className="displayProjects">
-        {dataToMap.map((element, index) => (
+        {projectData.slice(startIndex, endIndex).map((element, index) => (
           <motion.div
             key={index}
             className="projectContainer"
@@ -123,12 +131,43 @@ const Projects = ({ projectContainerVariants, isThemeToggled }) => {
         ))}
       </div>
 
-      <button
-        className="block mx-auto font-semibold mt-5 hover:underline"
-        onClick={() => setAreProjectsFiltered(!areProjectsFiltered)}
-      >
-        {areProjectsFiltered ? "Show All" : "Show less"}
-      </button>
+      <div className="flex flex-col md:flex-row items-center md:justify-between gap-5 md:gap-0 mt-10">
+        <div className="flex flex-row items-center gap-5">
+          <button
+            className={`prevNextBtn ${
+              isThemeToggled ? "projectContainerDark" : "projectContainerLight"
+            }  ${currentPage === 1 ? "hidden" : ""}`}
+            onClick={handlePrevBtn}
+            disabled={currentPage === 1}
+          >
+            Previous
+          </button>
+          <button
+            className={`prevNextBtn ${
+              isThemeToggled ? "projectContainerDark" : "projectContainerLight"
+            } ${currentPage === numberOfPages ? "hidden" : ""}`}
+            onClick={handleNextBtn}
+            disabled={currentPage === numberOfPages}
+          >
+            Next
+          </button>
+        </div>
+
+        <div className="pageNumGrp">
+          {Array.from({ length: numberOfPages }, (_, index) => (
+            <button
+              className={`pageNum ${
+                currentPage === index + 1
+                  ? "scale-110 font-bold bg-orange-400"
+                  : ""
+              }`}
+              key={index}
+            >
+              {index + 1}
+            </button>
+          ))}
+        </div>
+      </div>
     </motion.section>
   );
 };
