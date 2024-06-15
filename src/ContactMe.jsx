@@ -104,19 +104,16 @@ const ContactMe = ({ isThemeToggled }) => {
             opacity: 1,
             transition: { duration: 0.5 },
           }}
-          className="flex flex-row items-center gap-5 justify-center mt-5 mb-5"
+          className="flex flex-row items-center gap-5 justify-center mt-5 mb-5 hover:text-orange-400 cursor-pointer"
+          onClick={() => {
+            copy("oseoziegbe0@gmail.com")
+              .then(alert("Copied email"))
+              .catch((err) => console.log(err));
+          }}
         >
           <p>oseoziegbe0@gmail.com</p>
 
-          <button
-            onClick={() => {
-              copy("oseoziegbe0@gmail.com")
-                .then(alert("Copied email"))
-                .catch((err) => console.log(err));
-            }}
-          >
-            {copySVG}
-          </button>
+          <button>{copySVG}</button>
         </div>
 
         <div
@@ -126,25 +123,16 @@ const ContactMe = ({ isThemeToggled }) => {
             opacity: 1,
             transition: { duration: 0.5 },
           }}
-          className="flex flex-row items-center gap-5 justify-center mb-10"
+          className="flex flex-row items-center gap-5 justify-center mb-10 hover:text-orange-400 cursor-pointer"
+          onClick={() => {
+            copy("+234 70 1995 2903")
+              .then(alert("Copied number"))
+              .catch((err) => console.log(err));
+          }}
         >
-          <a
-            href="https://wa.me/+234 70 1995 2903"
-            target="_blank"
-            className="hover:text-orange-400"
-          >
-            +234 70 1995 2903
-          </a>
+          <p>+234 70 1995 2903</p>
 
-          <button
-            onClick={() => {
-              copy("+234 70 1995 2903")
-                .then(alert("Copied number"))
-                .catch((err) => console.log(err));
-            }}
-          >
-            {copySVG}
-          </button>
+          <button>{copySVG}</button>
         </div>
 
         <a

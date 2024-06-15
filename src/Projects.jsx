@@ -142,15 +142,17 @@ const Projects = ({ projectContainerVariants, isThemeToggled }) => {
           >
             Previous
           </button>
-          <button
+
+          <a
+            href="#projects"
             className={`prevNextBtn ${
               isThemeToggled ? "projectContainerDark" : "projectContainerLight"
             } ${currentPage === numberOfPages ? "hidden" : ""}`}
             onClick={handleNextBtn}
             disabled={currentPage === numberOfPages}
           >
-            <a href="#projects">Next</a>
-          </button>
+            Next
+          </a>
         </div>
 
         <div className="pageNumGrp">
