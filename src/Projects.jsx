@@ -149,13 +149,13 @@ const Projects = ({ projectContainerVariants, isThemeToggled }) => {
             onClick={handleNextBtn}
             disabled={currentPage === numberOfPages}
           >
-            Next
+            <a href="#projects">Next</a>
           </button>
         </div>
 
         <div className="pageNumGrp">
           {Array.from({ length: numberOfPages }, (_, index) => (
-            <button
+            <div
               className={`pageNum ${
                 currentPage === index + 1
                   ? "scale-110 font-bold bg-orange-400"
@@ -164,7 +164,7 @@ const Projects = ({ projectContainerVariants, isThemeToggled }) => {
               key={index}
             >
               {index + 1}
-            </button>
+            </div>
           ))}
         </div>
       </div>
