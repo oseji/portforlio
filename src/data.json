@@ -63,7 +63,7 @@
   },
   {
     "id": 7,
-    "img": "/assets/translator.jpg",
+    "img": "/assets/translator.png",
     "alt": "Analytics screenshot",
     "title": "Language translator",
     "href": "https://translator-oseji.netlify.app/",
