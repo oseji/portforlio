@@ -88,9 +88,7 @@ const AboutMe = ({ projectsVariants }) => {
             initial="hidden"
             whileInView="visible"
           >
-            <div
-              className={`skillText bg-slate-200 hover:bg-orange-400 hover:scale-110 transition ease-in-out duration-100 cursor-default`}
-            >
+            <div className={`skillText`}>
               <img src={html} alt="html" className="skillIcon" />
               <span>HTML</span>
             </div>
@@ -102,9 +100,7 @@ const AboutMe = ({ projectsVariants }) => {
             initial="hidden"
             whileInView="visible"
           >
-            <div
-              className={`skillText bg-slate-200 hover:bg-orange-400 hover:scale-110 transition ease-in-out duration-100 cursor-default`}
-            >
+            <div className={`skillText`}>
               <img src={css} alt="css" className="skillIcon" />
               <span>CSS</span>
             </div>
@@ -116,9 +112,7 @@ const AboutMe = ({ projectsVariants }) => {
             initial="hidden"
             whileInView="visible"
           >
-            <div
-              className={`skillText bg-slate-200 hover:bg-orange-400 hover:scale-110 transition ease-in-out duration-100 cursor-default`}
-            >
+            <div className={`skillText`}>
               <img src={js} alt="javascript" className="skillIcon" />
               <span>Javascript</span>
             </div>
@@ -130,9 +124,7 @@ const AboutMe = ({ projectsVariants }) => {
             initial="hidden"
             whileInView="visible"
           >
-            <div
-              className={`skillText bg-slate-200 hover:bg-orange-400 hover:scale-110 transition ease-in-out duration-100 cursor-default`}
-            >
+            <div className={`skillText`}>
               <img src={ts} alt="typescript" className="skillIcon" />
               <span>Typescript</span>
             </div>
@@ -144,9 +136,7 @@ const AboutMe = ({ projectsVariants }) => {
             initial="hidden"
             whileInView="visible"
           >
-            <div
-              className={`skillText bg-slate-200 hover:bg-orange-400 hover:scale-110 transition ease-in-out duration-100 cursor-default`}
-            >
+            <div className={`skillText`}>
               <img src={tailwind} alt="tailwindcss" className="skillIcon" />
               <span>Tailwindcss</span>
             </div>
@@ -158,9 +148,7 @@ const AboutMe = ({ projectsVariants }) => {
             initial="hidden"
             whileInView="visible"
           >
-            <div
-              className={`skillText bg-slate-200 hover:bg-orange-400 hover:scale-110 transition ease-in-out duration-100 cursor-default`}
-            >
+            <div className={`skillText`}>
               <img src={react} alt="react" className="skillIcon" />
               <span>ReactJS</span>
             </div>
@@ -172,9 +160,7 @@ const AboutMe = ({ projectsVariants }) => {
             initial="hidden"
             whileInView="visible"
           >
-            <div
-              className={`skillText bg-slate-200 hover:bg-orange-400 hover:scale-110 transition ease-in-out duration-100 cursor-default`}
-            >
+            <div className={`skillText`}>
               <img src={framer} alt="framer motion" className="skillIcon" />
               <span>Framer motion</span>
             </div>
@@ -186,9 +172,7 @@ const AboutMe = ({ projectsVariants }) => {
             initial="hidden"
             whileInView="visible"
           >
-            <div
-              className={`skillText bg-slate-200 hover:bg-orange-400 hover:scale-110 transition ease-in-out duration-100 cursor-default`}
-            >
+            <div className={`skillText`}>
               <img src={git} alt="html" className="skillIcon" />
               <span>Git</span>
             </div>

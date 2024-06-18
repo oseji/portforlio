@@ -53,7 +53,7 @@ header {
 }
 
 .sliderContainer {
-  @apply p-1 rounded-xl bg-slate-300 w-10 cursor-pointer;
+  @apply p-1 rounded-xl bg-slate-300 dark:bg-white w-10 cursor-pointer;
 }
 
 .slider {
@@ -116,11 +116,11 @@ section {
 }
 
 .skill {
-  @apply flex flex-row gap-3 items-center;
+  @apply flex flex-row gap-3 items-center bg-transparent;
 }
 
 .skillText {
-  @apply flex flex-row gap-2 items-center p-3 rounded-lg font-semibold text-sm text-black;
+  @apply min-w-36 flex flex-row gap-2 items-center p-3 rounded-lg font-semibold text-sm bg-lightBg text-black dark:bg-orange-400 dark:hover:bg-white hover:bg-orange-400 hover:scale-110 transition ease-in-out duration-100 cursor-default;
 }
 .skillIcon {
   @apply h-6;
@@ -131,21 +131,8 @@ section {
   @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mt-10;
 }
 
-.projectsPageLightMode {
-  @apply bg-slate-200;
-}
-.projectsPageDarkMode {
-  @apply bg-black text-white;
-}
-
 .projectContainer {
   @apply flex flex-col gap-5;
-}
-.projectContainerLight {
-  @apply bg-white;
-}
-.projectContainerDark {
-  @apply bg-slate-900;
 }
 
 .projectImg {
@@ -153,7 +140,7 @@ section {
 }
 
 .projectText {
-  @apply rounded-lg p-3 h-48 flex flex-col justify-between cursor-default  shadow-lg;
+  @apply bg-white dark:bg-darkBg rounded-lg p-3 h-48 flex flex-col justify-between cursor-default shadow-lg;
 }
 
 .projectName {
@@ -169,13 +156,7 @@ section {
 }
 
 .stack {
-  @apply p-1 rounded-lg font-bold text-xs text-orange-400;
-}
-.stackLight {
-  @apply bg-slate-200;
-}
-.stackDark {
-  @apply bg-slate-950;
+  @apply p-1 rounded-lg font-bold text-xs text-orange-400 bg-lightBg dark:bg-black;
 }
 
 .iconGrp {

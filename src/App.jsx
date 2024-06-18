@@ -25,6 +25,7 @@ function App() {
 
   const sliderRef = useRef(null);
   const navRef = useRef(null);
+  const appRef = useRef(null);
 
   const [isThemeToggled, setIsThemeToggled] = useState(false);
   const [menu, setMenu] = useState(iconMenu);
@@ -104,10 +105,14 @@ function App() {
 
     const slider = sliderRef.current;
     slider.classList.toggle("translate-x-end");
+    appRef.current.classList.toggle("dark");
   };
 
   return (
-    <div className={`App  ${isThemeToggled ? "appDarkMode" : "appLightMode"}`}>
+    <div
+      className={`App bg-white text-black dark:bg-black dark:text-white`}
+      ref={appRef}
+    >
       <header
         className={` ${isThemeToggled ? "headerDarkMode" : "headerLightMode"}`}
       >

@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  darkMode: "selector",
   theme: {
     extend: {
       translate: {
@@ -11,6 +12,10 @@ export default {
       },
       fontFamily: {
         afacad: ["Afacad", "sans-serif"],
+      },
+      colors: {
+        darkBg: "#0D0D0D",
+        lightBg: "#E9E9E9",
       },
     },
   },

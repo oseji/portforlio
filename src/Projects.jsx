@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import projectData from "./data.json";
 
@@ -59,12 +59,7 @@ const Projects = ({ projectContainerVariants, isThemeToggled }) => {
   );
 
   return (
-    <motion.section
-      id="projects"
-      className={
-        isThemeToggled ? "projectsPageDarkMode" : "projectsPageLightMode"
-      }
-    >
+    <motion.section id="projects" className=" bg-lightBg dark:bg-black">
       <h1 className="sectionHeading col-span-full">
         <span className="headingNum">02. </span>PROJECTS
       </h1>
@@ -79,13 +74,7 @@ const Projects = ({ projectContainerVariants, isThemeToggled }) => {
           >
             <img src={element.img} alt={element.alt} className="projectImg" />
 
-            <div
-              className={`projectText ${
-                isThemeToggled
-                  ? "projectContainerDark"
-                  : "projectContainerLight"
-              }`}
-            >
+            <div className={`projectText`}>
               <div>
                 <h1 className="projectName">{element.title}</h1>
 
@@ -95,12 +84,7 @@ const Projects = ({ projectContainerVariants, isThemeToggled }) => {
               <div>
                 <div className="stackGrp">
                   {element.stack.map((stack, index) => (
-                    <p
-                      className={`stack ${
-                        isThemeToggled ? "stackDark" : "stackLight"
-                      }`}
-                      key={index}
-                    >
+                    <p className={`stack`} key={index}>
                       {stack}
                     </p>
                   ))}
@@ -115,9 +99,7 @@ const Projects = ({ projectContainerVariants, isThemeToggled }) => {
                     <a
                       href={element.href}
                       target="_blank"
-                      className={`font-semibold  text-sm  ${
-                        isThemeToggled ? `border-white` : `border-black`
-                      }`}
+                      className={`font-semibold  text-sm`}
                     >
                       Live site
                     </a>
