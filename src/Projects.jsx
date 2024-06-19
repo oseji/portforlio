@@ -59,10 +59,11 @@ const Projects = ({ projectContainerVariants, isThemeToggled }) => {
   );
 
   return (
-    <motion.section id="projects" className=" bg-lightBg dark:bg-black">
+    <motion.section id="projects" className=" bg-lightBg dark:bg-black ">
       <h1 className="sectionHeading col-span-full">
         <span className="headingNum">02. </span>PROJECTS
       </h1>
+
       <div className="displayProjects">
         {projectData.slice(startIndex, endIndex).map((element, index) => (
           <motion.div

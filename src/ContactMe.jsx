@@ -4,10 +4,11 @@ import copy from "clipboard-copy";
 const ContactMe = ({ isThemeToggled }) => {
   const iconTwitter = (
     <svg
-      class="w-6 h-6 text-gray-800 dark:text-white"
+      class="w-6 h-6 text-white"
       aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
-      fill={isThemeToggled ? "white" : "#000000"}
+      // fill={isThemeToggled ? "white" : "#000000"}
+      fill={"white"}
       viewBox="0 0 20 20"
     >
       <path

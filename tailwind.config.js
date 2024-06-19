@@ -17,6 +17,9 @@ export default {
         darkBg: "#0D0D0D",
         lightBg: "#E9E9E9",
       },
+      screens: {
+        xxl: "1440px",
+      },
     },
   },
   plugins: [],

@@ -12,24 +12,9 @@ html {
   @apply min-h-screen font-afacad overflow-hidden;
 }
 
-.appLightMode {
-  @apply bg-white text-black;
-}
-
-.appDarkMode {
-  @apply bg-black text-white;
-}
-
 /* HEADER */
 header {
-  @apply w-full fixed z-10 flex flex-col lg:flex-row items-center lg:justify-between py-3 px-5 lg:px-20  overflow-hidden;
-}
-
-.headerLightMode {
-  @apply bg-white text-black;
-}
-.headerDarkMode {
-  @apply bg-black text-white;
+  @apply w-full fixed z-10 flex flex-col lg:flex-row items-center lg:justify-between bg-white dark:bg-black py-3 px-5 lg:px-20 overflow-hidden;
 }
 
 .logoGrp {
@@ -85,7 +70,7 @@ main {
 }
 
 section {
-  @apply lg:min-h-screen px-5 lg:px-20 py-10;
+  @apply px-5 lg:px-20 py-10 lg:min-h-[screen] xxl:min-h-[80dvh];
 }
 .sectionHeading {
   @apply text-2xl md:text-4xl uppercase;
@@ -95,7 +80,7 @@ section {
 }
 
 .introText {
-  @apply text-center font-bold mb-2 w-full lg:w-2/3;
+  @apply text-center font-bold mb-2 w-full lg:w-2/3  lg:mt-0 text-4xl md:text-5xl lg:text-6xl min-h-[135px];
 }
 
 /* ABOUT ME */
@@ -144,7 +129,7 @@ section {
 }
 
 .projectName {
-  @apply text-2xl font-bold;
+  @apply text-2xl font-bold dark:text-orange-400;
 }
 
 .aboutProject {
@@ -164,7 +149,7 @@ section {
 }
 
 .prevNextBtn {
-  @apply px-2 py-1 rounded-md w-24 text-center font-semibold hover:bg-orange-400 hover:scale-110 transition ease-in-out duration-100;
+  @apply px-2 py-1 rounded-md w-24 text-center font-semibold bg-white dark:bg-darkBg hover:bg-orange-400 hover:scale-110 transition ease-in-out duration-100;
 }
 
 .pageNum {

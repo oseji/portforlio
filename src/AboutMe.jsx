@@ -53,19 +53,25 @@ const AboutMe = ({ projectsVariants }) => {
             }}
             className="aboutMeText"
           >
-            Hi, I'm Ose, a front-end web developer with a strong foundation in
-            HTML, CSS and JavaScript. I specialize in creating beautiful and
-            responsive user interfaces using the power of Tailwindcss to
-            accelerate my design process. Using ReactJS, I build scalable and
-            efficient UIs, making sure that every project is both solid and
-            adaptable.<br></br>
-            <br></br> Currently, I'm exploring Framer Motion to bring dynamic
-            animations to life, adding an extra layer of interactivity and
-            engagement to my work. I thrive on solving complex problems and I am
-            a firm believer in writing clean and maintainable code. My goal is
-            to innovate and create captivating digital experiences that leave a
-            lasting impression on users. So come on, let's connect and
-            collaborate to bring your vision to life!
+            Hi, I'm Ose, a <b>front-end web developer</b> with a strong
+            foundation in HTML, CSS and JavaScript. I specialize in implementing
+            beautiful and responsive user interfaces using the power of
+            TailwindCSS to accelerate my design process. With ReactJS, I build
+            scalable and efficient UIs, ensuring every project is both solid and
+            adaptable.
+            <br />
+            <br />
+            Currently, I'm exploring Framer Motion to add lively animations that
+            make interactions more engaging and fun, adding an extra layer of
+            engagement to my work. I thrive on tackling complex problems and
+            believe strongly in writing clean, maintainable code. My goal is to
+            innovate and create captivating digital experiences that leave a
+            lasting impression on users.
+            <br />
+            <br />
+            Don’t just take my word for it though, check out my projects to see
+            my work in action. Let's connect and collaborate to turn your vision
+            into reality! Together, we can create something truly special.
           </motion.p>
         </div>
 

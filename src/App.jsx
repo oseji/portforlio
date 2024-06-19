@@ -90,14 +90,22 @@ function App() {
 
   const toggleMenu = () => {
     const navbar = navRef.current;
-    navbar.classList.toggle("hideNav");
 
     setIsMenuToggled(!isMenuToggled);
+
     if (isMenuToggled) {
       setMenu(iconMenu);
+      navbar.classList.add("hideNav");
     } else {
       setMenu(iconClose);
+      navbar.classList.remove("hideNav");
     }
+  };
+
+  const closeMenu = () => {
+    setIsMenuToggled(false);
+    setMenu(iconMenu);
+    navRef.current.classList.add("hideNav");
   };
 
   const toggleTheme = () => {
@@ -129,19 +137,19 @@ function App() {
 
         <nav className="hideNav" ref={navRef}>
           <ul className="navList">
-            <li className="navText">
+            <li className="navText" onClick={closeMenu}>
               <a href="#aboutMe" className="navLink">
                 About me
               </a>
             </li>
 
-            <li className="navText">
+            <li className="navText" onClick={closeMenu}>
               <a href="#projects" className="navLink">
                 Projects
               </a>
             </li>
 
-            <li className="navText">
+            <li className="navText" onClick={closeMenu}>
               <a href="#contactMe" className="navLink">
                 Contact me
               </a>

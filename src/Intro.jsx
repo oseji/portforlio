@@ -2,7 +2,10 @@ import { TypeAnimation } from "react-type-animation";
 
 const Intro = ({ isThemeToggled }) => {
   return (
-    <section id="intro" className="flex flex-col justify-center items-center">
+    <section
+      id="intro"
+      className="flex flex-col justify-center items-center min-h-screen"
+    >
       <TypeAnimation
         sequence={[
           // Same substring at the start will only be typed out once, initially
@@ -15,7 +18,7 @@ const Intro = ({ isThemeToggled }) => {
           "Hey there I'm Ose, a Front-end developer, welcome to my portfolio.",
           1000,
         ]}
-        className="introText mt-20 lg:mt-0 text-3xl md:text-5xl min-h-[135px]"
+        className="introText"
         wrapper="h1"
         speed={30}
         repeat={0}
