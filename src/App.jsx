@@ -90,15 +90,14 @@ function App() {
 
   const toggleMenu = () => {
     const navbar = navRef.current;
+    navbar.classList.toggle("hideNav");
 
     setIsMenuToggled(!isMenuToggled);
 
     if (isMenuToggled) {
       setMenu(iconMenu);
-      navbar.classList.add("hideNav");
     } else {
       setMenu(iconClose);
-      navbar.classList.remove("hideNav");
     }
   };
 
