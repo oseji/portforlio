@@ -14,7 +14,7 @@ html {
 
 /* HEADER */
 header {
-  @apply w-full fixed z-10 flex flex-col lg:flex-row items-center lg:justify-between bg-white dark:bg-black py-3 px-5 lg:px-20 overflow-hidden;
+  @apply w-full fixed z-10 flex flex-col lg:flex-row items-center lg:justify-between bg-white dark:bg-black py-3 px-5 lg:px-20 overflow-hidden transition ease-in-out duration-150;
 }
 
 .logoGrp {
@@ -66,7 +66,7 @@ nav {
 }
 
 main {
-  @apply py-2;
+  @apply pt-2;
 }
 
 section {
@@ -161,10 +161,40 @@ section {
 }
 
 /* CONTACTS */
-.contactIconGrp {
-  @apply flex flex-row items-center gap-10 mt-5 mx-auto bg-orange-400 p-3 w-fit rounded-md;
+form {
+  @apply flex flex-col gap-5 md:w-3/4 md:mx-auto lg:mx-0 xl:w-1/2 mt-5;
 }
 
-.emailBtn {
-  @apply w-fit mx-auto block p-4 font-semibold rounded-lg bg-orange-400;
+.formGrp {
+  @apply flex flex-col justify-start;
+}
+
+label {
+  @apply font-semibold capitalize;
+}
+
+input,
+textarea {
+  @apply bg-lightBg dark:bg-darkBg rounded-md p-2;
+}
+
+textarea::-webkit-scrollbar {
+  @apply hidden;
+}
+
+.confirmationText {
+  @apply font-semibold transition duration-200 ease-in-out;
+}
+
+.hideConfirmation {
+  @apply h-0 overflow-hidden translate-x-20;
+}
+
+/* footer */
+footer {
+  @apply flex flex-col lg:flex-row lg:justify-between items-center gap-5 lg:gap-0 px-5 lg:px-20 py-5 lg:py-16 mt-5 bg-lightBg dark:bg-darkBg;
+}
+
+.footerLink {
+  @apply font-semibold hover:text-orange-400 hover:scale-125 transition ease-in-out duration-150 cursor-pointer;
 }

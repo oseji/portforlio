@@ -4,6 +4,7 @@ import Intro from "./Intro";
 import AboutMe from "./AboutMe";
 import Projects from "./Projects";
 import ContactMe from "./ContactMe";
+import Footer from "./footer";
 
 import iconMenu from "./assets/iconMenu.svg";
 import iconClose from "./assets/iconClose.svg";
@@ -30,6 +31,9 @@ function App() {
   const [isThemeToggled, setIsThemeToggled] = useState(false);
   const [menu, setMenu] = useState(iconMenu);
   const [isMenuToggled, setIsMenuToggled] = useState(false);
+
+  const [showHeader, setShowHeader] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   const upArrow = (
     <svg
@@ -115,13 +119,26 @@ function App() {
     appRef.current.classList.toggle("dark");
   };
 
+  const handleStickyHeader = () => {
+    window.scrollY > lastScrollY ? setShowHeader(false) : setShowHeader(true);
+
+    setLastScrollY(window.scrollY);
+  };
+
+  //handling sticky header
+  useEffect(() => {
+    window.addEventListener("scroll", handleStickyHeader);
+  }, [lastScrollY]);
+
   return (
     <div
       className={`App bg-white text-black dark:bg-black dark:text-white`}
       ref={appRef}
     >
       <header
-        className={` ${isThemeToggled ? "headerDarkMode" : "headerLightMode"}`}
+        className={` ${isThemeToggled ? "headerDarkMode" : "headerLightMode"} ${
+          showHeader ? "translate-y-0" : "-translate-y-full"
+        }`}
       >
         <div className="logoGrp">
           <h1 className="logo">Oseji</h1>
@@ -182,6 +199,8 @@ function App() {
         ></Projects>
 
         <ContactMe isThemeToggled={isThemeToggled}></ContactMe>
+
+        <Footer></Footer>
       </main>
     </div>
   );
