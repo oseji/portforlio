@@ -8,14 +8,6 @@ const Footer = () => {
       </a>
 
       <a
-        href="https://x.com/osejiiii?s=21"
-        target="_blank"
-        className="footerLink"
-      >
-        Twitter
-      </a>
-
-      <a
         onClick={() => {
           copy("oseoziegbe0@gmail.com")
             .then(alert("Copied email: oseoziegbe0@gmail.com"))
