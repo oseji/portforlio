@@ -192,7 +192,7 @@ textarea::-webkit-scrollbar {
 
 /* footer */
 footer {
-  @apply flex flex-col lg:flex-row lg:justify-between items-center gap-5 lg:gap-0 px-5 lg:px-20 py-5 lg:py-16 mt-5 bg-lightBg dark:bg-darkBg;
+  @apply flex flex-col lg:flex-row lg:justify-center items-center gap-5 lg:gap-16 px-5 lg:px-20 py-5 lg:py-16 mt-5 bg-lightBg dark:bg-darkBg;
 }
 
 .footerLink {

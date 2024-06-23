@@ -32,13 +32,13 @@
   },
   {
     "id": 4,
-    "img": "/assets/dashboard.png",
-    "alt": "Analytics dashboard screenshot",
-    "title": "Analytics dashboard",
-    "href": "https://oseji-dashboard.netlify.app/",
-    "githubRepo": "https://github.com/oseji/geepay-challenge.git",
-    "about": "The overview page of an Analytics dashboard I developed from a figma design.",
-    "stack": ["React", "Tailwindcss", "Rechart js"]
+    "img": "/assets/hrSphere.png",
+    "alt": "HR Sphere dashboard screenshot",
+    "title": "HR Sphere dashboard",
+    "href": "https://hr-sphere.netlify.app/",
+    "githubRepo": "https://github.com/oseji/HR-Sphere.git",
+    "about": "A human resources dashboard for employee management and overview.Implemented from a figma design (UNDER CONSTRUCTION).",
+    "stack": ["React","Typescript", "Tailwindcss", "Rechart js"]
   },
   
   {
@@ -53,13 +53,13 @@
   },
   {
     "id": 6,
-    "img": "/assets/taxas.png",
-    "alt": "Taxas landing page screenshot",
-    "title": "Taxas landing page",
-    "href": "https://oseji-taxas.netlify.app/",
-    "githubRepo": "https://github.com/oseji/taxas.git",
+    "img": "/assets/trendy trove.png",
+    "alt": "Trendy Trove page screenshot",
+    "title": "Trendy Trove",
+    "href": "https://trendy-trove.netlify.app/",
+    "githubRepo": "https://github.com/oseji/TrendyTrove.git",
     "about": "A landing page with simple animations.",
-    "stack": ["HTML", "Tailwindcss", "Javascript"]
+    "stack": ["React","Typescript", "Tailwindcss", "Framer motion"]
   },
   {
     "id": 7,
