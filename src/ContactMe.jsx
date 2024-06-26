@@ -12,11 +12,12 @@ const ContactMe = ({ isThemeToggled }) => {
   const [messageState, setMessageState] = useState(null);
   const confirmationRef = useRef(null);
 
+  const apiUrl = "https://portforlio-n7px.onrender.com";
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:3001/send", {
+      const response = await fetch(`${apiUrl}/send`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

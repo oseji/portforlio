@@ -9,7 +9,12 @@ const { info } = require("autoprefixer");
 
 const app = express();
 
-app.use(cors());
+const corsOptions = {
+  origin: "https://oseji.vercel.app/",
+  optionsSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
 const transporter = nodemailer.createTransport({
