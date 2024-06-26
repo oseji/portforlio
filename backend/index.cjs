@@ -10,8 +10,10 @@ const { info } = require("autoprefixer");
 const app = express();
 
 const corsOptions = {
-  origin: "https://oseji.vercel.app/",
+  origin: "https://oseji.vercel.app",
   optionsSuccessStatus: 200,
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  allowedHeaders: "Content-Type,Authorization",
 };
 
 app.use(cors(corsOptions));
