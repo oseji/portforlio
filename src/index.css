@@ -129,7 +129,7 @@ section {
 }
 
 .projectName {
-  @apply text-2xl font-bold dark:text-orange-400;
+  @apply text-2xl font-bold dark:text-orange-400 capitalize;
 }
 
 .aboutProject {

@@ -1,13 +1,13 @@
 [
   {
     "id": 1,
-    "img": "/assets/country finder.png",
-    "alt": "Country Finder screenshot",
-    "title": "Country finder",
-    "href": "https://country-finder-oseji.netlify.app/",
-    "githubRepo": "https://github.com/oseji/countryFinder.git",
-    "about": "Search for any country in the world by name or the region they're located in and click on their card to see their details.",
-    "stack": ["React", "Tailwindcss", "Framer motion", "API"]
+    "img": "/assets/toDo.png",
+    "alt": "ToDo App screenshot",
+    "title": "ToDo app",
+    "href": "https://oseji-todo.vercel.app/",
+    "githubRepo": "https://github.com/oseji/ToDo.git",
+    "about": "A todo application built with react, typescript and firebase to provide user authentication. Only registered accounts can log in and have access to their individual data.",
+    "stack": ["React", "Typescript", "Tailwindcss", "Firebase"]
   },
   {
     "id": 2,
