@@ -1,0 +1,9 @@
+version: "3.8"
+services:
+  frontend:
+    build: .
+    container_name: portfolio_compose
+    ports:
+      - 4000:4000
+    volumes:
+      - ./frontend/src:/app/frontend/src
