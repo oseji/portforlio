@@ -35,7 +35,7 @@
     "img": "/assets/hrSphere.png",
     "alt": "HR Sphere dashboard screenshot",
     "title": "HR Sphere dashboard",
-    "href": "https://hr-sphere.netlify.app/",
+    "href": "https://hr-sphere.vercel.app/",
     "githubRepo": "https://github.com/oseji/HR-Sphere.git",
     "about": "A human resources dashboard for employee management and overview.Implemented from a figma design (UNDER CONSTRUCTION).",
     "stack": ["React","Typescript", "Tailwindcss", "Rechart js"]
