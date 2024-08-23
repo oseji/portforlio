@@ -37,7 +37,7 @@
     "title": "HR Sphere dashboard",
     "href": "https://hr-sphere.vercel.app/",
     "githubRepo": "https://github.com/oseji/HR-Sphere.git",
-    "about": "A human resources dashboard for employee management and overview.Implemented from a figma design (UNDER CONSTRUCTION).",
+    "about": "A human resources dashboard for employee management with user authentication. Users can login to their account to get an overview of the employees in their database, add new employees or delete/edit existing employee data.",
     "stack": ["React","Typescript", "Tailwindcss", "Rechart js"]
   },
   
