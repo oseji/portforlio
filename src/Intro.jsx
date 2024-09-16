@@ -4,7 +4,7 @@ const Intro = () => {
   return (
     <section
       id="intro"
-      className="flex flex-col justify-center lg:items-start min-h-screen"
+      className="flex flex-col justify-center  lg:items-start min-h-screen"
     >
       <TypeAnimation
         sequence={["Hey there", 1000]}
