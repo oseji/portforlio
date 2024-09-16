@@ -1,13 +1,14 @@
 [
+  
   {
     "id": 1,
-    "img": "/assets/toDo.png",
-    "alt": "ToDo App screenshot",
-    "title": "ToDo app",
-    "href": "https://oseji-todo.vercel.app/",
-    "githubRepo": "https://github.com/oseji/ToDo.git",
-    "about": "A todo application built with react, typescript and firebase to provide user authentication. Only registered accounts can log in and have access to their individual data.",
-    "stack": ["React", "Typescript", "Tailwindcss", "Firebase"]
+    "img": "/assets/hrSphere.png",
+    "alt": "HR Sphere dashboard screenshot",
+    "title": "HR Sphere dashboard",
+    "href": "https://hr-sphere.vercel.app/",
+    "githubRepo": "https://github.com/oseji/HR-Sphere.git",
+    "about": "A functional Human Resources dashboard for employee management with user authentication.",
+    "stack": ["React","Typescript", "Tailwindcss","Firebase"]
   },
   {
     "id": 2,
@@ -32,15 +33,15 @@
   },
   {
     "id": 4,
-    "img": "/assets/hrSphere.png",
-    "alt": "HR Sphere dashboard screenshot",
-    "title": "HR Sphere dashboard",
-    "href": "https://hr-sphere.vercel.app/",
-    "githubRepo": "https://github.com/oseji/HR-Sphere.git",
-    "about": "A human resources dashboard for employee management with user authentication. Users can login to their account to get an overview of the employees in their database, add new employees or delete/edit existing employee data.",
-    "stack": ["React","Typescript", "Tailwindcss", "Rechart js"]
-  },
-  
+    "img": "/assets/toDo.png",
+    "alt": "ToDo App screenshot",
+    "title": "ToDo app",
+    "href": "https://oseji-todo.vercel.app/",
+    "githubRepo": "https://github.com/oseji/ToDo.git",
+    "about": "A todo application built with react, typescript and firebase to provide user authentication. Only registered accounts can log in and have access to their individual data.",
+    "stack": ["React", "Typescript", "Tailwindcss", "Firebase"]
+  }
+  ,
   {
     "id": 5,
     "img": "/assets/github search.png",

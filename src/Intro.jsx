@@ -1,23 +1,39 @@
 import { TypeAnimation } from "react-type-animation";
 
-const Intro = ({ isThemeToggled }) => {
+const Intro = () => {
   return (
     <section
       id="intro"
-      className="flex flex-col justify-center items-center min-h-screen"
+      className="flex flex-col justify-center lg:items-start min-h-screen"
     >
       <TypeAnimation
+        sequence={["Hey there", 1000]}
+        cursor={false}
+        className="introText"
+        wrapper="h1"
+        speed={30}
+        repeat={0}
+      />
+
+      <TypeAnimation
         sequence={[
-          // Same substring at the start will only be typed out once, initially
-          "Hey there",
-          1000, // wait 1s before replacing "Mice" with "Hamsters"
-          "Hey there I'm Ose",
+          "",
           1000,
-          "Hey there I'm Ose, a Front-end developer",
+          "I'm Ose",
           1000,
-          "Hey there I'm Ose, a Front-end developer, welcome to my portfolio.",
+          "I'm Ose, a Front-end developer",
           1000,
         ]}
+        cursor={false}
+        className="introText"
+        wrapper="h1"
+        speed={30}
+        repeat={0}
+      />
+
+      <TypeAnimation
+        sequence={["", 5000, "Welcome to my portfolio", 1000]}
+        cursor={false}
         className="introText"
         wrapper="h1"
         speed={30}

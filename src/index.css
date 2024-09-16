@@ -79,8 +79,9 @@ section {
   @apply text-orange-400;
 }
 
+/* INTRO */
 .introText {
-  @apply text-center font-bold mb-2 w-full lg:w-2/3  lg:mt-0 text-4xl md:text-5xl lg:text-6xl min-h-[135px];
+  @apply text-start font-bold  lg:mt-0 text-4xl md:text-5xl lg:text-6xl p-2 lg:p-5 w-fit capitalize;
 }
 
 /* ABOUT ME */
@@ -89,7 +90,7 @@ section {
 }
 
 .avatar {
-  @apply rounded-md h-72 mx-auto;
+  @apply rounded-md h-72 lg:h-96 mx-auto;
 }
 
 .aboutMeText {
@@ -97,7 +98,7 @@ section {
 }
 
 .skillsGrp {
-  @apply grid grid-cols-2 md:grid-cols-3 gap-3;
+  @apply grid grid-cols-2 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 gap-3;
 }
 
 .skill {
@@ -125,7 +126,7 @@ section {
 }
 
 .projectText {
-  @apply bg-white dark:bg-darkBg rounded-lg p-3 h-48 flex flex-col justify-between cursor-default shadow-lg;
+  @apply bg-white dark:bg-darkBg rounded-lg p-3 h-52 flex flex-col justify-between cursor-default shadow-lg;
 }
 
 .projectName {
