@@ -17,17 +17,24 @@ gsap.registerPlugin(ScrollTrigger);
 const AboutMe = () => {
   const avatarRef = useRef(null);
 
-  // useEffect(() => {
-  //   gsap.to(avatarRef.current, {
-  //     scale: 1,
-  //     scrollTrigger: {
-  //       trigger: avatarRef.current,
-  //       start: "top bottom",
-  //       end: "bottom top",
-  //       scrub: true,
-  //     },
-  //   });
-  // }, []);
+  useEffect(() => {
+    if (avatarRef.current) {
+      gsap.fromTo(
+        avatarRef.current,
+        { scale: 0.4 },
+        {
+          scale: 1, // Increase scale
+          transformOrigin: "left center",
+          scrollTrigger: {
+            trigger: avatarRef.current,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true, // Allows animation to follow scroll
+          },
+        }
+      );
+    }
+  }, []);
 
   return (
     <section id="aboutMe">
