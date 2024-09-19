@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
 import projectData from "./data.json";
 
-const Projects = ({ projectContainerVariants, isThemeToggled }) => {
+const Projects = ({ isThemeToggled }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const numberOfItemsPerPage = 3;
   const numberOfPages = Math.ceil(projectData.length / numberOfItemsPerPage);
@@ -59,20 +58,14 @@ const Projects = ({ projectContainerVariants, isThemeToggled }) => {
   );
 
   return (
-    <motion.section id="projects" className=" bg-lightBg dark:bg-black ">
+    <section id="projects" className=" bg-lightBg dark:bg-black ">
       <h1 className="sectionHeading col-span-full">
         <span className="headingNum">02. </span>PROJECTS
       </h1>
 
       <div className="displayProjects">
         {projectData.slice(startIndex, endIndex).map((element, index) => (
-          <motion.div
-            key={index}
-            className="projectContainer"
-            variants={projectContainerVariants}
-            initial="hidden"
-            whileInView="visible"
-          >
+          <div key={index} className="projectContainer">
             <img src={element.img} alt={element.alt} className="projectImg" />
 
             <div className={`projectText`}>
@@ -110,7 +103,7 @@ const Projects = ({ projectContainerVariants, isThemeToggled }) => {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
         ))}
       </div>
 
@@ -153,7 +146,7 @@ const Projects = ({ projectContainerVariants, isThemeToggled }) => {
           ))}
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 };
 
