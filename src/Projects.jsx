@@ -85,7 +85,11 @@ const Projects = ({ isThemeToggled }) => {
                 </div>
 
                 <div className="iconGrp">
-                  <a href={element.githubRepo} target="_blank">
+                  <a
+                    href={element.githubRepo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     {iconGithub}
                   </a>
 
@@ -93,6 +97,7 @@ const Projects = ({ isThemeToggled }) => {
                     <a
                       href={element.href}
                       target="_blank"
+                      rel="noopener noreferrer"
                       className={`font-semibold  text-sm`}
                     >
                       Live site

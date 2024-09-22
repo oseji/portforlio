@@ -3,7 +3,12 @@ import copy from "clipboard-copy";
 const Footer = () => {
   return (
     <footer>
-      <a href="https://github.com/oseji" target="_blank" className="footerLink">
+      <a
+        href="https://github.com/oseji"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="footerLink"
+      >
         Github
       </a>
 

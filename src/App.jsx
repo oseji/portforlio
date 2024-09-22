@@ -180,7 +180,7 @@ function App() {
 
         <Projects isThemeToggled={isThemeToggled}></Projects>
 
-        <ContactMe isThemeToggled={isThemeToggled}></ContactMe>
+        <ContactMe></ContactMe>
 
         <Footer></Footer>
       </main>

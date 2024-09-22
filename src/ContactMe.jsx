@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-const ContactMe = ({ isThemeToggled }) => {
+const ContactMe = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
