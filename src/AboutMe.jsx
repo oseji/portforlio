@@ -28,8 +28,9 @@ const AboutMe = () => {
           scrollTrigger: {
             trigger: avatarRef.current,
             start: "top bottom",
-            end: "bottom top",
-            scrub: true, // Allows animation to follow scroll
+            end: "top 20%",
+            scrub: 1.5, // Allows animation to follow scroll
+            // markers: true,
           },
         }
       );

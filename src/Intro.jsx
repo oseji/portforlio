@@ -1,45 +1,89 @@
-import { TypeAnimation } from "react-type-animation";
+import { useRef, useEffect } from "react";
+import SplitType from "split-type";
+import gsap from "gsap/all";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Intro = () => {
+  const textRefs = [useRef(null), useRef(null), useRef(null)];
+
+  useEffect(() => {
+    const text1 = new SplitType(textRefs[0].current, {
+      types: "chars, words",
+    });
+    const text2 = new SplitType(textRefs[1].current, {
+      types: "chars, words",
+    });
+    const text3 = new SplitType(textRefs[2].current, {
+      types: "chars, words",
+    });
+
+    const tl = gsap.timeline();
+
+    gsap.set([text1.chars, text2.chars, text3.chars], { opacity: 0 });
+
+    tl.fromTo(
+      text1.chars,
+      {
+        opacity: 0,
+        y: -20,
+        scale: 1.5,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        stagger: 0.1,
+      }
+    )
+      .fromTo(
+        text2.chars,
+        {
+          opacity: 0,
+          y: -20,
+          scale: 1.5,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          stagger: 0.1,
+        }
+      )
+      .fromTo(
+        text3.chars,
+        {
+          opacity: 0,
+          y: -20,
+          scale: 1.5,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          stagger: 0.1,
+        }
+      );
+  }, []);
+
   return (
     <section
       id="intro"
       className="flex flex-col justify-center lg:items-start min-h-screen"
     >
       <div className=" min-h-80">
-        <TypeAnimation
-          sequence={["Hey there", 1000]}
-          cursor={false}
-          className="introText"
-          wrapper="h1"
-          speed={30}
-          repeat={0}
-        />
+        <div className="introText" ref={textRefs[0]}>
+          Hey there
+        </div>
 
-        <TypeAnimation
-          sequence={[
-            "",
-            1000,
-            "I'm Ose",
-            1000,
-            "I'm Ose, a Front-end developer",
-            1000,
-          ]}
-          cursor={false}
-          className="introText"
-          wrapper="h1"
-          speed={30}
-          repeat={0}
-        />
+        <div className="introText" ref={textRefs[1]}>
+          I'm Ose, a front-end developer
+        </div>
 
-        <TypeAnimation
-          sequence={["", 5000, "Welcome to my portfolio", 1000]}
-          cursor={false}
-          className="introText"
-          wrapper="h1"
-          speed={30}
-          repeat={0}
-        />
+        <div className="introText" ref={textRefs[2]}>
+          Welcome to my portfolio
+        </div>
       </div>
     </section>
   );
