@@ -1,4 +1,5 @@
 import { useRef, useEffect } from "react";
+import SplitType from "split-type";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 
@@ -16,6 +17,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const AboutMe = () => {
   const avatarRef = useRef(null);
+  const textRef = useRef(null);
 
   useEffect(() => {
     if (avatarRef.current) {
@@ -37,6 +39,38 @@ const AboutMe = () => {
     }
   }, []);
 
+  useEffect(() => {
+    const text = new SplitType(textRef.current, {
+      types: "chars, words",
+    });
+
+    const tl = gsap.timeline();
+
+    // gsap.set(text.chars, { opacity: 0 });
+
+    tl.fromTo(
+      text.chars,
+      {
+        opacity: 0,
+        y: -20,
+        scale: 1.5,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        stagger: 0.5,
+        duration: 0.5,
+        scrollTrigger: {
+          trigger: textRef.current,
+          scrub: 0.5,
+          start: "top bottom",
+          end: "top top",
+        },
+      }
+    );
+  }, []);
+
   return (
     <section id="aboutMe">
       <div className="w-full lg:w-1/2">
@@ -50,7 +84,7 @@ const AboutMe = () => {
             ABOUT ME
           </h1>
 
-          <p className="aboutMeText">
+          <p className="aboutMeText" ref={textRef}>
             Hi, I'm Ose, a <b>front-end web developer</b> with a strong
             foundation in HTML, CSS and JavaScript. I specialize in implementing
             beautiful and responsive user interfaces using the power of
