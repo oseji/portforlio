@@ -27,42 +27,42 @@ const Intro = () => {
       text1.chars,
       {
         opacity: 0,
-        y: -20,
-        scale: 1.5,
+        y: -50,
+        scale: 2,
       },
       {
         opacity: 1,
         y: 0,
         scale: 1,
-        stagger: 0.08,
+        stagger: 0.07,
       }
     )
       .fromTo(
         text2.chars,
         {
           opacity: 0,
-          y: -20,
-          scale: 1.5,
+          y: -50,
+          scale: 2,
         },
         {
           opacity: 1,
           y: 0,
           scale: 1,
-          stagger: 0.08,
+          stagger: 0.07,
         }
       )
       .fromTo(
         text3.chars,
         {
           opacity: 0,
-          y: -20,
-          scale: 1.5,
+          y: -50,
+          scale: 2,
         },
         {
           opacity: 1,
           y: 0,
           scale: 1,
-          stagger: 0.08,
+          stagger: 0.07,
         }
       );
   }, []);
@@ -70,9 +70,9 @@ const Intro = () => {
   return (
     <section
       id="intro"
-      className="flex flex-col justify-center lg:items-start min-h-screen"
+      className="flex flex-col justify-center lg:items-start min-h-[90dvh] md:min-h-screen"
     >
-      <div className=" min-h-80">
+      <div className=" min-h-80 flex flex-col justify-between">
         <div className="introText" ref={textRefs[0]}>
           Hey there
         </div>

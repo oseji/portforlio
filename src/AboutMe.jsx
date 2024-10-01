@@ -31,7 +31,7 @@ const AboutMe = () => {
           scrollTrigger: {
             trigger: avatarRef.current,
             start: "top bottom",
-            end: "top 20%",
+            end: "top 30%",
             scrub: 1.5, // Allows animation to follow scroll
             // markers: true,
           },
