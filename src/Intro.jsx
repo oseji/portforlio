@@ -34,7 +34,7 @@ const Intro = () => {
         opacity: 1,
         y: 0,
         scale: 1,
-        stagger: 0.1,
+        stagger: 0.08,
       }
     )
       .fromTo(
@@ -48,7 +48,7 @@ const Intro = () => {
           opacity: 1,
           y: 0,
           scale: 1,
-          stagger: 0.1,
+          stagger: 0.08,
         }
       )
       .fromTo(
@@ -62,7 +62,7 @@ const Intro = () => {
           opacity: 1,
           y: 0,
           scale: 1,
-          stagger: 0.1,
+          stagger: 0.08,
         }
       );
   }, []);

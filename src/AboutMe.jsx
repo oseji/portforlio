@@ -19,6 +19,7 @@ const AboutMe = () => {
   const avatarRef = useRef(null);
   const textRef = useRef(null);
 
+  // animating avatar
   useEffect(() => {
     if (avatarRef.current) {
       gsap.fromTo(
@@ -39,14 +40,13 @@ const AboutMe = () => {
     }
   }, []);
 
+  // animating about me text
   useEffect(() => {
     const text = new SplitType(textRef.current, {
       types: "chars, words",
     });
 
     const tl = gsap.timeline();
-
-    // gsap.set(text.chars, { opacity: 0 });
 
     tl.fromTo(
       text.chars,
@@ -59,13 +59,13 @@ const AboutMe = () => {
         opacity: 1,
         y: 0,
         scale: 1,
-        stagger: 0.5,
-        duration: 0.5,
+        stagger: 1,
+        duration: 1,
         scrollTrigger: {
           trigger: textRef.current,
           scrub: 0.5,
           start: "top bottom",
-          end: "top top",
+          end: "top 20%",
         },
       }
     );
@@ -93,12 +93,12 @@ const AboutMe = () => {
             adaptable.
             <br />
             <br />
-            Currently, I'm exploring Framer Motion to add lively animations that
-            make interactions more engaging and fun, adding an extra layer of
-            engagement to my work. I thrive on tackling complex problems and
-            believe strongly in writing clean, maintainable code. My goal is to
-            innovate and create captivating digital experiences that leave a
-            lasting impression on users.
+            Currently, I'm exploring GreenSock Animation Platform (GSAP) to add
+            lively animations that make interactions more engaging and fun,
+            adding an extra layer of engagement to my work. I thrive on tackling
+            complex problems and believe strongly in writing clean, maintainable
+            code. My goal is to innovate and create captivating digital
+            experiences that leave a lasting impression on users.
             <br />
             <br />
             Don’t just take my word for it though, check out my projects to see
