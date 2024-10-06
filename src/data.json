@@ -20,9 +20,19 @@
     "about": "A landing page with animations.",
     "stack": ["React", "Typescript","Tailwindcss", "Framer motion"]
   },
+   {
+    "id": 3,
+    "img": "/assets/binge.png",
+    "alt": "Binge landing page screenshot",
+    "title": "Binge",
+    "href": "https://binge-beta.vercel.app/",
+    "githubRepo": "https://github.com/oseji/Binge.git",
+    "about": "A landing page with animations.",
+    "stack": ["React","Typescript", "Tailwindcss", "GSAP"]
+  },
   
   {
-    "id": 3,
+    "id": 4,
     "img": "/assets/ip address.png",
     "alt": "IP address screenshot",
     "title": "IP address tracker",
@@ -32,7 +42,7 @@
     "stack": ["React", "Tailwindcss", "React-leaflet", "API"]
   },
   {
-    "id": 4,
+    "id": 5,
     "img": "/assets/toDo.png",
     "alt": "ToDo App screenshot",
     "title": "ToDo app",
@@ -40,19 +50,8 @@
     "githubRepo": "https://github.com/oseji/ToDo.git",
     "about": "A todo application built with react, typescript and firebase to provide user authentication. Only registered accounts can log in and have access to their individual data.",
     "stack": ["React", "Typescript", "Tailwindcss", "Firebase"]
-  }
-  ,
-  {
-    "id": 5,
-    "img": "/assets/github search.png",
-    "alt": "Github profile screenshot",
-    "title": "Github profile searcher",
-    "href": "https://github-profile-finder-oseji.netlify.app/",
-    "githubRepo": "https://github.com/oseji/github-profile-search.git",
-    "about": "Search for github profiles and view the user follower and following count, location and repositories.",
-    "stack": ["React", "Tailwindcss", "Framer motion", "API"]
   },
-  {
+   {
     "id": 6,
     "img": "/assets/trendy trove.png",
     "alt": "Trendy Trove page screenshot",
@@ -62,8 +61,20 @@
     "about": "A landing page with simple animations.",
     "stack": ["React","Typescript", "Tailwindcss", "Framer motion"]
   },
+  
   {
     "id": 7,
+    "img": "/assets/github search.png",
+    "alt": "Github profile screenshot",
+    "title": "Github profile searcher",
+    "href": "https://github-profile-finder-oseji.netlify.app/",
+    "githubRepo": "https://github.com/oseji/github-profile-search.git",
+    "about": "Search for github profiles and view the user follower and following count, location and repositories.",
+    "stack": ["React", "Tailwindcss", "Framer motion", "API"]
+  },
+ 
+  {
+    "id": 8,
     "img": "/assets/translator.png",
     "alt": "Analytics screenshot",
     "title": "Language translator",
@@ -73,7 +84,7 @@
     "stack": ["React", "Tailwindcss", "API"]
   },
   {
-    "id": 8,
+    "id": 9,
     "img": "/assets/dictionary.png",
     "alt": "Dictionary screenshot",
     "title": "Dictionary",
@@ -81,15 +92,6 @@
     "githubRepo": "https://github.com/oseji/osejis-dictionary.git",
     "about": "Created a dictionary with audio playback and theme switching functionality.",
     "stack": ["React", "Tailwindcss", "Framer motion", "API"]
-  },
-  {
-    "id": 9,
-    "img": "/assets/manage.png",
-    "alt": "Manage landing page screenshot",
-    "title": "Manage landing page",
-    "href": "https://manage-landing-page-oseji.netlify.app/",
-    "githubRepo": "https://github.com/oseji/manage-landingPage.git",
-    "about": "A landing page with animations.",
-    "stack": ["React", "Tailwindcss", "Framer motion"]
   }
+
 ]

@@ -10,20 +10,6 @@ import iconMenu from "./assets/iconMenu.svg";
 import iconClose from "./assets/iconClose.svg";
 
 function App() {
-  const projectsVariants = {
-    hidden: { scale: 0.7, opacity: 0 },
-    visible: { scale: 1, opacity: 1, transition: { duration: 0.5 } },
-  };
-
-  const projectContainerVariants = {
-    hidden: { scale: 0.8, opacity: 0 },
-    visible: {
-      scale: 1,
-      opacity: 1,
-      transition: { duration: 0.5 },
-    },
-  };
-
   const sliderRef = useRef(null);
   const navRef = useRef(null);
   const appRef = useRef(null);
@@ -190,15 +176,11 @@ function App() {
       <main>
         <Intro isThemeToggled={isThemeToggled}></Intro>
 
-        <AboutMe projectsVariants={projectsVariants}></AboutMe>
+        <AboutMe></AboutMe>
 
-        <Projects
-          projectsVariants={projectsVariants}
-          projectContainerVariants={projectContainerVariants}
-          isThemeToggled={isThemeToggled}
-        ></Projects>
+        <Projects isThemeToggled={isThemeToggled}></Projects>
 
-        <ContactMe isThemeToggled={isThemeToggled}></ContactMe>
+        <ContactMe></ContactMe>
 
         <Footer></Footer>
       </main>

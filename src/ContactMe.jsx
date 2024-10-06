@@ -1,8 +1,6 @@
-import { motion } from "framer-motion";
-
 import { useEffect, useRef, useState } from "react";
 
-const ContactMe = ({ isThemeToggled }) => {
+const ContactMe = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -61,17 +59,9 @@ const ContactMe = ({ isThemeToggled }) => {
   return (
     <section id="contactMe">
       <form onSubmit={handleSubmit}>
-        <motion.h1
-          className="sectionHeading"
-          initial={{ x: 100, opacity: 0 }}
-          whileInView={{
-            x: 0,
-            opacity: 1,
-            transition: { duration: 0.5 },
-          }}
-        >
+        <h1 className="sectionHeading">
           <span className="headingNum">03. </span>CONTACT ME
-        </motion.h1>
+        </h1>
 
         <div className="formGrp">
           <label htmlFor="name">Name:</label>
