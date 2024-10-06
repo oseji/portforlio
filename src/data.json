@@ -20,9 +20,19 @@
     "about": "A landing page with animations.",
     "stack": ["React", "Typescript","Tailwindcss", "Framer motion"]
   },
+   {
+    "id": 3,
+    "img": "/assets/binge.png",
+    "alt": "Binge landing page screenshot",
+    "title": "Binge",
+    "href": "https://binge-beta.vercel.app/",
+    "githubRepo": "https://github.com/oseji/Binge.git",
+    "about": "A landing page with animations.",
+    "stack": ["React","Typescript", "Tailwindcss", "GSAP"]
+  },
   
   {
-    "id": 3,
+    "id": 4,
     "img": "/assets/ip address.png",
     "alt": "IP address screenshot",
     "title": "IP address tracker",
@@ -32,7 +42,7 @@
     "stack": ["React", "Tailwindcss", "React-leaflet", "API"]
   },
   {
-    "id": 4,
+    "id": 5,
     "img": "/assets/toDo.png",
     "alt": "ToDo App screenshot",
     "title": "ToDo app",
@@ -43,7 +53,7 @@
   }
   ,
   {
-    "id": 5,
+    "id": 6,
     "img": "/assets/github search.png",
     "alt": "Github profile screenshot",
     "title": "Github profile searcher",
@@ -53,7 +63,7 @@
     "stack": ["React", "Tailwindcss", "Framer motion", "API"]
   },
   {
-    "id": 6,
+    "id": 7,
     "img": "/assets/trendy trove.png",
     "alt": "Trendy Trove page screenshot",
     "title": "Trendy Trove",
@@ -63,7 +73,7 @@
     "stack": ["React","Typescript", "Tailwindcss", "Framer motion"]
   },
   {
-    "id": 7,
+    "id": 8,
     "img": "/assets/translator.png",
     "alt": "Analytics screenshot",
     "title": "Language translator",
@@ -73,7 +83,7 @@
     "stack": ["React", "Tailwindcss", "API"]
   },
   {
-    "id": 8,
+    "id": 9,
     "img": "/assets/dictionary.png",
     "alt": "Dictionary screenshot",
     "title": "Dictionary",
@@ -81,15 +91,6 @@
     "githubRepo": "https://github.com/oseji/osejis-dictionary.git",
     "about": "Created a dictionary with audio playback and theme switching functionality.",
     "stack": ["React", "Tailwindcss", "Framer motion", "API"]
-  },
-  {
-    "id": 9,
-    "img": "/assets/manage.png",
-    "alt": "Manage landing page screenshot",
-    "title": "Manage landing page",
-    "href": "https://manage-landing-page-oseji.netlify.app/",
-    "githubRepo": "https://github.com/oseji/manage-landingPage.git",
-    "about": "A landing page with animations.",
-    "stack": ["React", "Tailwindcss", "Framer motion"]
   }
+
 ]
