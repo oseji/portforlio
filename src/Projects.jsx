@@ -62,8 +62,8 @@ const Projects = ({ isThemeToggled }) => {
       <h1 className="sectionHeading col-span-full">
         <span className="headingNum">02. </span>PROJECTS
       </h1>
-
-      <div className="displayProjects">
+      {/* tablets and above */}
+      <div className="displayProjectsBig">
         {projectData.slice(startIndex, endIndex).map((element, index) => (
           <div key={index} className="projectContainer">
             <img src={element.img} alt={element.alt} className="projectImg" />
@@ -112,7 +112,57 @@ const Projects = ({ isThemeToggled }) => {
         ))}
       </div>
 
-      <div className="flex flex-col md:flex-row items-center md:justify-between gap-5 md:gap-0 mt-10">
+      {/* mobiles */}
+      <div className="displayProjectsMobile">
+        {projectData.map((element, index) => (
+          <div key={index} className="projectContainer">
+            <img src={element.img} alt={element.alt} className="projectImg" />
+
+            <div className={`projectText`}>
+              <div>
+                <h1 className="projectName">{element.title}</h1>
+
+                <p className="aboutProject">{element.about}</p>
+              </div>
+
+              <div>
+                <div className="stackGrp">
+                  {element.stack.map((stack, index) => (
+                    <p className={`stack`} key={index}>
+                      {stack}
+                    </p>
+                  ))}
+                </div>
+
+                <div className="iconGrp">
+                  <a
+                    href={element.githubRepo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {iconGithub}
+                  </a>
+
+                  <div className=" flex flex-row items-center gap-2 hover:text-orange-400 duration-100">
+                    <a
+                      href={element.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`font-semibold  text-sm`}
+                    >
+                      Live site
+                    </a>
+
+                    {linkSVG}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="hidden lg:flex flex-col lg:flex-row items-center lg:justify-between gap-5 lg:gap-0 mt-10">
         <div className="flex flex-row items-center gap-5">
           <button
             className={`prevNextBtn ${
