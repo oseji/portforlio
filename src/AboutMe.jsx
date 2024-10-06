@@ -21,7 +21,7 @@ const AboutMe = () => {
   const endValue = window.innerWidth <= 500 ? "top 10%" : "top 20%";
 
   // animating avatar
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (avatarRef.current) {
       gsap.fromTo(
         avatarRef.current,
@@ -42,7 +42,7 @@ const AboutMe = () => {
   }, []);
 
   // animating about me text
-  useLayoutEffect(() => {
+  useEffect(() => {
     const text = new SplitType(textRef.current, {
       types: "chars, words",
     });

@@ -50,20 +50,9 @@
     "githubRepo": "https://github.com/oseji/ToDo.git",
     "about": "A todo application built with react, typescript and firebase to provide user authentication. Only registered accounts can log in and have access to their individual data.",
     "stack": ["React", "Typescript", "Tailwindcss", "Firebase"]
-  }
-  ,
-  {
-    "id": 6,
-    "img": "/assets/github search.png",
-    "alt": "Github profile screenshot",
-    "title": "Github profile searcher",
-    "href": "https://github-profile-finder-oseji.netlify.app/",
-    "githubRepo": "https://github.com/oseji/github-profile-search.git",
-    "about": "Search for github profiles and view the user follower and following count, location and repositories.",
-    "stack": ["React", "Tailwindcss", "Framer motion", "API"]
   },
-  {
-    "id": 7,
+   {
+    "id": 6,
     "img": "/assets/trendy trove.png",
     "alt": "Trendy Trove page screenshot",
     "title": "Trendy Trove",
@@ -72,6 +61,18 @@
     "about": "A landing page with simple animations.",
     "stack": ["React","Typescript", "Tailwindcss", "Framer motion"]
   },
+  
+  {
+    "id": 7,
+    "img": "/assets/github search.png",
+    "alt": "Github profile screenshot",
+    "title": "Github profile searcher",
+    "href": "https://github-profile-finder-oseji.netlify.app/",
+    "githubRepo": "https://github.com/oseji/github-profile-search.git",
+    "about": "Search for github profiles and view the user follower and following count, location and repositories.",
+    "stack": ["React", "Tailwindcss", "Framer motion", "API"]
+  },
+ 
   {
     "id": 8,
     "img": "/assets/translator.png",

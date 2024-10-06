@@ -125,7 +125,7 @@ const Projects = ({ isThemeToggled }) => {
           </button>
 
           <a
-            href="#projects"
+            // href="#projects"
             className={`prevNextBtn ${
               isThemeToggled ? "projectContainerDark" : "projectContainerLight"
             } ${currentPage === numberOfPages ? "hidden" : ""}`}
