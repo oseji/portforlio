@@ -81,7 +81,7 @@ section {
 
 /* INTRO */
 .introText {
-  @apply text-start font-bold  lg:mt-0 text-4xl md:text-5xl lg:text-6xl p-2 lg:p-5 w-fit capitalize;
+  @apply text-center md:text-start font-bold  lg:mt-0 text-4xl md:text-5xl lg:text-6xl py-2 lg:p-5 w-fit capitalize;
 }
 
 /* ABOUT ME */

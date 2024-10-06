@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useLayoutEffect } from "react";
 import SplitType from "split-type";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
@@ -18,9 +18,10 @@ gsap.registerPlugin(ScrollTrigger);
 const AboutMe = () => {
   const avatarRef = useRef(null);
   const textRef = useRef(null);
+  const endValue = window.innerWidth <= 500 ? "top 10%" : "top 20%";
 
   // animating avatar
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (avatarRef.current) {
       gsap.fromTo(
         avatarRef.current,
@@ -41,7 +42,7 @@ const AboutMe = () => {
   }, []);
 
   // animating about me text
-  useEffect(() => {
+  useLayoutEffect(() => {
     const text = new SplitType(textRef.current, {
       types: "chars, words",
     });
@@ -59,13 +60,13 @@ const AboutMe = () => {
         opacity: 1,
         y: 0,
         scale: 1,
-        stagger: 1,
+        stagger: 0.5,
         duration: 1,
         scrollTrigger: {
           trigger: textRef.current,
-          scrub: 0.5,
+          scrub: 1,
           start: "top bottom",
-          end: "top 20%",
+          end: endValue,
         },
       }
     );
