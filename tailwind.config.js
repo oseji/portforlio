@@ -12,6 +12,7 @@ export default {
       },
       fontFamily: {
         afacad: ["Afacad", "sans-serif"],
+        "Satoshi-regular": ["Satoshi-Regular", "sans-serif"],
       },
       colors: {
         darkBg: "#0D0D0D",

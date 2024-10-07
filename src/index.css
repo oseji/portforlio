@@ -1,4 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Afacad:wght@400;500;600;700&display=swap");
+@font-face {
+  font-family: Satoshi-Regular;
+  src: url("/fonts/Satoshi-Regular.ttf");
+}
 
 @tailwind base;
 @tailwind components;
@@ -9,7 +12,7 @@ html {
 }
 
 .App {
-  @apply min-h-screen font-afacad overflow-hidden;
+  @apply min-h-screen font-Satoshi-regular overflow-hidden;
 }
 
 /* HEADER */
@@ -54,7 +57,7 @@ nav {
 }
 
 .navList {
-  @apply flex flex-col lg:flex-row items-center gap-10;
+  @apply flex flex-col lg:flex-row items-center gap-10 py-2 px-16 rounded-full bg-gray-200 dark:bg-slate-900;
 }
 
 .navText {
@@ -81,7 +84,7 @@ section {
 
 /* INTRO */
 .introText {
-  @apply text-center md:text-start font-bold  lg:mt-0 text-4xl md:text-5xl lg:text-6xl py-2 lg:p-5 w-fit capitalize;
+  @apply text-center font-bold  lg:mt-0 text-4xl md:text-5xl lg:text-6xl py-2 lg:p-5 w-fit capitalize;
 }
 
 /* ABOUT ME */
@@ -114,7 +117,7 @@ section {
 
 /* PROJECTS */
 .displayProjectsBig {
-  @apply hidden lg:grid lg:grid-cols-3 gap-12 mt-10;
+  @apply hidden lg:grid lg:grid-cols-3 gap-12 mt-10  relative;
 }
 
 .displayProjectsMobile {
@@ -122,15 +125,15 @@ section {
 }
 
 .projectContainer {
-  @apply flex flex-col gap-5 md:w-auto;
+  @apply flex flex-col gap-0 md:w-auto;
 }
 
 .projectImg {
-  @apply rounded-lg;
+  @apply rounded-t-lg;
 }
 
 .projectText {
-  @apply bg-white dark:bg-darkBg rounded-lg p-3 h-52 w-72 md:w-96 lg:w-auto flex flex-col justify-between cursor-default shadow-lg;
+  @apply bg-white dark:bg-darkBg rounded-b-lg p-3 h-52 w-72 md:w-96 lg:w-auto flex flex-col justify-between cursor-default shadow-lg;
 }
 
 .projectName {
@@ -154,7 +157,18 @@ section {
 }
 
 .prevNextBtn {
-  @apply px-2 py-1 rounded-md w-24 text-center font-semibold bg-white dark:bg-darkBg hover:bg-orange-400 hover:scale-110 transition ease-in-out duration-100 cursor-pointer;
+  @apply px-2 py-1 h-10 w-10 rounded-full  text-center font-semibold bg-orange-400 hover:scale-125 transition ease-in-out duration-100 cursor-pointer  absolute;
+}
+
+.prevNextBtn > img {
+  @apply mx-auto;
+}
+
+#prevBtn {
+  @apply top-1/2 -left-[5%];
+}
+#nextBtn {
+  @apply top-1/2 -right-[5%];
 }
 
 .pageNum {
@@ -162,7 +176,7 @@ section {
 }
 
 .pageNumGrp {
-  @apply flex flex-row items-center gap-5;
+  @apply flex flex-row items-center justify-center gap-5 mt-10;
 }
 
 /* CONTACTS */
