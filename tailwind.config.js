@@ -21,6 +21,10 @@ export default {
       screens: {
         xxl: "1440px",
       },
+      backgroundImage: {
+        "custom-radial":
+          "radial-gradient(circle, rgba(255,165,0,1) 10%, rgba(17,17,17,1) 70%)",
+      },
     },
   },
   plugins: [],
