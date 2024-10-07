@@ -28,12 +28,12 @@ const Intro = () => {
       text1.chars,
       {
         opacity: 0,
-        y: -50,
+        x: 100,
         scale: 0.1,
       },
       {
         opacity: 1,
-        y: 0,
+        x: 0,
         scale: 1,
         stagger: 0.07,
       }
@@ -42,12 +42,12 @@ const Intro = () => {
         text2.chars,
         {
           opacity: 0,
-          y: -50,
+          x: 100,
           scale: 0.1,
         },
         {
           opacity: 1,
-          y: 0,
+          x: 0,
           scale: 1,
           stagger: 0.07,
         }
@@ -56,12 +56,12 @@ const Intro = () => {
         text3.chars,
         {
           opacity: 0,
-          y: -50,
+          x: 100,
           scale: 0.1,
         },
         {
           opacity: 1,
-          y: 0,
+          x: 0,
           scale: 1,
           stagger: 0.07,
         }
