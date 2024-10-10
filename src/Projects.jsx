@@ -68,6 +68,7 @@ const Projects = ({ isThemeToggled }) => {
       {/* tablets and above */}
       <div className=" hidden lg:block">
         <div className="displayProjectsBig">
+          {/* prev btn */}
           <button
             className={`prevNextBtn ${
               isThemeToggled ? "projectContainerDark" : "projectContainerLight"
@@ -79,6 +80,7 @@ const Projects = ({ isThemeToggled }) => {
             <img src={prevBtn} alt="previous btn" />
           </button>
 
+          {/* projects */}
           {projectData.slice(startIndex, endIndex).map((element, index) => (
             <div key={index} className="projectContainer">
               <img src={element.img} alt={element.alt} className="projectImg" />
@@ -126,6 +128,7 @@ const Projects = ({ isThemeToggled }) => {
             </div>
           ))}
 
+          {/* next btn */}
           <button
             className={`prevNextBtn ${
               isThemeToggled ? "projectContainerDark" : "projectContainerLight"
