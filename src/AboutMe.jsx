@@ -27,14 +27,13 @@ const AboutMe = () => {
         avatarRef.current,
         { scale: 0.3 },
         {
-          scale: 1, // Increase scale
+          scale: 1,
           transformOrigin: "center",
           scrollTrigger: {
             trigger: avatarRef.current,
             start: "top bottom",
             end: "top 30%",
-            scrub: 1.5, // Allows animation to follow scroll
-            // markers: true,
+            scrub: 1.5,
           },
         }
       );
