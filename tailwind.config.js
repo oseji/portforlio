@@ -12,6 +12,7 @@ export default {
       },
       fontFamily: {
         afacad: ["Afacad", "sans-serif"],
+        "Satoshi-regular": ["Satoshi-Regular", "sans-serif"],
       },
       colors: {
         darkBg: "#0D0D0D",
@@ -19,6 +20,10 @@ export default {
       },
       screens: {
         xxl: "1440px",
+      },
+      backgroundImage: {
+        "custom-radial":
+          "radial-gradient(circle, rgba(44,40,36,1) 10%,rgba(10,10,10,1) 70%)",
       },
     },
   },

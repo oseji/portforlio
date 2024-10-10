@@ -1,16 +1,19 @@
 import { useState, useEffect, useRef } from "react";
-
+import gsap from "gsap";
 import Intro from "./Intro";
 import AboutMe from "./AboutMe";
 import Projects from "./Projects";
 import ContactMe from "./ContactMe";
 import Footer from "./footer";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 import iconMenu from "./assets/iconMenu.svg";
 import iconClose from "./assets/iconClose.svg";
+gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   const sliderRef = useRef(null);
+  const headerRef = useRef(null);
   const navRef = useRef(null);
   const appRef = useRef(null);
 
@@ -118,13 +121,12 @@ function App() {
 
   return (
     <div
-      className={`App bg-white text-black dark:bg-black dark:text-white`}
+      className={`App bg-white text-black dark:bg-custom-radial dark:text-white`}
       ref={appRef}
     >
       <header
-        className={` ${isThemeToggled ? "headerDarkMode" : "headerLightMode"} ${
-          showHeader ? "translate-y-0" : "-translate-y-full"
-        }`}
+        ref={headerRef}
+        className={`  ${showHeader ? "translate-y-0 " : "-translate-y-full"}`}
       >
         <div className="logoGrp">
           <h1 className="logo">Oseji</h1>

@@ -1,5 +1,7 @@
 import { useState } from "react";
 import projectData from "./data.json";
+import prevBtn from "./assets/prev.svg";
+import nextBtn from "./assets/next.svg";
 
 const Projects = ({ isThemeToggled }) => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -62,54 +64,100 @@ const Projects = ({ isThemeToggled }) => {
       <h1 className="sectionHeading col-span-full">
         <span className="headingNum">02. </span>PROJECTS
       </h1>
+
       {/* tablets and above */}
-      <div className="displayProjectsBig">
-        {projectData.slice(startIndex, endIndex).map((element, index) => (
-          <div key={index} className="projectContainer">
-            <img src={element.img} alt={element.alt} className="projectImg" />
+      <div className=" hidden lg:block">
+        <div className="displayProjectsBig">
+          {/* prev btn */}
+          <button
+            className={`prevNextBtn ${
+              isThemeToggled ? "projectContainerDark" : "projectContainerLight"
+            }  ${currentPage === 1 ? "hidden" : ""}`}
+            id="prevBtn"
+            onClick={handlePrevBtn}
+            disabled={currentPage === 1}
+          >
+            <img src={prevBtn} alt="previous btn" />
+          </button>
 
-            <div className={`projectText`}>
-              <div>
-                <h1 className="projectName">{element.title}</h1>
+          {/* projects */}
+          {projectData.slice(startIndex, endIndex).map((element, index) => (
+            <div key={index} className="projectContainer">
+              <img src={element.img} alt={element.alt} className="projectImg" />
 
-                <p className="aboutProject">{element.about}</p>
-              </div>
+              <div className={`projectText`}>
+                <div>
+                  <h1 className="projectName">{element.title}</h1>
 
-              <div>
-                <div className="stackGrp">
-                  {element.stack.map((stack, index) => (
-                    <p className={`stack`} key={index}>
-                      {stack}
-                    </p>
-                  ))}
+                  <p className="aboutProject">{element.about}</p>
                 </div>
 
-                <div className="iconGrp">
-                  <a
-                    href={element.githubRepo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {iconGithub}
-                  </a>
+                <div>
+                  <div className="stackGrp">
+                    {element.stack.map((stack, index) => (
+                      <p className={`stack`} key={index}>
+                        {stack}
+                      </p>
+                    ))}
+                  </div>
 
-                  <div className=" flex flex-row items-center gap-2 hover:text-orange-400 duration-100">
+                  <div className="iconGrp">
                     <a
-                      href={element.href}
+                      href={element.githubRepo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`font-semibold  text-sm`}
                     >
-                      Live site
+                      {iconGithub}
                     </a>
 
-                    {linkSVG}
+                    <div className=" flex flex-row items-center gap-2 hover:text-orange-400 duration-100">
+                      <a
+                        href={element.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`font-semibold  text-sm`}
+                      >
+                        Live site
+                      </a>
+
+                      {linkSVG}
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+          ))}
+
+          {/* next btn */}
+          <button
+            className={`prevNextBtn ${
+              isThemeToggled ? "projectContainerDark" : "projectContainerLight"
+            } ${currentPage === numberOfPages ? "hidden" : ""}`}
+            id="nextBtn"
+            onClick={handleNextBtn}
+            disabled={currentPage === numberOfPages}
+          >
+            <img src={nextBtn} alt="next button" />
+          </button>
+        </div>
+
+        {/* pagination section */}
+        <div>
+          <div className="pageNumGrp">
+            {Array.from({ length: numberOfPages }, (_, index) => (
+              <div
+                className={`pageNum ${
+                  currentPage === index + 1
+                    ? "scale-110 font-bold bg-orange-400"
+                    : ""
+                }`}
+                key={index}
+              >
+                {index + 1}
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
 
       {/* mobiles */}
@@ -160,46 +208,6 @@ const Projects = ({ isThemeToggled }) => {
             </div>
           </div>
         ))}
-      </div>
-
-      <div className="hidden lg:flex flex-col lg:flex-row items-center lg:justify-between gap-5 lg:gap-0 mt-10">
-        <div className="flex flex-row items-center gap-5">
-          <button
-            className={`prevNextBtn ${
-              isThemeToggled ? "projectContainerDark" : "projectContainerLight"
-            }  ${currentPage === 1 ? "hidden" : ""}`}
-            onClick={handlePrevBtn}
-            disabled={currentPage === 1}
-          >
-            Previous
-          </button>
-
-          <a
-            // href="#projects"
-            className={`prevNextBtn ${
-              isThemeToggled ? "projectContainerDark" : "projectContainerLight"
-            } ${currentPage === numberOfPages ? "hidden" : ""}`}
-            onClick={handleNextBtn}
-            disabled={currentPage === numberOfPages}
-          >
-            Next
-          </a>
-        </div>
-
-        <div className="pageNumGrp">
-          {Array.from({ length: numberOfPages }, (_, index) => (
-            <div
-              className={`pageNum ${
-                currentPage === index + 1
-                  ? "scale-110 font-bold bg-orange-400"
-                  : ""
-              }`}
-              key={index}
-            >
-              {index + 1}
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );

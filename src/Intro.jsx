@@ -28,12 +28,12 @@ const Intro = () => {
       text1.chars,
       {
         opacity: 0,
-        y: -50,
-        scale: 2,
+        x: 100,
+        scale: 0.1,
       },
       {
         opacity: 1,
-        y: 0,
+        x: 0,
         scale: 1,
         stagger: 0.07,
       }
@@ -42,12 +42,12 @@ const Intro = () => {
         text2.chars,
         {
           opacity: 0,
-          y: -50,
-          scale: 2,
+          x: 100,
+          scale: 0.1,
         },
         {
           opacity: 1,
-          y: 0,
+          x: 0,
           scale: 1,
           stagger: 0.07,
         }
@@ -56,12 +56,12 @@ const Intro = () => {
         text3.chars,
         {
           opacity: 0,
-          y: -50,
-          scale: 2,
+          x: 100,
+          scale: 0.1,
         },
         {
           opacity: 1,
-          y: 0,
+          x: 0,
           scale: 1,
           stagger: 0.07,
         }
@@ -73,7 +73,7 @@ const Intro = () => {
       id="intro"
       className="flex flex-col justify-center lg:items-start min-h-[90dvh] md:min-h-screen"
     >
-      <div className=" min-h-80 flex flex-col justify-between items-center md:items-start">
+      <div className=" min-h-80 flex flex-col justify-between items-center md:items-start mx-auto">
         <div className="introText" ref={textRefs[0]}>
           Hey there
         </div>

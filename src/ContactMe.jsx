@@ -66,9 +66,10 @@ const ContactMe = () => {
         <div className="formGrp">
           <label htmlFor="name">Name:</label>
           <input
+            autoComplete={true}
             placeholder="Enter your name"
             type="text"
-            name="name"
+            id="name"
             value={formData.name}
             onChange={(e) =>
               setFormData({
@@ -83,9 +84,10 @@ const ContactMe = () => {
         <div className="formGrp">
           <label htmlFor="email">Email:</label>
           <input
+            autoComplete={true}
             placeholder="Enter your email"
             type="email"
-            name="email"
+            id="email"
             value={formData.email}
             onChange={(e) =>
               setFormData({
@@ -103,7 +105,7 @@ const ContactMe = () => {
             placeholder="Enter your message"
             className="h-32 max-h-32"
             type="text"
-            name="message"
+            id="message"
             value={formData.message}
             onChange={(e) =>
               setFormData({
@@ -124,7 +126,7 @@ const ContactMe = () => {
           </span>
         </div>
 
-        <button className="px-2 py-1 rounded-md w-24 text-center font-semibold bg-lightBg dark:bg-darkBg hover:bg-orange-400 hover:scale-110 transition ease-in-out duration-100">
+        <button className="px-2 py-1 rounded-md w-24 text-center font-semibold bg-orange-400 hover:bg-orange-400 hover:scale-110 transition ease-in-out duration-100">
           Submit
         </button>
       </form>
