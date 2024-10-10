@@ -105,7 +105,7 @@ section {
 }
 
 .skill {
-  @apply flex flex-row gap-3 items-center bg-transparent mx-auto lg:mx-0 w-fit;
+  @apply flex flex-row gap-3 items-center bg-transparent mx-auto lg:mx-0 w-full;
 }
 
 .skillText {
@@ -125,7 +125,7 @@ section {
 }
 
 .displayProjectsMobile {
-  @apply lg:hidden flex flex-row gap-7 overflow-x-scroll mt-9;
+  @apply lg:hidden flex flex-row gap-5 overflow-x-scroll mt-9;
 }
 
 .projectContainer {
@@ -137,11 +137,11 @@ section {
 }
 
 .projectText {
-  @apply bg-white dark:bg-darkBg rounded-b-lg p-3 h-56 w-80 md:w-96 lg:w-auto flex flex-col justify-between cursor-default shadow-lg;
+  @apply bg-white dark:bg-darkBg rounded-b-lg p-3 h-56 w-[20.625rem] md:w-96 lg:w-auto flex flex-col justify-between cursor-default shadow-lg;
 }
 
 .projectName {
-  @apply text-2xl font-bold dark:text-orange-400 capitalize;
+  @apply text-xl md:text-2xl font-bold dark:text-orange-400 capitalize;
 }
 
 .aboutProject {
