@@ -60,7 +60,7 @@ const Projects = ({ isThemeToggled }) => {
   );
 
   return (
-    <section id="projects" className=" bg-lightBg dark:bg-black ">
+    <div id="projects" className=" bg-lightBg dark:bg-black ">
       <h1 className="sectionHeading col-span-full">
         <span className="headingNum">02. </span>PROJECTS
       </h1>
@@ -209,7 +209,7 @@ const Projects = ({ isThemeToggled }) => {
           </div>
         ))}
       </div>
-    </section>
+    </div>
   );
 };
 

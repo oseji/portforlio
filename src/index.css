@@ -116,6 +116,10 @@ section {
 }
 
 /* PROJECTS */
+#projects {
+  @apply px-2 md:px-5 lg:px-20 py-10 lg:min-h-[screen] xxl:min-h-[100dvh];
+}
+
 .displayProjectsBig {
   @apply hidden lg:grid lg:grid-cols-3 gap-12 mt-10  relative;
 }
@@ -133,7 +137,7 @@ section {
 }
 
 .projectText {
-  @apply bg-white dark:bg-darkBg rounded-b-lg p-3 h-52 w-72 md:w-96 lg:w-auto flex flex-col justify-between cursor-default shadow-lg;
+  @apply bg-white dark:bg-darkBg rounded-b-lg p-3 h-56 w-80 md:w-96 lg:w-auto flex flex-col justify-between cursor-default shadow-lg;
 }
 
 .projectName {
@@ -179,7 +183,7 @@ section {
   @apply flex flex-row items-center justify-center gap-5 mt-10;
 }
 
-/* CONTACTS */
+/* CONTACT ME */
 form {
   @apply flex flex-col gap-5 md:w-3/4 md:mx-auto lg:mx-0 xl:w-1/2 mt-5;
 }
