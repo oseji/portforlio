@@ -23,7 +23,7 @@ export default {
       },
       backgroundImage: {
         "custom-radial":
-          "radial-gradient(circle, rgba(255,165,0,1) 10%, rgba(17,17,17,1) 70%)",
+          "radial-gradient(circle, rgba(44,40,36,1) 10%,rgba(10,10,10,1) 70%)",
       },
     },
   },

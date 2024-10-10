@@ -17,7 +17,7 @@ html {
 
 /* HEADER */
 header {
-  @apply w-full fixed z-10 flex flex-col lg:flex-row items-center lg:justify-between bg-white dark:bg-custom-radial py-3 px-5 lg:px-20 overflow-hidden transition ease-in-out duration-150;
+  @apply w-full fixed z-10 flex flex-col lg:flex-row items-center lg:justify-between bg-white dark:bg-opacity-0 py-3 px-5 lg:px-20 overflow-hidden transition ease-in-out duration-150;
 }
 
 .logoGrp {
@@ -57,7 +57,7 @@ nav {
 }
 
 .navList {
-  @apply flex flex-col lg:flex-row items-center gap-10 py-2 px-16 rounded-full bg-gray-200 dark:bg-slate-900;
+  @apply flex flex-col lg:flex-row items-center gap-10 py-2 px-16 rounded-full dark:bg-gray-200 dark:bg-opacity-10;
 }
 
 .navText {
@@ -73,7 +73,7 @@ main {
 }
 
 section {
-  @apply px-5 lg:px-20 py-10 lg:min-h-[screen] xxl:min-h-[100dvh] dark:bg-custom-radial;
+  @apply px-5 lg:px-20 py-10 lg:min-h-[screen] xxl:min-h-[100dvh];
 }
 .sectionHeading {
   @apply text-2xl md:text-4xl uppercase;
@@ -84,7 +84,7 @@ section {
 
 /* INTRO */
 .introText {
-  @apply text-center font-bold  lg:mt-0 text-4xl md:text-5xl lg:text-6xl lg:p-5 w-fit;
+  @apply text-center md:text-start font-bold  lg:mt-0 text-4xl md:text-5xl lg:text-6xl lg:p-5 w-fit;
 }
 
 /* ABOUT ME */

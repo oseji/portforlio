@@ -25,10 +25,10 @@ const AboutMe = () => {
     if (avatarRef.current) {
       gsap.fromTo(
         avatarRef.current,
-        { scale: 0.4 },
+        { scale: 0.3 },
         {
           scale: 1, // Increase scale
-          transformOrigin: "left center",
+          transformOrigin: "center",
           scrollTrigger: {
             trigger: avatarRef.current,
             start: "top bottom",

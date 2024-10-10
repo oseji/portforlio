@@ -73,7 +73,7 @@ const Intro = () => {
       id="intro"
       className="flex flex-col justify-center lg:items-start min-h-[90dvh] md:min-h-screen"
     >
-      <div className=" min-h-80 flex flex-col justify-between items-center mx-auto">
+      <div className=" min-h-80 flex flex-col justify-between items-center md:items-start mx-auto">
         <div className="introText" ref={textRefs[0]}>
           Hey there
         </div>
