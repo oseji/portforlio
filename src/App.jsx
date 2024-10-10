@@ -126,7 +126,7 @@ function App() {
     >
       <header
         ref={headerRef}
-        className={` ${showHeader ? "translate-y-0" : "-translate-y-full"}`}
+        className={`  ${showHeader ? "translate-y-0 " : "-translate-y-full"}`}
       >
         <div className="logoGrp">
           <h1 className="logo">Oseji</h1>

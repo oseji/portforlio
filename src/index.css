@@ -17,7 +17,7 @@ html {
 
 /* HEADER */
 header {
-  @apply w-full fixed z-10 flex flex-col lg:flex-row items-center lg:justify-between bg-white dark:bg-opacity-0 py-3 px-5 lg:px-20 overflow-hidden transition ease-in-out duration-150;
+  @apply w-full fixed z-10 flex flex-col lg:flex-row items-center lg:justify-between bg-white dark:bg-black py-3 px-5 lg:px-20 overflow-hidden transition ease-in-out duration-150;
 }
 
 .logoGrp {
@@ -41,7 +41,7 @@ header {
 }
 
 .sliderContainer {
-  @apply p-1 rounded-xl bg-slate-300 dark:bg-white w-10 cursor-pointer;
+  @apply p-1 rounded-xl bg-slate-300 dark:bg-opacity-30 w-10 cursor-pointer;
 }
 
 .slider {
@@ -57,7 +57,7 @@ nav {
 }
 
 .navList {
-  @apply flex flex-col lg:flex-row items-center gap-10 py-2 px-16 rounded-full dark:bg-gray-200 dark:bg-opacity-10;
+  @apply flex flex-col lg:flex-row items-center gap-10 py-2 px-16 lg:rounded-full lg:dark:bg-gray-200 lg:dark:bg-opacity-10;
 }
 
 .navText {
@@ -84,7 +84,7 @@ section {
 
 /* INTRO */
 .introText {
-  @apply text-center md:text-start font-bold  lg:mt-0 text-4xl md:text-5xl lg:text-6xl lg:p-5 w-fit;
+  @apply text-center md:text-start font-bold  lg:mt-0 text-4xl md:text-6xl lg:text-6xl lg:p-5 w-fit;
 }
 
 /* ABOUT ME */
@@ -101,11 +101,11 @@ section {
 }
 
 .skillsGrp {
-  @apply grid grid-cols-2 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 gap-3;
+  @apply grid grid-cols-2 md:grid-cols-4 lg:grid-cols-2 xl:grid-cols-3 gap-3 lg:w-fit;
 }
 
 .skill {
-  @apply flex flex-row gap-3 items-center bg-transparent;
+  @apply flex flex-row gap-3 items-center bg-transparent mx-auto lg:mx-0 w-fit;
 }
 
 .skillText {

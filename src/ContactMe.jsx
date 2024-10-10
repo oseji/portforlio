@@ -126,7 +126,7 @@ const ContactMe = () => {
           </span>
         </div>
 
-        <button className="px-2 py-1 rounded-md w-24 text-center font-semibold bg-lightBg dark:bg-darkBg hover:bg-orange-400 hover:scale-110 transition ease-in-out duration-100">
+        <button className="px-2 py-1 rounded-md w-24 text-center font-semibold bg-orange-400 hover:bg-orange-400 hover:scale-110 transition ease-in-out duration-100">
           Submit
         </button>
       </form>
