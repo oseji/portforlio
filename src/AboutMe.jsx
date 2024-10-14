@@ -1,4 +1,4 @@
-import { useRef, useEffect, useLayoutEffect } from "react";
+import { useRef, useEffect } from "react";
 import SplitType from "split-type";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
@@ -18,7 +18,9 @@ gsap.registerPlugin(ScrollTrigger);
 const AboutMe = () => {
   const avatarRef = useRef(null);
   const textRef = useRef(null);
+  const lineRef = useRef(null);
   const endValue = window.innerWidth <= 500 ? "top 10%" : "top 20%";
+  const lineWidth = window.innerWidth <= 500 ? "200px" : "250px";
 
   // animating avatar
   useEffect(() => {
@@ -71,6 +73,26 @@ const AboutMe = () => {
     );
   }, []);
 
+  // animating line
+  useEffect(() => {
+    gsap.set(lineRef.current, { width: 0 });
+
+    gsap.fromTo(
+      lineRef.current,
+      { width: 0 },
+      {
+        width: lineWidth,
+        duration: 3,
+        scrollTrigger: {
+          trigger: lineRef.current,
+          start: "top 90%",
+          end: "top 20%",
+          once: true,
+        },
+      }
+    );
+  }, []);
+
   return (
     <section id="aboutMe">
       <div className="w-full lg:w-1/2">
@@ -83,6 +105,8 @@ const AboutMe = () => {
             <span className="headingNum">01. </span>
             ABOUT ME
           </h1>
+
+          <div className="line" ref={lineRef}></div>
 
           <p className="aboutMeText" ref={textRef}>
             Hi, I'm Ose, a <b>front-end web developer</b> with a strong

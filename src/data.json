@@ -8,7 +8,7 @@
     "href": "https://hr-sphere.vercel.app/",
     "githubRepo": "https://github.com/oseji/HR-Sphere.git",
     "about": "A functional Human Resources dashboard for employee management with user authentication.",
-    "stack": ["React","Typescript", "Tailwindcss","Firebase"]
+    "stack": ["React","Typescript", "Tailwind","Firebase"]
   },
   {
     "id": 2,
@@ -18,7 +18,7 @@
     "href": "https://fingenius.netlify.app/",
     "githubRepo": "https://github.com/oseji/finGenius.git",
     "about": "A landing page with animations.",
-    "stack": ["React", "Typescript","Tailwindcss", "Framer motion"]
+    "stack": ["React", "Typescript","Tailwind", "Framer motion"]
   },
    {
     "id": 3,
@@ -28,7 +28,7 @@
     "href": "https://binge-beta.vercel.app/",
     "githubRepo": "https://github.com/oseji/Binge.git",
     "about": "A landing page with animations.",
-    "stack": ["React","Typescript", "Tailwindcss", "GSAP"]
+    "stack": ["React","Typescript", "Tailwind", "GSAP"]
   },
   
   {
@@ -39,7 +39,7 @@
     "href": "https://ip-tracker-oseji.netlify.app/",
     "githubRepo": "https://github.com/oseji/IP-Address-Tracker.git",
     "about": "An IP address tracker that displays the users IP address, Internet service provider(ISP) and user timezone. Integrated react-leaflet to display the users ISP location on a rendered map.",
-    "stack": ["React", "Tailwindcss", "React-leaflet", "API"]
+    "stack": ["React", "Tailwind", "React-leaflet", "API"]
   },
   {
     "id": 5,
@@ -49,7 +49,7 @@
     "href": "https://oseji-todo.vercel.app/",
     "githubRepo": "https://github.com/oseji/ToDo.git",
     "about": "A todo application built with react, typescript and firebase to provide user authentication. Only registered accounts can log in and have access to their individual data.",
-    "stack": ["React", "Typescript", "Tailwindcss", "Firebase"]
+    "stack": ["React", "Typescript", "Tailwind", "Firebase"]
   },
    {
     "id": 6,
@@ -59,7 +59,7 @@
     "href": "https://trendy-trove.netlify.app/",
     "githubRepo": "https://github.com/oseji/TrendyTrove.git",
     "about": "A landing page with simple animations.",
-    "stack": ["React","Typescript", "Tailwindcss", "Framer motion"]
+    "stack": ["React","Typescript", "Tailwind", "Framer motion"]
   },
   
   {
@@ -70,7 +70,7 @@
     "href": "https://github-profile-finder-oseji.netlify.app/",
     "githubRepo": "https://github.com/oseji/github-profile-search.git",
     "about": "Search for github profiles and view the user follower and following count, location and repositories.",
-    "stack": ["React", "Tailwindcss", "Framer motion", "API"]
+    "stack": ["React", "Tailwind", "Framer motion", "API"]
   },
  
   {
@@ -81,7 +81,7 @@
     "href": "https://translator-oseji.netlify.app/",
     "githubRepo": "https://github.com/oseji/translator.git",
     "about": "Created a multilingual translator with text copy and audio playback functionality.",
-    "stack": ["React", "Tailwindcss", "API"]
+    "stack": ["React", "Tailwind", "API"]
   },
   {
     "id": 9,
@@ -91,7 +91,7 @@
     "href": "https://osejis-dictionary.netlify.app/",
     "githubRepo": "https://github.com/oseji/osejis-dictionary.git",
     "about": "Created a dictionary with audio playback and theme switching functionality.",
-    "stack": ["React", "Tailwindcss", "Framer motion", "API"]
+    "stack": ["React", "Tailwind", "Framer motion", "API"]
   }
 
 ]

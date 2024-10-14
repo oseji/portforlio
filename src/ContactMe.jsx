@@ -1,6 +1,12 @@
 import { useEffect, useRef, useState } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const ContactMe = () => {
+  const lineRef = useRef(null);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -11,6 +17,8 @@ const ContactMe = () => {
   const confirmationRef = useRef(null);
 
   const apiUrl = "https://portforlio-n7px.onrender.com";
+
+  const lineWidth = window.innerWidth <= 500 ? "200px" : "300px";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -56,12 +64,34 @@ const ContactMe = () => {
     console.log(messageState);
   }, [messageState]);
 
+  // animating line
+  useEffect(() => {
+    gsap.set(lineRef.current, { width: 0 });
+
+    gsap.fromTo(
+      lineRef.current,
+      { width: 0 },
+      {
+        width: lineWidth,
+        duration: 3,
+        scrollTrigger: {
+          trigger: lineRef.current,
+          start: "top 90%",
+          end: "top 20%",
+          once: true,
+        },
+      }
+    );
+  }, []);
+
   return (
     <section id="contactMe">
       <form onSubmit={handleSubmit}>
         <h1 className="sectionHeading">
           <span className="headingNum">03. </span>CONTACT ME
         </h1>
+
+        <div className="line mb-5" ref={lineRef}></div>
 
         <div className="formGrp">
           <label htmlFor="name">Name:</label>

@@ -1,15 +1,23 @@
-import { useState } from "react";
+import { useRef, useState, useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
 import projectData from "./data.json";
 import prevBtn from "./assets/prev.svg";
 import nextBtn from "./assets/next.svg";
 
+gsap.registerPlugin(ScrollTrigger);
+
 const Projects = ({ isThemeToggled }) => {
+  const lineRef = useRef(null);
+
   const [currentPage, setCurrentPage] = useState(1);
   const numberOfItemsPerPage = 3;
   const numberOfPages = Math.ceil(projectData.length / numberOfItemsPerPage);
 
   const startIndex = (currentPage - 1) * numberOfItemsPerPage;
   const endIndex = startIndex + numberOfItemsPerPage;
+
+  const lineWidth = window.innerWidth <= 500 ? "200px" : "250px";
 
   const handlePrevBtn = () => {
     if (currentPage >= 1) {
@@ -59,11 +67,33 @@ const Projects = ({ isThemeToggled }) => {
     </svg>
   );
 
+  // animating line
+  useEffect(() => {
+    gsap.set(lineRef.current, { width: 0 });
+
+    gsap.fromTo(
+      lineRef.current,
+      { width: 0 },
+      {
+        width: lineWidth,
+        duration: 3,
+        scrollTrigger: {
+          trigger: lineRef.current,
+          start: "top 90%",
+          end: "top 20%",
+          once: true,
+        },
+      }
+    );
+  }, []);
+
   return (
     <div id="projects" className=" bg-lightBg dark:bg-black ">
       <h1 className="sectionHeading col-span-full">
         <span className="headingNum">02. </span>PROJECTS
       </h1>
+
+      <div className="line" ref={lineRef}></div>
 
       {/* tablets and above */}
       <div className=" hidden lg:block">
