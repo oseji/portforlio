@@ -15,6 +15,10 @@ html {
   @apply min-h-screen font-Satoshi-regular overflow-hidden;
 }
 
+.line {
+  @apply bg-black dark:bg-white p-[1px] mt-2;
+}
+
 /* HEADER */
 header {
   @apply w-full fixed z-10 flex flex-col lg:flex-row items-center lg:justify-between bg-white dark:bg-black py-3 px-5 lg:px-20 overflow-hidden transition ease-in-out duration-150;
@@ -185,7 +189,7 @@ section {
 
 /* CONTACT ME */
 form {
-  @apply flex flex-col gap-5 md:w-3/4 md:mx-auto lg:mx-0 xl:w-1/2 mt-5;
+  @apply flex flex-col md:w-3/4 md:mx-auto lg:mx-0 xl:w-1/2 mt-5;
 }
 
 .formGrp {
@@ -198,7 +202,7 @@ label {
 
 input,
 textarea {
-  @apply bg-lightBg dark:bg-darkBg rounded-md p-2;
+  @apply bg-lightBg dark:bg-darkBg rounded-md p-2 focus:outline-0;
 }
 
 textarea::-webkit-scrollbar {
