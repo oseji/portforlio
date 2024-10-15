@@ -189,7 +189,7 @@ section {
 
 /* CONTACT ME */
 form {
-  @apply flex flex-col md:w-3/4 md:mx-auto lg:mx-0 xl:w-1/2 mt-5;
+  @apply flex flex-col gap-5 md:w-3/4 md:mx-auto lg:mx-0 xl:w-1/2 mt-5;
 }
 
 .formGrp {
