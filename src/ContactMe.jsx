@@ -86,13 +86,13 @@ const ContactMe = () => {
 
   return (
     <section id="contactMe">
+      <h1 className="sectionHeading">
+        <span className="headingNum">03. </span>CONTACT ME
+      </h1>
+
+      <div className="line mb-5" ref={lineRef}></div>
+
       <form onSubmit={handleSubmit}>
-        <h1 className="sectionHeading">
-          <span className="headingNum">03. </span>CONTACT ME
-        </h1>
-
-        <div className="line mb-5" ref={lineRef}></div>
-
         <div className="formGrp">
           <label htmlFor="name">Name:</label>
           <input

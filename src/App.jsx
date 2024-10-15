@@ -132,6 +132,19 @@ function App() {
     window.addEventListener("scroll", handleStickyHeader);
   }, [lastScrollY]);
 
+  //check for user preference on page load and set theme accordingly
+  useEffect(() => {
+    const currentTheme = isDarkModePreferred ? "dark" : "light";
+
+    if (currentTheme === "dark") {
+      appRef.current?.classList.add("dark");
+      sliderRef.current?.classList.add("translate-x-end");
+    } else {
+      appRef.current?.classList.remove("dark");
+      sliderRef.current?.classList.remove("translate-x-end");
+    }
+  }, [window.matchMedia("(prefers-color-scheme: dark)").matches]);
+
   return (
     <div
       className={`App bg-white text-black dark:bg-custom-radial dark:text-white`}
