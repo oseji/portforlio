@@ -17,6 +17,10 @@ function App() {
   const navRef = useRef(null);
   const appRef = useRef(null);
 
+  const isDarkModePreferred = window.matchMedia(
+    "(prefers-color-scheme: dark)"
+  ).matches;
+
   const [isThemeToggled, setIsThemeToggled] = useState(false);
   const [menu, setMenu] = useState(iconMenu);
   const [isMenuToggled, setIsMenuToggled] = useState(false);
@@ -105,7 +109,16 @@ function App() {
 
     const slider = sliderRef.current;
     slider.classList.toggle("translate-x-end");
-    appRef.current.classList.toggle("dark");
+
+    //check if dark mode is applied
+    const isDarkModeApplied = appRef.current?.classList.contains("dark");
+
+    //determine current theme
+    const newTheme = isDarkModeApplied ? "light" : "dark";
+
+    newTheme === "dark"
+      ? appRef.current?.classList.add("dark")
+      : appRef.current?.classList.remove("dark");
   };
 
   const handleStickyHeader = () => {

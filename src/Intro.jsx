@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 const Intro = () => {
   const textRefs = [useRef(null), useRef(null), useRef(null)];
 
-  // typewriter effect
+  // intro text animation
   useEffect(() => {
     const text1 = new SplitType(textRefs[0].current, {
       types: "chars, words",
