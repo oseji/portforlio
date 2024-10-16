@@ -21,7 +21,7 @@ function App() {
     "(prefers-color-scheme: dark)"
   ).matches;
 
-  const [isThemeToggled, setIsThemeToggled] = useState(false);
+  const [isThemeToggled, setIsThemeToggled] = useState(isDarkModePreferred);
   const [menu, setMenu] = useState(iconMenu);
   const [isMenuToggled, setIsMenuToggled] = useState(false);
 
@@ -132,7 +132,7 @@ function App() {
     window.addEventListener("scroll", handleStickyHeader);
   }, [lastScrollY]);
 
-  //check for user preference on page load and set theme accordingly
+  //check for user theme preference on page load and set theme accordingly
   useEffect(() => {
     const currentTheme = isDarkModePreferred ? "dark" : "light";
 
