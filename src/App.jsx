@@ -21,7 +21,6 @@ function App() {
     "(prefers-color-scheme: dark)"
   ).matches;
 
-  const [isThemeToggled, setIsThemeToggled] = useState(false);
   const [menu, setMenu] = useState(iconMenu);
   const [isMenuToggled, setIsMenuToggled] = useState(false);
 
@@ -33,7 +32,7 @@ function App() {
       class="w-6 h-6 text-gray-800 dark:text-white"
       aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
-      fill={isThemeToggled ? "white" : "black"}
+      fill={isDarkModePreferred ? "white" : "black"}
       viewBox="0 0 14 8"
     >
       <path
@@ -48,7 +47,7 @@ function App() {
   const moon = (
     <svg
       class={`w-4 h-4 transition ease-in-out duration-200 ${
-        isThemeToggled ? "text-orange-400 scale-125" : "text-black"
+        isDarkModePreferred ? "text-orange-400 scale-125" : "text-black"
       }`}
       aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
@@ -68,7 +67,7 @@ function App() {
   const sun = (
     <svg
       class={`w-5 h-5 transition ease-in-out duration-200 ${
-        !isThemeToggled ? "text-orange-400 scale-125" : "text-white"
+        !isDarkModePreferred ? "text-orange-400 scale-125" : "text-white"
       }`}
       aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
@@ -105,8 +104,6 @@ function App() {
   };
 
   const toggleTheme = () => {
-    setIsThemeToggled(!isThemeToggled);
-
     const slider = sliderRef.current;
     slider.classList.toggle("translate-x-end");
 
@@ -132,7 +129,7 @@ function App() {
     window.addEventListener("scroll", handleStickyHeader);
   }, [lastScrollY]);
 
-  //check for user preference on page load and set theme accordingly
+  //check for user theme preference on page load and set theme accordingly
   useEffect(() => {
     const currentTheme = isDarkModePreferred ? "dark" : "light";
 
@@ -202,11 +199,11 @@ function App() {
       </a>
 
       <main>
-        <Intro isThemeToggled={isThemeToggled}></Intro>
+        <Intro isDarkModePreferred={isDarkModePreferred}></Intro>
 
         <AboutMe></AboutMe>
 
-        <Projects isThemeToggled={isThemeToggled}></Projects>
+        <Projects isDarkModePreferred={isDarkModePreferred}></Projects>
 
         <ContactMe></ContactMe>
 

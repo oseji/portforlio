@@ -7,7 +7,7 @@ import nextBtn from "./assets/next.svg";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Projects = ({ isThemeToggled }) => {
+const Projects = ({ isDarkModePreferred }) => {
   const lineRef = useRef(null);
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -36,7 +36,7 @@ const Projects = ({ isThemeToggled }) => {
       className="w-6 h-6 text-gray-800 dark:text-white"
       aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
-      fill={isThemeToggled ? "white" : "#000000"}
+      fill={isDarkModePreferred ? "white" : "#000000"}
       viewBox="0 0 20 20"
     >
       <path
@@ -50,7 +50,7 @@ const Projects = ({ isThemeToggled }) => {
   const linkSVG = (
     <svg
       stroke="currentColor"
-      fill={isThemeToggled ? "white" : "#000000"}
+      fill={isDarkModePreferred ? "white" : "#000000"}
       strokeWidth="0"
       viewBox="0 0 15 15"
       className="cursor-pointer"
@@ -101,7 +101,9 @@ const Projects = ({ isThemeToggled }) => {
           {/* prev btn */}
           <button
             className={`prevNextBtn ${
-              isThemeToggled ? "projectContainerDark" : "projectContainerLight"
+              isDarkModePreferred
+                ? "projectContainerDark"
+                : "projectContainerLight"
             }  ${currentPage === 1 ? "hidden" : ""}`}
             id="prevBtn"
             onClick={handlePrevBtn}
@@ -161,7 +163,9 @@ const Projects = ({ isThemeToggled }) => {
           {/* next btn */}
           <button
             className={`prevNextBtn ${
-              isThemeToggled ? "projectContainerDark" : "projectContainerLight"
+              isDarkModePreferred
+                ? "projectContainerDark"
+                : "projectContainerLight"
             } ${currentPage === numberOfPages ? "hidden" : ""}`}
             id="nextBtn"
             onClick={handleNextBtn}
