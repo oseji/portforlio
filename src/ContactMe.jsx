@@ -8,6 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 const ContactMe = () => {
   const headingRef = useRef(null);
   const lineRef = useRef(null);
+  const lineWidth = window.innerWidth <= 500 ? "200px" : "300px";
 
   const [formData, setFormData] = useState({
     name: "",
@@ -15,15 +16,14 @@ const ContactMe = () => {
     message: "",
   });
 
+  const [submissionLoading, setSubmissionLoading] = useState(false);
   const [messageState, setMessageState] = useState(null);
   const confirmationRef = useRef(null);
 
   const apiUrl = "https://portforlio-n7px.onrender.com";
 
-  const lineWidth = window.innerWidth <= 500 ? "200px" : "300px";
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async () => {
+    setSubmissionLoading(true);
 
     try {
       const response = await fetch(`${apiUrl}/send`, {
@@ -40,16 +40,17 @@ const ContactMe = () => {
         });
 
         setMessageState(true);
-        //alert("Message sent sucessfully");
       } else {
         setMessageState(false);
-        //alert("Failed to send message,please try again");
       }
     } catch (error) {
       console.error(error);
       setMessageState(false);
-      alert("Failed to send message,please try again");
+    } finally {
+      setSubmissionLoading(false);
     }
+
+    console.log("submitted");
   };
 
   useEffect(() => {
@@ -114,6 +115,10 @@ const ContactMe = () => {
     );
   }, []);
 
+  useEffect(() => {
+    console.log(submissionLoading);
+  }, [submissionLoading]);
+
   return (
     <section id="contactMe">
       <h1 className="sectionHeading" ref={headingRef}>
@@ -122,11 +127,16 @@ const ContactMe = () => {
 
       <div className="line mb-5" ref={lineRef}></div>
 
-      <form onSubmit={handleSubmit}>
+      <form
+        onSubmit={(event) => {
+          event.preventDefault();
+          handleSubmit();
+        }}
+      >
         <div className="formGrp">
           <label htmlFor="name">Name:</label>
           <input
-            autoComplete={true}
+            autoComplete={"true"}
             placeholder="Enter your name"
             type="text"
             id="name"
@@ -144,9 +154,10 @@ const ContactMe = () => {
         <div className="formGrp">
           <label htmlFor="email">Email:</label>
           <input
-            autoComplete={true}
+            autoComplete={"true"}
             placeholder="Enter your email"
             type="email"
+            inputMode="email"
             id="email"
             value={formData.email}
             onChange={(e) =>
@@ -175,16 +186,18 @@ const ContactMe = () => {
             }
             required
           />
-
-          <span
-            className={`confirmationText hideConfirmation ${
-              messageState ? "text-green-500" : "text-red-500"
-            }`}
-            ref={confirmationRef}
-          >
-            {messageState ? "Sent successfully" : "Failed to send"}
-          </span>
         </div>
+
+        {submissionLoading && <p>Sending...</p>}
+
+        <span
+          className={`confirmationText hideConfirmation ${
+            messageState ? "text-green-500" : "text-red-500"
+          }`}
+          ref={confirmationRef}
+        >
+          {messageState ? "Sent successfully" : "Failed to send"}
+        </span>
 
         <button className="px-2 py-1 rounded-md w-24 text-center font-semibold bg-orange-400 hover:bg-orange-400 hover:scale-110 transition ease-in-out duration-100">
           Submit
