@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import SplitType from "split-type";
+import { CircularProgress } from "@mui/material";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -115,10 +116,6 @@ const ContactMe = () => {
     );
   }, []);
 
-  useEffect(() => {
-    console.log(submissionLoading);
-  }, [submissionLoading]);
-
   return (
     <section id="contactMe">
       <h1 className="sectionHeading" ref={headingRef}>
@@ -188,7 +185,9 @@ const ContactMe = () => {
           />
         </div>
 
-        {submissionLoading && <p>Sending...</p>}
+        {submissionLoading && (
+          <CircularProgress color="neutral" variant="indeterminate" size={30} />
+        )}
 
         <span
           className={`confirmationText hideConfirmation ${
