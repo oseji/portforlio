@@ -18,6 +18,7 @@ gsap.registerPlugin(ScrollTrigger);
 const AboutMe = () => {
   const avatarRef = useRef(null);
   const textRef = useRef(null);
+  const headingRef = useRef(null);
   const lineRef = useRef(null);
   const endValue = window.innerWidth <= 500 ? "top 10%" : "top 20%";
   const lineWidth = window.innerWidth <= 500 ? "200px" : "250px";
@@ -36,6 +37,34 @@ const AboutMe = () => {
             start: "top bottom",
             end: "top 30%",
             scrub: 1.5,
+          },
+        }
+      );
+    }
+  }, []);
+
+  // heading animation
+  useEffect(() => {
+    if (headingRef.current) {
+      const text = new SplitType(headingRef.current, { types: "chars,words" });
+
+      const tl = gsap.timeline();
+
+      tl.fromTo(
+        text.chars,
+        { scale: 0.2, opacity: 0, y: -20 },
+        {
+          scale: 1,
+          opacity: 1,
+          y: 0,
+          stagger: 1,
+          duration: 1,
+
+          scrollTrigger: {
+            trigger: headingRef.current,
+            start: "top 80%",
+            end: "top 30%",
+            scrub: 3,
           },
         }
       );
@@ -101,7 +130,7 @@ const AboutMe = () => {
 
       <div className="w-full  lg:w-1/2 flex flex-col justify-between">
         <div>
-          <h1 className="sectionHeading">
+          <h1 className="sectionHeading" ref={headingRef}>
             <span className="headingNum">01. </span>
             ABOUT ME
           </h1>

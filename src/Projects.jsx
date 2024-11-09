@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import gsap from "gsap";
+import SplitType from "split-type";
 import { ScrollTrigger } from "gsap/all";
 import projectData from "./data.json";
 import prevBtn from "./assets/prev.svg";
@@ -8,6 +9,7 @@ import nextBtn from "./assets/next.svg";
 gsap.registerPlugin(ScrollTrigger);
 
 const Projects = ({ isDarkModePreferred }) => {
+  const headingRef = useRef(null);
   const lineRef = useRef(null);
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -67,6 +69,34 @@ const Projects = ({ isDarkModePreferred }) => {
     </svg>
   );
 
+  // heading animation
+  useEffect(() => {
+    if (headingRef.current) {
+      const text = new SplitType(headingRef.current, { types: "chars,words" });
+
+      const tl = gsap.timeline();
+
+      tl.fromTo(
+        text.chars,
+        { scale: 0.2, opacity: 0, y: -20 },
+        {
+          scale: 1,
+          opacity: 1,
+          y: 0,
+          stagger: 1,
+          duration: 1,
+
+          scrollTrigger: {
+            trigger: headingRef.current,
+            start: "top 80%",
+            end: "top 30%",
+            scrub: 3,
+          },
+        }
+      );
+    }
+  }, []);
+
   // animating line
   useEffect(() => {
     gsap.set(lineRef.current, { width: 0 });
@@ -89,7 +119,7 @@ const Projects = ({ isDarkModePreferred }) => {
 
   return (
     <div id="projects" className=" bg-lightBg dark:bg-black ">
-      <h1 className="sectionHeading col-span-full">
+      <h1 className="sectionHeading col-span-full" ref={headingRef}>
         <span className="headingNum">02. </span>PROJECTS
       </h1>
 

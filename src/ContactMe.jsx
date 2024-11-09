@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import SplitType from "split-type";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const ContactMe = () => {
+  const headingRef = useRef(null);
   const lineRef = useRef(null);
 
   const [formData, setFormData] = useState({
@@ -64,6 +66,34 @@ const ContactMe = () => {
     console.log(messageState);
   }, [messageState]);
 
+  // heading animation
+  useEffect(() => {
+    if (headingRef.current) {
+      const text = new SplitType(headingRef.current, { types: "chars,words" });
+
+      const tl = gsap.timeline();
+
+      tl.fromTo(
+        text.chars,
+        { scale: 0.2, opacity: 0, y: -20 },
+        {
+          scale: 1,
+          opacity: 1,
+          y: 0,
+          stagger: 1,
+          duration: 1,
+
+          scrollTrigger: {
+            trigger: headingRef.current,
+            start: "top 80%",
+            end: "top 30%",
+            scrub: 3,
+          },
+        }
+      );
+    }
+  }, []);
+
   // animating line
   useEffect(() => {
     gsap.set(lineRef.current, { width: 0 });
@@ -86,7 +116,7 @@ const ContactMe = () => {
 
   return (
     <section id="contactMe">
-      <h1 className="sectionHeading">
+      <h1 className="sectionHeading" ref={headingRef}>
         <span className="headingNum">03. </span>CONTACT ME
       </h1>
 
