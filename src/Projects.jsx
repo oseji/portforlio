@@ -8,7 +8,7 @@ import nextBtn from "./assets/next.svg";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Projects = ({ isDarkModePreferred }) => {
+const Projects = ({ darkMode }) => {
   const headingRef = useRef(null);
   const lineRef = useRef(null);
 
@@ -35,10 +35,10 @@ const Projects = ({ isDarkModePreferred }) => {
 
   const iconGithub = (
     <svg
-      className="w-6 h-6 text-gray-800 dark:text-white"
+      className="w-6 h-6 "
       aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
-      fill={isDarkModePreferred ? "white" : "#000000"}
+      fill={darkMode ? "black" : "white"}
       viewBox="0 0 20 20"
     >
       <path
@@ -52,7 +52,7 @@ const Projects = ({ isDarkModePreferred }) => {
   const linkSVG = (
     <svg
       stroke="currentColor"
-      fill={isDarkModePreferred ? "white" : "#000000"}
+      fill={darkMode ? "white" : "#000000"}
       strokeWidth="0"
       viewBox="0 0 15 15"
       className="cursor-pointer"
@@ -131,9 +131,7 @@ const Projects = ({ isDarkModePreferred }) => {
           {/* prev btn */}
           <button
             className={`prevNextBtn ${
-              isDarkModePreferred
-                ? "projectContainerDark"
-                : "projectContainerLight"
+              darkMode ? "projectContainerDark" : "projectContainerLight"
             }  ${currentPage === 1 ? "hidden" : ""}`}
             id="prevBtn"
             onClick={handlePrevBtn}
@@ -193,9 +191,7 @@ const Projects = ({ isDarkModePreferred }) => {
           {/* next btn */}
           <button
             className={`prevNextBtn ${
-              isDarkModePreferred
-                ? "projectContainerDark"
-                : "projectContainerLight"
+              darkMode ? "projectContainerDark" : "projectContainerLight"
             } ${currentPage === numberOfPages ? "hidden" : ""}`}
             id="nextBtn"
             onClick={handleNextBtn}

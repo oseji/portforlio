@@ -20,6 +20,7 @@ function App() {
   const isDarkModePreferred = window.matchMedia(
     "(prefers-color-scheme: dark)"
   ).matches;
+  const [darkMode, setDarkMode] = useState(false);
 
   const [menu, setMenu] = useState(iconMenu);
   const [isMenuToggled, setIsMenuToggled] = useState(false);
@@ -109,6 +110,7 @@ function App() {
 
     //check if dark mode is applied
     const isDarkModeApplied = appRef.current?.classList.contains("dark");
+    setDarkMode(isDarkModeApplied);
 
     //determine current theme
     const newTheme = isDarkModeApplied ? "light" : "dark";
@@ -141,6 +143,10 @@ function App() {
       sliderRef.current?.classList.remove("translate-x-end");
     }
   }, [window.matchMedia("(prefers-color-scheme: dark)").matches]);
+
+  useEffect(() => {
+    console.log(isDarkModePreferred);
+  }, [isDarkModePreferred]);
 
   return (
     <div
@@ -203,7 +209,7 @@ function App() {
 
         <AboutMe></AboutMe>
 
-        <Projects isDarkModePreferred={isDarkModePreferred}></Projects>
+        <Projects darkMode={darkMode}></Projects>
 
         <ContactMe></ContactMe>
 
