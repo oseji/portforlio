@@ -9,9 +9,11 @@ import html from "./assets/html.svg";
 import tailwind from "./assets/tailwind.svg";
 import git from "./assets/git.svg";
 import css from "./assets/css.svg";
+import scss from "./assets/scss-svgrepo-com.svg";
 import js from "./assets/js.svg";
 import ts from "./assets/typescript.svg";
 import react from "./assets/react.svg";
+import gsapIcon from "./assets/greensock-svgrepo-com.svg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -20,11 +22,27 @@ const AboutMe = () => {
   const textRef = useRef(null);
   const headingRef = useRef(null);
   const lineRef = useRef(null);
+  const skillTextRefs = useRef([]);
+  const skillImageRefs = useRef([]);
+
   const endValue = window.innerWidth <= 500 ? "top 10%" : "top 20%";
   const lineWidth = window.innerWidth <= 500 ? "200px" : "250px";
 
-  // animating avatar
+  const skills = [
+    { name: "HTML", img: html },
+    { name: "CSS", img: css },
+    { name: "SCSS", img: scss },
+    { name: "Javascript", img: js },
+    { name: "Typescript", img: ts },
+    { name: "Tailwindcss", img: tailwind },
+    { name: "React", img: react },
+    { name: "Framer motion", img: framer },
+    { name: "GSAP", img: gsapIcon },
+    { name: "Git", img: git },
+  ];
+
   useEffect(() => {
+    // animating avatar
     if (avatarRef.current) {
       gsap.fromTo(
         avatarRef.current,
@@ -41,10 +59,50 @@ const AboutMe = () => {
         }
       );
     }
-  }, []);
 
-  // heading animation
-  useEffect(() => {
+    // animating skill texts
+    if (skillTextRefs.current && skillTextRefs.current.length > 0) {
+      skillTextRefs.current.forEach((ref) => {
+        gsap.fromTo(
+          ref,
+          { y: 60 },
+          {
+            y: 0,
+            transformOrigin: "center",
+            scrollTrigger: {
+              trigger: ref,
+              start: "top bottom",
+              end: "top 40%",
+              scrub: 1.5,
+            },
+          }
+        );
+      });
+    }
+
+    // animating skill icons
+    if (skillImageRefs.current && skillImageRefs.current.length > 0) {
+      skillImageRefs.current.forEach((ref) => {
+        if (ref) {
+          gsap.fromTo(
+            ref,
+            { y: -80 },
+            {
+              y: 0,
+              transformOrigin: "center",
+              scrollTrigger: {
+                trigger: ref,
+                start: "top bottom",
+                end: "top 30%",
+                scrub: 1.5,
+              },
+            }
+          );
+        }
+      });
+    }
+
+    // heading animation
     if (headingRef.current) {
       const text = new SplitType(headingRef.current, { types: "chars,words" });
 
@@ -69,6 +127,24 @@ const AboutMe = () => {
         }
       );
     }
+
+    // animating line
+    gsap.set(lineRef.current, { width: 0 });
+
+    gsap.fromTo(
+      lineRef.current,
+      { width: 0 },
+      {
+        width: lineWidth,
+        duration: 3,
+        scrollTrigger: {
+          trigger: lineRef.current,
+          start: "top 90%",
+          end: "top 20%",
+          once: true,
+        },
+      }
+    );
   }, []);
 
   // animating about me text
@@ -97,26 +173,6 @@ const AboutMe = () => {
           scrub: 1,
           start: "top bottom",
           end: endValue,
-        },
-      }
-    );
-  }, []);
-
-  // animating line
-  useEffect(() => {
-    gsap.set(lineRef.current, { width: 0 });
-
-    gsap.fromTo(
-      lineRef.current,
-      { width: 0 },
-      {
-        width: lineWidth,
-        duration: 3,
-        scrollTrigger: {
-          trigger: lineRef.current,
-          start: "top 90%",
-          end: "top 20%",
-          once: true,
         },
       }
     );
@@ -163,61 +219,21 @@ const AboutMe = () => {
         <div className="skillsGrp">
           <h2 className="font-bold text-xl mt-8 col-span-full">My Skills:</h2>
 
-          <div className="skill">
-            <div className={`skillText`}>
-              <img src={html} alt="html" className="skillIcon" />
-              <span>HTML</span>
+          {skills.map((element, index) => (
+            <div className="skill" key={index}>
+              <div className={`skillText`}>
+                <img
+                  src={element.img}
+                  alt={element.name}
+                  className="skillIcon"
+                  ref={(el) => (skillImageRefs.current[index] = el)}
+                />
+                <span ref={(el) => (skillTextRefs.current[index] = el)}>
+                  {element.name}
+                </span>
+              </div>
             </div>
-          </div>
-
-          <div className="skill">
-            <div className={`skillText`}>
-              <img src={css} alt="css" className="skillIcon" />
-              <span>CSS</span>
-            </div>
-          </div>
-
-          <div className="skill">
-            <div className={`skillText`}>
-              <img src={js} alt="javascript" className="skillIcon" />
-              <span>Javascript</span>
-            </div>
-          </div>
-
-          <div className="skill">
-            <div className={`skillText`}>
-              <img src={ts} alt="typescript" className="skillIcon" />
-              <span>Typescript</span>
-            </div>
-          </div>
-
-          <div className="skill">
-            <div className={`skillText`}>
-              <img src={tailwind} alt="tailwindcss" className="skillIcon" />
-              <span>Tailwindcss</span>
-            </div>
-          </div>
-
-          <div className="skill">
-            <div className={`skillText`}>
-              <img src={react} alt="react" className="skillIcon" />
-              <span>ReactJS</span>
-            </div>
-          </div>
-
-          <div className="skill">
-            <div className={`skillText`}>
-              <img src={framer} alt="framer motion" className="skillIcon" />
-              <span>Framer motion</span>
-            </div>
-          </div>
-
-          <div className="skill">
-            <div className={`skillText`}>
-              <img src={git} alt="html" className="skillIcon" />
-              <span>Git</span>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
