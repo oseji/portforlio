@@ -11,6 +11,8 @@ gsap.registerPlugin(ScrollTrigger);
 const Projects = ({ darkMode }) => {
   const headingRef = useRef(null);
   const lineRef = useRef(null);
+  const projectHeadingRef = useRef([]);
+  const projectTextRef = useRef([]);
 
   const [currentPage, setCurrentPage] = useState(1);
   const numberOfItemsPerPage = 3;
@@ -69,8 +71,26 @@ const Projects = ({ darkMode }) => {
     </svg>
   );
 
-  // heading animation
   useEffect(() => {
+    // animating line
+    gsap.set(lineRef.current, { width: 0 });
+
+    gsap.fromTo(
+      lineRef.current,
+      { width: 0 },
+      {
+        width: lineWidth,
+        duration: 3,
+        scrollTrigger: {
+          trigger: lineRef.current,
+          start: "top 90%",
+          end: "top 20%",
+          once: true,
+        },
+      }
+    );
+
+    // heading animation
     if (headingRef.current) {
       const text = new SplitType(headingRef.current, { types: "chars,words" });
 
@@ -95,26 +115,50 @@ const Projects = ({ darkMode }) => {
         }
       );
     }
-  }, []);
 
-  // animating line
-  useEffect(() => {
-    gsap.set(lineRef.current, { width: 0 });
+    // animating project heading
+    if (projectHeadingRef.current && projectHeadingRef.current.length > 0) {
+      projectHeadingRef.current.forEach((ref) => {
+        if (ref) {
+          gsap.fromTo(
+            ref,
+            { y: -60 },
+            {
+              y: 0,
+              transformOrigin: "center",
+              scrollTrigger: {
+                trigger: ref,
+                start: "top bottom",
+                end: "top 40%",
+                scrub: 1.5,
+              },
+            }
+          );
+        }
+      });
+    }
 
-    gsap.fromTo(
-      lineRef.current,
-      { width: 0 },
-      {
-        width: lineWidth,
-        duration: 3,
-        scrollTrigger: {
-          trigger: lineRef.current,
-          start: "top 90%",
-          end: "top 20%",
-          once: true,
-        },
-      }
-    );
+    // animating project text
+    if (projectTextRef.current && projectTextRef.current.length > 0) {
+      projectTextRef.current.forEach((ref) => {
+        if (ref) {
+          gsap.fromTo(
+            ref,
+            { y: 60 },
+            {
+              y: 0,
+              transformOrigin: "center",
+              scrollTrigger: {
+                trigger: ref,
+                start: "top bottom",
+                end: "top 40%",
+                scrub: 1.5,
+              },
+            }
+          );
+        }
+      });
+    }
   }, []);
 
   return (
@@ -147,9 +191,19 @@ const Projects = ({ darkMode }) => {
 
               <div className={`projectText`}>
                 <div>
-                  <h1 className="projectName">{element.title}</h1>
+                  <h1
+                    className="projectName"
+                    ref={(el) => (projectHeadingRef.current[index] = el)}
+                  >
+                    {element.title}
+                  </h1>
 
-                  <p className="aboutProject">{element.about}</p>
+                  <p
+                    className="aboutProject"
+                    ref={(el) => (projectTextRef.current[index] = el)}
+                  >
+                    {element.about}
+                  </p>
                 </div>
 
                 <div>

@@ -141,7 +141,7 @@ section {
 }
 
 .projectText {
-  @apply bg-white dark:bg-darkBg rounded-b-lg p-3 h-56 w-[20.625rem] md:w-96 lg:w-auto flex flex-col justify-between cursor-default shadow-lg;
+  @apply bg-white dark:bg-darkBg rounded-b-lg p-3 h-56 w-[20.625rem] md:w-96 lg:w-auto flex flex-col justify-between cursor-default shadow-lg overflow-hidden;
 }
 
 .projectName {
@@ -188,6 +188,10 @@ section {
 }
 
 /* CONTACT ME */
+#contactMe {
+  @apply overflow-hidden;
+}
+
 form {
   @apply flex flex-col gap-5 w-full md:w-3/4 md:mx-auto lg:mx-0 xl:w-1/2 mt-5;
 }

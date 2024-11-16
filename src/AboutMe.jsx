@@ -63,20 +63,22 @@ const AboutMe = () => {
     // animating skill texts
     if (skillTextRefs.current && skillTextRefs.current.length > 0) {
       skillTextRefs.current.forEach((ref) => {
-        gsap.fromTo(
-          ref,
-          { y: 60 },
-          {
-            y: 0,
-            transformOrigin: "center",
-            scrollTrigger: {
-              trigger: ref,
-              start: "top bottom",
-              end: "top 40%",
-              scrub: 1.5,
-            },
-          }
-        );
+        if (ref) {
+          gsap.fromTo(
+            ref,
+            { y: 60 },
+            {
+              y: 0,
+              transformOrigin: "center",
+              scrollTrigger: {
+                trigger: ref,
+                start: "top bottom",
+                end: "top 40%",
+                scrub: 1.5,
+              },
+            }
+          );
+        }
       });
     }
 
