@@ -7,7 +7,7 @@
     "title": "HR Sphere dashboard",
     "href": "https://hr-sphere.vercel.app/",
     "githubRepo": "https://github.com/oseji/HR-Sphere.git",
-    "about": "A functional Human Resources dashboard for employee management with user authentication.",
+    "about": "A user-friendly HR management platform with secure authentication and real-time data handling via Firebase.",
     "stack": ["React","Typescript", "Tailwind","Firebase"]
   },
   {
@@ -17,17 +17,17 @@
     "title": "FinGenius landing page",
     "href": "https://fingenius.netlify.app/",
     "githubRepo": "https://github.com/oseji/finGenius.git",
-    "about": "A landing page with animations.",
+    "about": "A sleek and animated landing page crafted with Framer Motion for a dynamic user experience.",
     "stack": ["React", "Typescript","Tailwind", "Framer motion"]
   },
    {
     "id": 3,
     "img": "/assets/binge.png",
-    "alt": "Binge landing page screenshot",
+    "alt": "A visually captivating landing page featuring smooth animations powered by GSAP.",
     "title": "Binge",
     "href": "https://binge-beta.vercel.app/",
     "githubRepo": "https://github.com/oseji/Binge.git",
-    "about": "A landing page with animations.",
+    "about": "A movie-viewing platform in development, featuring a dynamic landing page with GSAP animations. The registration, login, and payment screens are completed, and the home screen for signed-in users is currently being built. This evolving project aims to provide a seamless user experience from browsing to viewing.",
     "stack": ["React","Typescript", "Tailwind", "GSAP"]
   },
   
@@ -38,7 +38,7 @@
     "title": "IP address tracker",
     "href": "https://ip-tracker-oseji.netlify.app/",
     "githubRepo": "https://github.com/oseji/IP-Address-Tracker.git",
-    "about": "An IP address tracker that displays the users IP address, Internet service provider(ISP) and user timezone. Integrated react-leaflet to display the users ISP location on a rendered map.",
+    "about": "A versatile tool for tracking IP addresses. This application displays essential details like the user's IP address, ISP, and timezone, while utilizing React Leaflet to render a map showcasing the ISP location. The integration of APIs ensures real-time data accuracy.",
     "stack": ["React", "Tailwind", "React-leaflet", "API"]
   },
   {
@@ -48,7 +48,7 @@
     "title": "ToDo app",
     "href": "https://oseji-todo.vercel.app/",
     "githubRepo": "https://github.com/oseji/ToDo.git",
-    "about": "A todo application built with react, typescript and firebase to provide user authentication. Only registered accounts can log in and have access to their individual data.",
+    "about": "A practical and secure task management application with built-in user authentication powered by Firebase. Registered users can log in to manage and access their personal to-do lists, ensuring a personalized and private experience.",
     "stack": ["React", "Typescript", "Tailwind", "Firebase"]
   },
    {
@@ -58,7 +58,7 @@
     "title": "Trendy Trove",
     "href": "https://trendy-trove.netlify.app/",
     "githubRepo": "https://github.com/oseji/TrendyTrove.git",
-    "about": "A landing page with simple animations.",
+    "about": "An engaging and minimalist landing page enriched with simple yet effective animations. The design focuses on clarity and style, making it a great example of impactful yet lightweight web development.",
     "stack": ["React","Typescript", "Tailwind", "Framer motion"]
   },
   
@@ -69,7 +69,7 @@
     "title": "Github profile searcher",
     "href": "https://github-profile-finder-oseji.netlify.app/",
     "githubRepo": "https://github.com/oseji/github-profile-search.git",
-    "about": "Search for github profiles and view the user follower and following count, location and repositories.",
+    "about": "Search and explore GitHub profiles with user details displayed in an interactive UI.",
     "stack": ["React", "Tailwind", "Framer motion", "API"]
   },
  
@@ -80,7 +80,7 @@
     "title": "Language translator",
     "href": "https://translator-oseji.netlify.app/",
     "githubRepo": "https://github.com/oseji/translator.git",
-    "about": "Created a multilingual translator with text copy and audio playback functionality.",
+    "about": "A multilingual translator application offering features like text translation, copy functionality, and audio playback. Its simple interface ensures accessibility for a wide audience, while APIs provide reliable translations.",
     "stack": ["React", "Tailwind", "API"]
   },
   {
@@ -90,7 +90,7 @@
     "title": "Dictionary",
     "href": "https://osejis-dictionary.netlify.app/",
     "githubRepo": "https://github.com/oseji/osejis-dictionary.git",
-    "about": "Created a dictionary with audio playback and theme switching functionality.",
+    "about": "An intuitive dictionary app that combines functionality and style. It features audio playback for pronunciation and theme switching for enhanced accessibility, all within a clean and modern design.",
     "stack": ["React", "Tailwind", "Framer motion", "API"]
   }
 

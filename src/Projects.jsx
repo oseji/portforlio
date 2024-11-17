@@ -109,7 +109,7 @@ const Projects = ({ darkMode }) => {
           scrollTrigger: {
             trigger: headingRef.current,
             start: "top 80%",
-            end: "top 30%",
+            end: "top 50%",
             scrub: 3,
           },
         }
@@ -122,7 +122,7 @@ const Projects = ({ darkMode }) => {
         if (ref) {
           gsap.fromTo(
             ref,
-            { y: -60 },
+            { y: -50 },
             {
               y: 0,
               transformOrigin: "center",
@@ -151,7 +151,7 @@ const Projects = ({ darkMode }) => {
               scrollTrigger: {
                 trigger: ref,
                 start: "top bottom",
-                end: "top 40%",
+                end: "top 70%",
                 scrub: 1.5,
               },
             }
@@ -190,7 +190,7 @@ const Projects = ({ darkMode }) => {
               <img src={element.img} alt={element.alt} className="projectImg" />
 
               <div className={`projectText`}>
-                <div>
+                <div className=" overflow-hidden">
                   <h1
                     className="projectName"
                     ref={(el) => (projectHeadingRef.current[index] = el)}

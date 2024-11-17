@@ -22,47 +22,49 @@ const Intro = () => {
 
     const tl = gsap.timeline();
 
-    gsap.set([text1.chars, text2.chars, text3.chars], { opacity: 0 });
+    gsap.set([text1.chars, text2.chars, text3.chars], {
+      opacity: 0,
+    });
 
     tl.fromTo(
       text1.chars,
       {
-        opacity: 0,
-        x: 100,
-        scale: 0.1,
+        // opacity: 0,
+        y: 200,
+        // scale: 0.1,
       },
       {
         opacity: 1,
-        x: 0,
-        scale: 1,
+        y: 0,
+        // scale: 1,
         stagger: 0.07,
       }
     )
       .fromTo(
         text2.chars,
         {
-          opacity: 0,
-          x: 100,
-          scale: 0.1,
+          // opacity: 0,
+          y: 200,
+          // scale: 0.1,
         },
         {
           opacity: 1,
-          x: 0,
-          scale: 1,
+          y: 0,
+          // scale: 1,
           stagger: 0.07,
         }
       )
       .fromTo(
         text3.chars,
         {
-          opacity: 0,
-          x: 100,
-          scale: 0.1,
+          // opacity: 0,
+          y: 200,
+          // scale: 0.1,
         },
         {
           opacity: 1,
-          x: 0,
-          scale: 1,
+          y: 0,
+          // scale: 1,
           stagger: 0.07,
         }
       );

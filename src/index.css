@@ -88,7 +88,7 @@ section {
 
 /* INTRO */
 .introText {
-  @apply text-center md:text-start font-bold  lg:mt-0 text-4xl md:text-6xl lg:text-6xl lg:p-5 w-fit uppercase;
+  @apply text-center md:text-start font-bold  lg:mt-0 text-4xl md:text-6xl lg:text-6xl lg:p-5 w-fit uppercase overflow-hidden;
 }
 
 /* ABOUT ME */
@@ -141,7 +141,7 @@ section {
 }
 
 .projectText {
-  @apply bg-white dark:bg-darkBg rounded-b-lg p-3 h-56 w-[20.625rem] md:w-96 lg:w-auto flex flex-col justify-between cursor-default shadow-lg overflow-hidden;
+  @apply bg-white dark:bg-darkBg rounded-b-lg p-3 h-60 w-[20.625rem] md:w-96 lg:w-auto flex flex-col justify-between cursor-default shadow-lg overflow-hidden;
 }
 
 .projectName {

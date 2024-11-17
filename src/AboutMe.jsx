@@ -97,7 +97,7 @@ const AboutMe = () => {
               scrollTrigger: {
                 trigger: ref,
                 start: "top bottom",
-                end: "top 30%",
+                end: "top 40%",
                 scrub: 1.5,
               },
             }
@@ -125,7 +125,7 @@ const AboutMe = () => {
           scrollTrigger: {
             trigger: headingRef.current,
             start: "top 80%",
-            end: "top 30%",
+            end: "top 50%",
             scrub: 3,
           },
         }
