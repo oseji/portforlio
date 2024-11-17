@@ -14,6 +14,7 @@ import js from "./assets/js.svg";
 import ts from "./assets/typescript.svg";
 import react from "./assets/react.svg";
 import gsapIcon from "./assets/greensock-svgrepo-com.svg";
+import firebaseIcon from "./assets/icons8-firebase.svg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -38,6 +39,7 @@ const AboutMe = () => {
     { name: "React", img: react },
     { name: "Framer motion", img: framer },
     { name: "GSAP", img: gsapIcon },
+    { name: "Firebase", img: firebaseIcon },
     { name: "Git", img: git },
   ];
 
@@ -88,7 +90,7 @@ const AboutMe = () => {
         if (ref) {
           gsap.fromTo(
             ref,
-            { y: -80 },
+            { y: -60 },
             {
               y: 0,
               transformOrigin: "center",
@@ -218,24 +220,27 @@ const AboutMe = () => {
           </p>
         </div>
 
-        <div className="skillsGrp">
-          <h2 className="font-bold text-xl mt-8 col-span-full">My Skills:</h2>
-
-          {skills.map((element, index) => (
-            <div className="skill" key={index}>
-              <div className={`skillText`}>
-                <img
-                  src={element.img}
-                  alt={element.name}
-                  className="skillIcon"
-                  ref={(el) => (skillImageRefs.current[index] = el)}
-                />
-                <span ref={(el) => (skillTextRefs.current[index] = el)}>
-                  {element.name}
-                </span>
+        <div>
+          <h2 className="font-bold text-xl mt-8 mb-4 col-span-full">
+            My Skills:
+          </h2>
+          <div className="skillsGrp">
+            {skills.map((element, index) => (
+              <div className="skill" key={index}>
+                <div className={`skillText`}>
+                  <img
+                    src={element.img}
+                    alt={element.name}
+                    className="skillIcon"
+                    ref={(el) => (skillImageRefs.current[index] = el)}
+                  />
+                  <span ref={(el) => (skillTextRefs.current[index] = el)}>
+                    {element.name}
+                  </span>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
