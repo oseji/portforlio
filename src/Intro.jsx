@@ -29,42 +29,33 @@ const Intro = () => {
     tl.fromTo(
       text1.chars,
       {
-        // opacity: 0,
         y: 200,
-        // scale: 0.1,
       },
       {
         opacity: 1,
         y: 0,
-        // scale: 1,
         stagger: 0.07,
       }
     )
       .fromTo(
         text2.chars,
         {
-          // opacity: 0,
           y: 200,
-          // scale: 0.1,
         },
         {
           opacity: 1,
           y: 0,
-          // scale: 1,
           stagger: 0.07,
         }
       )
       .fromTo(
         text3.chars,
         {
-          // opacity: 0,
           y: 200,
-          // scale: 0.1,
         },
         {
           opacity: 1,
           y: 0,
-          // scale: 1,
           stagger: 0.07,
         }
       );
