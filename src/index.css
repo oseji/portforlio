@@ -141,7 +141,7 @@ section {
 }
 
 .projectText {
-  @apply bg-white dark:bg-darkBg rounded-b-lg p-3 h-60 w-[20.625rem] md:w-96 lg:w-auto flex flex-col justify-between cursor-default shadow-lg overflow-hidden;
+  @apply bg-white dark:bg-darkBg rounded-b-lg p-3 h-[270px] w-[20.625rem] md:w-96 lg:w-auto flex flex-col justify-between cursor-default shadow-lg overflow-hidden;
 }
 
 .projectName {
