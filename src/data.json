@@ -17,7 +17,7 @@
     "title": "FinGenius landing page",
     "href": "https://fin-genius-inky.vercel.app/",
     "githubRepo": "https://github.com/oseji/finGenius.git",
-    "about": "A sleek and animated landing page crafted with Framer Motion for a dynamic user experience.",
+    "about": "A sleek and animated landing page crafted with GSAP for a dynamic user experience.",
     "stack": ["React", "Typescript","Tailwind", "GSAP"]
   },
    {
