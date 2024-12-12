@@ -7,8 +7,6 @@ import ContactMe from "./ContactMe";
 import Footer from "./footer";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
-import iconMenu from "./assets/iconMenu.svg";
-import iconClose from "./assets/iconClose.svg";
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
@@ -23,7 +21,6 @@ function App() {
   ).matches;
   const [darkMode, setDarkMode] = useState(false);
 
-  const [menu, setMenu] = useState(iconMenu);
   const [isMenuToggled, setIsMenuToggled] = useState(false);
 
   const [showHeader, setShowHeader] = useState(true);
@@ -31,7 +28,7 @@ function App() {
 
   const upArrow = (
     <svg
-      class="w-6 h-6 text-gray-800 dark:text-white"
+      className="w-6 h-6 text-gray-800 dark:text-white"
       aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
       fill={isDarkModePreferred ? "white" : "black"}
@@ -48,7 +45,7 @@ function App() {
 
   const moon = (
     <svg
-      class={`w-4 h-4 transition ease-in-out duration-200 ${
+      className={`w-4 h-4 transition ease-in-out duration-200 ${
         isDarkModePreferred ? "text-orange-400 scale-125" : "text-black"
       }`}
       aria-hidden="true"
@@ -68,7 +65,7 @@ function App() {
 
   const sun = (
     <svg
-      class={`w-5 h-5 transition ease-in-out duration-200 ${
+      className={`w-5 h-5 transition ease-in-out duration-200 ${
         !isDarkModePreferred ? "text-orange-400 scale-125" : "text-white"
       }`}
       aria-hidden="true"
@@ -113,7 +110,6 @@ function App() {
 
   const closeMenu = () => {
     setIsMenuToggled(false);
-    setMenu(iconMenu);
     navRef.current.classList.add("hideNav");
   };
 
@@ -179,7 +175,7 @@ function App() {
               ref={(el) => (menuLineRefs.current[0] = el)}
             ></span>
             <span
-              className="line2 top-1/2 w-full"
+              className="line2 top-1/2 w-[60%]"
               ref={(el) => (menuLineRefs.current[1] = el)}
             ></span>
             <span
