@@ -16,6 +16,7 @@ function App() {
   const headerRef = useRef(null);
   const navRef = useRef(null);
   const appRef = useRef(null);
+  const menuLineRefs = useRef([]);
 
   const isDarkModePreferred = window.matchMedia(
     "(prefers-color-scheme: dark)"
@@ -91,10 +92,22 @@ function App() {
 
     setIsMenuToggled(!isMenuToggled);
 
-    if (isMenuToggled) {
-      setMenu(iconMenu);
+    if (!isMenuToggled) {
+      menuLineRefs.current[0].classList.add("-rotate-45");
+      menuLineRefs.current[0].classList.remove("top-[10%]");
+
+      menuLineRefs.current[1].classList.add("hidden");
+
+      menuLineRefs.current[2].classList.add("rotate-45");
+      menuLineRefs.current[2].classList.remove("top-[90%]");
     } else {
-      setMenu(iconClose);
+      menuLineRefs.current[0].classList.remove("-rotate-45");
+      menuLineRefs.current[0].classList.add("top-[10%]");
+
+      menuLineRefs.current[1].classList.remove("hidden");
+
+      menuLineRefs.current[2].classList.remove("rotate-45");
+      menuLineRefs.current[2].classList.add("top-[90%]");
     }
   };
 
@@ -150,7 +163,7 @@ function App() {
 
   return (
     <div
-      className={`App bg-white text-black dark:bg-custom-radial dark:text-white`}
+      className={`App bg-white text-black dark:bg-black dark:text-white`}
       ref={appRef}
     >
       <header
@@ -160,12 +173,20 @@ function App() {
         <div className="logoGrp">
           <h1 className="logo">Oseji</h1>
 
-          <img
-            src={menu}
-            alt="menu"
-            className="menuIcon"
-            onClick={toggleMenu}
-          />
+          <div className="menuContainer" onClick={toggleMenu}>
+            <span
+              className="line1 top-[10%] w-full"
+              ref={(el) => (menuLineRefs.current[0] = el)}
+            ></span>
+            <span
+              className="line2 top-1/2 w-full"
+              ref={(el) => (menuLineRefs.current[1] = el)}
+            ></span>
+            <span
+              className="line3 top-[90%] w-full"
+              ref={(el) => (menuLineRefs.current[2] = el)}
+            ></span>
+          </div>
         </div>
 
         <nav className="hideNav" ref={navRef}>

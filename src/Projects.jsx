@@ -98,10 +98,8 @@ const Projects = ({ darkMode }) => {
 
       tl.fromTo(
         text.chars,
-        { scale: 0.2, opacity: 0, y: -20 },
+        { y: 40 },
         {
-          scale: 1,
-          opacity: 1,
           y: 0,
           stagger: 1,
           duration: 1,
@@ -187,7 +185,13 @@ const Projects = ({ darkMode }) => {
           {/* projects */}
           {projectData.slice(startIndex, endIndex).map((element, index) => (
             <div key={index} className="projectContainer">
-              <img src={element.img} alt={element.alt} className="projectImg" />
+              <div className=" overflow-hidden rounded-t-lg w-full">
+                <img
+                  src={element.img}
+                  alt={element.alt}
+                  className="projectImg"
+                />
+              </div>
 
               <div className={`projectText`}>
                 <div className=" overflow-hidden">
@@ -261,9 +265,7 @@ const Projects = ({ darkMode }) => {
             {Array.from({ length: numberOfPages }, (_, index) => (
               <div
                 className={`pageNum ${
-                  currentPage === index + 1
-                    ? "scale-110 font-bold bg-orange-400"
-                    : ""
+                  currentPage === index + 1 ? " text-white bg-orange-400" : ""
                 }`}
                 key={index}
               >

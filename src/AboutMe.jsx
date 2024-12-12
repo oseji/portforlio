@@ -114,10 +114,8 @@ const AboutMe = () => {
 
       tl.fromTo(
         text.chars,
-        { scale: 0.2, opacity: 0, y: -20 },
+        { y: 40 },
         {
-          scale: 1,
-          opacity: 1,
           y: 0,
           stagger: 1,
           duration: 1,

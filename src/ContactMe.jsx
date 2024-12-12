@@ -9,7 +9,6 @@ gsap.registerPlugin(ScrollTrigger);
 const ContactMe = () => {
   const headingRef = useRef(null);
   const lineRef = useRef(null);
-  const inputFormRefs = useRef([]);
   const lineWidth = window.innerWidth <= 500 ? "200px" : "300px";
 
   const [formData, setFormData] = useState({
@@ -74,6 +73,7 @@ const ContactMe = () => {
     // animating line
     gsap.set(lineRef.current, { width: 0 });
 
+    // animating line
     gsap.fromTo(
       lineRef.current,
       { width: 0 },
@@ -97,10 +97,8 @@ const ContactMe = () => {
 
       tl.fromTo(
         text.chars,
-        { scale: 0.2, opacity: 0, y: -20 },
+        { y: 40 },
         {
-          scale: 1,
-          opacity: 1,
           y: 0,
           stagger: 1,
           duration: 1,
@@ -113,49 +111,6 @@ const ContactMe = () => {
           },
         }
       );
-    }
-
-    // animating input forms
-    if (inputFormRefs.current && inputFormRefs.current.length > 0) {
-      inputFormRefs.current.forEach((ref, index) => {
-        if (index === 0 || index === 2) {
-          if (ref) {
-            gsap.fromTo(
-              ref,
-              { x: 100 },
-              {
-                x: 0,
-                transformOrigin: "center",
-                scrollTrigger: {
-                  trigger: ref,
-                  start: "top bottom",
-                  end: "top 40%",
-                  scrub: 1.5,
-                },
-              }
-            );
-          }
-        }
-
-        if (index === 1) {
-          if (ref) {
-            gsap.fromTo(
-              ref,
-              { x: -100 },
-              {
-                x: 0,
-                transformOrigin: "center",
-                scrollTrigger: {
-                  trigger: ref,
-                  start: "top bottom",
-                  end: "top 40%",
-                  scrub: 1.5,
-                },
-              }
-            );
-          }
-        }
-      });
     }
   }, []);
 
@@ -181,7 +136,6 @@ const ContactMe = () => {
             type="text"
             id="name"
             value={formData.name}
-            ref={(el) => (inputFormRefs.current[0] = el)}
             onChange={(e) =>
               setFormData({
                 ...formData,
@@ -201,7 +155,6 @@ const ContactMe = () => {
             inputMode="email"
             id="email"
             value={formData.email}
-            ref={(el) => (inputFormRefs.current[1] = el)}
             onChange={(e) =>
               setFormData({
                 ...formData,
@@ -220,7 +173,6 @@ const ContactMe = () => {
             type="text"
             id="message"
             value={formData.message}
-            ref={(el) => (inputFormRefs.current[2] = el)}
             onChange={(e) =>
               setFormData({
                 ...formData,
@@ -244,7 +196,7 @@ const ContactMe = () => {
           {messageState ? "Sent successfully" : "Failed to send"}
         </span>
 
-        <button className="px-2 py-1 rounded-md w-24 text-center font-semibold bg-orange-400 hover:bg-orange-400 hover:scale-110 transition ease-in-out duration-100">
+        <button className="px-2 py-1 rounded-md w-24 text-center font-semibold bg-orange-400 hover:bg-orange-400 hover:scale-110 transition ease-in-out duration-300">
           Submit
         </button>
       </form>

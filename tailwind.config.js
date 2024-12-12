@@ -16,7 +16,7 @@ export default {
       },
       colors: {
         darkBg: "#0D0D0D",
-        lightBg: "#E9E9E9",
+        lightBg: "#F4F4F4",
       },
       screens: {
         xxl: "1440px",
