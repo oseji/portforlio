@@ -75,7 +75,7 @@ const AboutMe = () => {
               scrollTrigger: {
                 trigger: ref,
                 start: "top bottom",
-                end: "top 40%",
+                end: "top 60%",
                 scrub: 1.5,
               },
             }
@@ -97,7 +97,7 @@ const AboutMe = () => {
               scrollTrigger: {
                 trigger: ref,
                 start: "top bottom",
-                end: "top 40%",
+                end: "top 60%",
                 scrub: 1.5,
               },
             }

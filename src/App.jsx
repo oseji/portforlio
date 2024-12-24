@@ -171,15 +171,15 @@ function App() {
 
           <div className="menuContainer" onClick={toggleMenu}>
             <span
-              className="line1 top-[10%] w-full"
+              className="top-[10%] w-full"
               ref={(el) => (menuLineRefs.current[0] = el)}
             ></span>
             <span
-              className="line2 top-1/2 w-[60%]"
+              className="top-1/2 w-[60%]"
               ref={(el) => (menuLineRefs.current[1] = el)}
             ></span>
             <span
-              className="line3 top-[90%] w-full"
+              className="top-[90%] w-full"
               ref={(el) => (menuLineRefs.current[2] = el)}
             ></span>
           </div>

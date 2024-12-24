@@ -7,6 +7,13 @@
 @tailwind components;
 @tailwind utilities;
 
+::-webkit-scrollbar {
+  @apply w-2;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-500 hover:bg-gray-700 rounded-lg;
+}
+
 html {
   @apply scroll-smooth;
 }
@@ -37,7 +44,7 @@ header {
 }
 
 .menuContainer {
-  @apply w-10 h-8 lg:hidden relative flex flex-col justify-center;
+  @apply w-8 h-6 lg:hidden relative flex flex-col justify-center;
 }
 
 .menuContainer span {
@@ -133,7 +140,7 @@ section {
 }
 
 .displayProjectsBig {
-  @apply hidden lg:grid lg:grid-cols-3 gap-12 mt-10  relative;
+  @apply hidden lg:grid lg:grid-cols-3 gap-10 mt-10  relative;
 }
 
 .displayProjectsMobile {
@@ -145,7 +152,7 @@ section {
 }
 
 .projectImg {
-  @apply rounded-t-lg w-full hover:scale-110 transition ease-in-out duration-500;
+  @apply rounded-t-lg w-full lg:hover:scale-110 transition ease-in-out duration-500;
 }
 
 .projectText {
@@ -187,12 +194,12 @@ section {
   @apply top-1/2 -right-[5%];
 }
 
-.pageNum {
-  @apply px-3 py-1 rounded-full;
+.pageNumGrp {
+  @apply flex flex-row items-center justify-center gap-4 mt-10;
 }
 
-.pageNumGrp {
-  @apply flex flex-row items-center justify-center gap-8 mt-10;
+.pageNum {
+  @apply px-3 py-1 rounded-full transition-all ease-in-out duration-500;
 }
 
 /* CONTACT ME */
@@ -214,7 +221,7 @@ label {
 
 input,
 textarea {
-  @apply bg-lightBg dark:bg-darkBg rounded-md p-2 focus:outline-0 hover:scale-105 transition ease-in-out duration-300;
+  @apply bg-lightBg dark:bg-darkBg rounded-md p-2 focus:outline-0;
 }
 
 textarea::-webkit-scrollbar {

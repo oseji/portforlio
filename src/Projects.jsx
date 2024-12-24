@@ -265,11 +265,13 @@ const Projects = ({ darkMode }) => {
             {Array.from({ length: numberOfPages }, (_, index) => (
               <div
                 className={`pageNum ${
-                  currentPage === index + 1 ? " text-white bg-orange-400" : ""
+                  currentPage === index + 1
+                    ? " text-white bg-orange-400 w-14"
+                    : " bg-slate-300 w-6"
                 }`}
                 key={index}
               >
-                {index + 1}
+                {/* {index + 1} */}
               </div>
             ))}
           </div>
