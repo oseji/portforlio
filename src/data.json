@@ -28,7 +28,7 @@
     "href": "https://binge-beta.vercel.app/",
     "githubRepo": "https://github.com/oseji/Binge.git",
     "about": "A movie-viewing platform in development, featuring a dynamic landing page with GSAP animations. The registration, login, and payment screens are completed, and the home screen for signed-in users is currently being built.",
-    "stack": ["React","Typescript", "Tailwind", "GSAP"]
+    "stack": ["React","Typescript","Redux Toolkit", "Tailwind", "GSAP"]
   },
   
   {

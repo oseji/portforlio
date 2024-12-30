@@ -128,7 +128,7 @@ section {
 }
 
 .skillText {
-  @apply flex flex-row gap-2 items-center  cursor-default overflow-hidden;
+  @apply flex flex-row gap-2 items-center capitalize  cursor-default overflow-hidden;
 }
 .skillIcon {
   @apply h-6;

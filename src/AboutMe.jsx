@@ -15,6 +15,7 @@ import ts from "./assets/typescript.svg";
 import react from "./assets/react.svg";
 import gsapIcon from "./assets/greensock-svgrepo-com.svg";
 import firebaseIcon from "./assets/icons8-firebase.svg";
+import reduxIcon from "./assets/icons8-redux.svg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -37,6 +38,7 @@ const AboutMe = () => {
     { name: "Typescript", img: ts },
     { name: "Tailwindcss", img: tailwind },
     { name: "React", img: react },
+    { name: "Redux toolkit", img: reduxIcon },
     { name: "Framer motion", img: framer },
     { name: "GSAP", img: gsapIcon },
     { name: "Firebase", img: firebaseIcon },
