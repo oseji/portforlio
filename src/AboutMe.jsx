@@ -198,25 +198,25 @@ const AboutMe = () => {
           <div className="line" ref={lineRef}></div>
 
           <p className="aboutMeText" ref={textRef}>
-            Hi, I'm Ose, a <b>front-end web developer</b> with a strong
-            foundation in HTML, CSS and JavaScript. I specialize in implementing
-            beautiful and responsive user interfaces using the power of
-            TailwindCSS to accelerate my design process. With ReactJS, I build
-            scalable and efficient UIs, ensuring every project is both solid and
-            adaptable.
+            <strong> Hey I’m Ose, your go to frontend developer!</strong>
             <br />
             <br />
-            Currently, I'm exploring GreenSock Animation Platform (GSAP) to add
-            lively animations that make interactions more engaging and fun,
-            adding an extra layer of engagement to my work. I thrive on tackling
-            complex problems and believe strongly in writing clean, maintainable
-            code. My goal is to innovate and create captivating digital
-            experiences that leave a lasting impression on users.
+            I build stunning, responsive, and user-friendly web experiences
+            using HTML, CSS, and JavaScript. With ReactJS and TailwindCSS in my
+            toolkit, I craft UIs that are not just sleek but also scalable and
+            efficient.
             <br />
             <br />
-            Don’t just take my word for it though, check out my projects to see
-            my work in action. Let's connect and collaborate to turn your vision
-            into reality! Together, we can create something truly special.
+            Lately, I’ve been diving deep into GSAP, bringing websites to life
+            with animations that make every interaction pop. I’m all about clean
+            code, creative problem-solving, and turning ideas into digital
+            experiences that actually stick with users.
+            <br />
+            <br />
+            When I’m not coding, I’m probably exploring new ways to push the
+            boundaries of web design. Wanna see what I’m all about? Check out my
+            projects, and let’s team up to create something that truly stands
+            out.
           </p>
         </div>
 
