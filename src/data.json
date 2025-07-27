@@ -13,10 +13,10 @@
   {
     "id": 2,
     "img": "/assets/finGenius.png",
-    "alt": "FinGenius screenshot",
-    "title": "FinGenius landing page",
-    "href": "https://fin-genius-inky.vercel.app/",
-    "githubRepo": "https://github.com/oseji/finGenius.git",
+    "alt": "IntelliVest screenshot",
+    "title": "IntelliVest landing page",
+    "href": "https://intellivest.vercel.app/",
+    "githubRepo": "https://github.com/oseji/IntelliVest.git",
     "about": "A sleek and animated landing page crafted with GSAP for a dynamic user experience.",
     "stack": ["React", "Typescript","Tailwind", "GSAP"]
   },
